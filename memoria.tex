@@ -75,7 +75,7 @@ Trabajo Fin de Grado
 \vspace{2.5cm}
 
 \LARGE
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+DISEÑO Y PROGRAMACIÓN DE EXPERIENCIAS DE REALIDAD VIRTUAL
 
 \vspace{4cm}
 
@@ -135,14 +135,14 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 20XX
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2019
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Dedicatoria
 
 \chapter*{}
-\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+%\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
 mi mismo} \\
@@ -155,8 +155,7 @@ mi mismo} \\
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Agradezco todo el apoyo a mi tutor Pedro de las Heras\ldots 
-Y a la persona más importante para que haya llegado a terminarlo, gracias Sara por tu apoyo constante para que lo lograra.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
@@ -165,8 +164,9 @@ Y a la persona más importante para que haya llegado a terminarlo, gracias Sara p
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
 
-Aquí viene un resumen del proyecto. Ha de constar de tres o cuatro párrafos, donde se presente de manera clara y concisa de qué va el proyecto. 
-Han de quedar respondidas las siguientes preguntas:
+Desde el principio se pensó en este proyecto como una serie de talleres o actividades para introducir a una serie de tecnologías a estudiantes de instituto que estén interesados en introducirse en ellas.
+
+El objetivo de este proyecto es introducir 3 tecnologías , Bettleblocks, A-Frame, y el Micro-Bit como interfaz de usuario.
 
 \begin{itemize}
   \item ¿De qué va este proyecto? ¿Cuál es su objetivo principal?
@@ -176,17 +176,6 @@ dentro de un marco general?
 \end{itemize}
 
 Lo mejor es escribir el resumen al final.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%% Resumen en inglés
-
-\chapter*{Summary}
-%\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
-\markboth{SUMMARY}{SUMMARY} % encabezado
-
-Here comes a translation of the ``Resumen'' into English. Please, double check it for correct grammar and spelling.
-As it is the translation of the ``Resumen'', which is supposed to be written at the end, this as well should be filled out
-just before submitting.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -209,6 +198,310 @@ just before submitting.
 %\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
 %\listoftables % indice de tablas
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICE%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Introducción}
+\pagenumbering{arabic} % para empezar la numeración de página con números
+
+\section{Experiencias VR}
+\label{sec:In_VR}
+
+La realidad virtual,es la sensación de estar inmerso en un entorno con objetos o escenas de apariencia real. El usuario puede sumergirse en imágenes 3D realistas, generadas por ordenador, a través de tecnología como los visores de realidad virtual una experiencia que luego puede enriquecerse con otros dispositivos.
+
+En los últimos años hemos visto un crecimiento en su importancia y uso, se trata de una tecnología relativamente temprana tanto en su concepción como en su aplicación, hasta los años 90 no se consiguió simplificar los grandes simuladores de realidad virtual en dispositivos portátiles, desde cascos de realidad virtual a gafas en los que los smartphones se encargan de hacer realidad la experiencia.
+
+Entre los años 2015 y 2016 se vivió el gran avance en estos dispositivos al animarse grandes marcas como HTC o Sony a sacar estos dispositivos a la venta para el público.
+
+A la hora de hablar de la realidad virtual nos centraremos en las denominadas experiencias, se trata de entornos en realidad virtual que nos permiten situarnos en medio de la escena, de la que podemos ser espectadores, o interactuar con ella, ayudándonos de sensores o controladores. 
+
+Si bien es cierto que el mayor uso de la realidad virtual va dirigido a videojuegos, también es empleada en campos como el de la medicina o la educación.
+
+
+\subsection{Utilidad VR en la educación }
+\label{subsec:In_VR1}
+
+
+El uso de la realidad virtual en la educación, es algo que se está empezando a introducir en la sociedad, ha estado limitada durante años a la formación de pilotos aéreos en carísimos simuladores pero gracias a la mejora en la tecnología y la reducción  en costes, podemos ir viendo como poco a poco más universidades e institutos introducen la realidad virtual, como apoyo para la enseñanza.
+
+Una gran baza de esta tecnología es su accesibilidad, con unas gafas de cartón como las Cardboard de Google y un móvil, podemos ser capaces de experimentar miles de experiencias en realidad virtual.
+
+Tampoco podemos obviar su inmersió que aumenta la motivación y aporta un mayor impacto en los procesos de aprendizaje. 
+
+Declaraciones como las de Baptiste Grève, creador de Unimersiv, una plataforma de experiencias virtuales, señala lo positivo de esta tecnología dado que el cerebro humano retiene el 10% de lo que lee, el 20% de lo que oye y el 90% de lo que experimenta. 
+
+
+\section{Diseño de figuras 3D}
+\label{sec:In_3D}
+
+El diseño de las figuras en 3D se realiza mediante software de diseño  como Blender o de una forma mas sencilla mediante una programación por bloques como la que nos ofrece Beetleblocks.
+
+A la hora de diseñar nuestra figura si nos centramos en la programación por bloques, deberemos tener en cuenta que que nuestra figura puede ser tan compleja como nosotros queramos, pero que para aprender a diseñar, la forma más correcta será empezar con una figura base, para más tarde crear una más compleja ayudándonos de la combinación de figuras simples.
+
+
+
+\subsection{Entornos VR con figuras en 3D}
+\label{subsec:In_3D1}
+
+Los entornos de realidad virtual se componen de figuras en 3 dimensiones.
+
+Gracias a utilidades como A-Frame podemos crear estos entornos y a herramientas como Beetleblocks y Blender crear figuras para verlas representadas en nuestras experiencias.
+
+\section{Microbit}
+\label{sec:In_Microbit}
+
+BBC micro: bit es una pequeña tarjeta programable de 4x5 cm diseñada para que aprender a programar sea fácil, divertido y al alcance de todos.
+
+Gracias a la gran cantidad de sensores que incorpora, sólo con la tarjeta se pueden llevar a cabo centenares de proyectos. BBC micro: bit también es una plataforma IoT (Internet of Things), lo que la hace muy interesante para usuarios avanzados.
+
+Y es Open Source, por supuesto. Tanto el hardware como el software de ?micro:bit? es de código abierto. 
+
+
+\subsection{Microbit como interfaz de usuario}
+\label{subsubsec:In_Microbit1}
+
+Dentro de las múltiples aplicaciones que le podemos dar al Micro: bit , nos centraremos en usarlo com interfaz de usuario, es decir, usarlo como un controlador para movernos por nuestra experiencia de realidad virtual. 
+
+\section{Estructura de la memoria}
+\label{sec:In_Estruc}
+
+Tras esta introducción en la que hemos visto una visión de la realidad virtual , los entornos , el diseño de objetos en 3D mediante  bloques, y el Microbit y sus multiples posibilidades, continuaremos describiendo los objetivos que se presentan en este trabajo de fin de  grado, en el capítulo 2.
+
+A continuación en el capítulo 3 aprenderemos a usar las tecnologías que se nos presentan , tanto para el diseño 3D , Beetleblocks y Blender,la creación de entornos de realidad virtual, A-Frame, y por último el uso del Microbit como controlador para nuestra experiencia.
+
+En el capítulo 4 nos encontramos la serie de 3 talleres o prácticas de las que consta este trabajo, el primero centrado en el diseño de figuras en 3D, el segundo para aprender a crear nuestro entorno de realidad virtual, y por último un tercero para usar nuestro Microbit como controlador en el entorno y poder movernos con él.
+
+Para finalizar tenemos el capítulo 5 con las Conclusiones, donde se analizan los resultados obtenidos de las prácticas y las posibles mejoras futuras que se podían aplicar.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Objetivos%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Objetivos}
+
+\section{Objetivos}
+\label{sec:objetivos}
+Ya hemos visto una breve introducción de las experiencias de realidad virtual, y del diseño de objetos en 3 dimensiones, ahora toca centrarse en los objetivos de este trabajo de fin de grado.
+
+\subsection{Implementar entornos VR en la educación}
+\label{subsec:VR_ed}
+
+El primer objetivo a la hora de realizar este trabajo de fin de grado, es exponer la utilidad de la realidad virtual en la educación, y como gracias a ella podemos llegar a aprender a programar figuras sencillas en 3D y experimentar con un entorno de realidad virtual de una forma sencilla e interactiva.
+
+\section{Motivación}
+\label{sec:Motiv}
+
+La principal motivación que me ha llevado a realizar este trabajo de fin de grado, es la propia tecnología en sí, siempre me ha llamado la atención , tanto el diseño de objetos en 3D como las experiencias en realidad virtual.
+
+EL gran potencial que tienen, y los múltiples usos que se le pueden dar me han parecido muy interesantes desde un primer momento, gracias a la realización de este trabajo podía a aprender acerca de todo esto y además darle una utilidad en forma de talleres para que alguien aprenda de una forma sencilla y amena.
+
+\section{Metodología y Plan de Trabajo}
+\label{sec:MyP}  
+
+XXXX
+
+\subsection{Metodología}
+\label{subsec:Metod}
+
+SSSS
+
+\subsection{Plan de trabajo}
+\label{subsec:Plan}
+
+
+SSS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Creación de experiencias VRs%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Creación de experiencias VR}
+
+\section{Tecnologías}
+\label{sec:Tecno}
+ En este capítulo nos centraremos en conocer el software y el hardware que vamos a usar en este trabajo, además aprenderemos a usarlo, y veremos unos pequeños ejemplos. 
+
+\section{Diseño 3D}
+\label{sec:3D_Desing}
+
+Para diseñar nuestros objetos en 3D, nos ayudaremos de Beetleblocks una potente herrramienta online que usa la programación mediante bloques para realizar nuestros objetos de una maneera más gráfica y amena.
+
+Una vez tengamos nuestra figura deseada en Beetleblocks, usaremos la segunda de las herramientas para el diseño en 3D, se trata de Blender un software open source.
+Blender posee numerosas utilidades, pero en este caso nos centraremos solamente en valernos de él, para lograr la extension deseada de nuestro objeto 3D.
+
+\subsection{Programación mediante bloques}
+\label{subsec:Prog}
+
+La programación mediante bloques, facilita mucho las cosas si no tenemos experiencia de ningún tipo con la programación, en este trabajo de fin de grado la veremos tanto en Beetleblocks como cuando usemos el Micro: bit.
+ 
+
+\subsection{Beetleblocks}
+\label{subsec:Beetle}
+
+Beetleblocks es un proyecto creado por Eric Rosenbaum, Duks Koschitz, y Bernat Romagosa, además de la ayuda en la programación de Jens Mönig.
+
+Beetle Blocks esta basado en  Scratch e implementado usando Snap! y ThreeJS.
+
+A la hora de comenzar a usar Beetle  Blocks, estos son los pasos a seguir:
+
+\begin{itemize}
+  \item Creamos una cuenta.
+  
+  \item Categorías de los bloques.
+  \begin{enumerate}
+  	\item Motion: Donde se engloban los bloques para movernos por la malla
+  	\item Shapes: Figuras y formas predeterminadas 
+  	\item Sensing: funciones para usar con nuestros bloques 
+  	\item Variables: creación y uso de variables de entorno 
+  	\item Control: operadores para nuestros conjuntos de bloques, eventos , funciones etc..
+  	\item Colors: Bloques para dar color a nuestros diseños 
+  	\item Operators: operadores matemáticos para usar en nuestros bloques 
+  	\item Myblocks: bloques propios creados en el proyecto.
+  	
+  \end{enumerate}
+  
+  
+  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
+  
+\end{itemize}
+
+
+\subsection{Blender}
+\label{subsec:Blender}
+
+\section{A-frame}
+\label{subsec:Aframe}
+
+\subsection{Programación A-frame mediante HTML}
+\label{subsec:HTML}
+
+\subsection{Programación A-frame mediante JS}
+\label{subsec:JS}
+
+\section{Microbit}
+\label{subsec:Microbit}
+
+\subsection{Programación Microbit mediante bloques(Makecode)}
+\label{subsec:Microbit_prog}
+
+\subsection{Micropython}
+\label{subsec:Microbit_py}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diseño e implementación de los talleres %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\chapter{Diseño e implementación de los talleres}
+
+\section{Taller 1 (Creación y exportación de un objeto 3D  )}
+\label{sec:In_VR}
+
+\subsection{ Bettleblocks}
+\label{subsec:In_3D1}
+
+\subsection{ Blender}
+\label{subsec:In_3D1}
+
+\section{Taller 2 (Creación de un entorno VR ) }
+\label{sec:In_VR}
+
+\subsection{Creación de entorno VR con A-Frame}
+\label{subsec:In_3D1}
+
+\subsection{Importación de figura 3D al entorno VR}
+\label{subsec:In_3D1}
+
+\subsection{Animación básica con A-frame.}
+\label{subsec:In_3D1}
+
+\section{Taller 3(Microbit como IU en entorno VR)}
+\label{sec:In_VR}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSIONES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+
+\section{Consecución de objetivos}
+\label{sec:consecucion-objetivos}
+
+Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
+
+Es aquí donde hay que debatir qué se ha conseguido y qué no. 
+Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
+
+
+\section{Aplicación de lo aprendido}
+\label{sec:aplicacion}
+
+Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
+
+\begin{enumerate}
+  \item a
+  \item b
+\end{enumerate}
+
+
+\section{Lecciones aprendidas}
+\label{sec:lecciones_aprendidas}
+
+Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
+
+\begin{enumerate}
+  \item a
+  \item b
+\end{enumerate}
+
+
+\section{Trabajos futuros}
+\label{sec:trabajos_futuros}
+
+Ningún software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+
+Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APÉNDICE(S) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\appendix
+\chapter{Manual de usuario}
+\label{app:manual}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+
+% Las siguientes dos instrucciones es todo lo que necesitas
+% para incluir las citas en la memoria
+\bibliographystyle{abbrv}
+\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
+% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
+% que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
+% formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
+% y verás que lo puedes hacer de manera sencilla.
+% Más información: 
+% http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -218,7 +511,6 @@ just before submitting.
 \cleardoublepage
 \chapter{Introducción}
 \label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
-\pagenumbering{arabic} % para empezar la numeración de página con números
 
 En este capítulo se introduce el proyeto. Debería tener información general sobre el mismo, dando la información sobre el contexto en el que se ha desarrollado.
 
@@ -421,83 +713,5 @@ En este capítulo se incluyen los resultados de tu trabajo fin de grado.
 
 Si es una herramienta de análisis lo que has realizado, aquí puedes poner ejemplos de haberla utilizado para que se vea su utilidad.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% CONCLUSIONES %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\chapter{Conclusiones}
-\label{chap:conclusiones}
-
-
-\section{Consecución de objetivos}
-\label{sec:consecucion-objetivos}
-
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos, donde se planteaba el objetivo general y se elaboraban los específicos.
-
-Es aquí donde hay que debatir qué se ha conseguido y qué no. 
-Cuando algo no se ha conseguido, se ha de justificar, en términos de qué problemas se han encontrado y qué medidas se han tomado para mitigar esos problemas.
-
-
-\section{Aplicación de lo aprendido}
-\label{sec:aplicacion}
-
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y comentar en un párrafo los conocimientos y habilidades puestos en práctica.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
-
-\section{Lecciones aprendidas}
-\label{sec:lecciones_aprendidas}
-
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
-
-\section{Trabajos futuros}
-\label{sec:trabajos_futuros}
-
-Ningún software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
-
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APÉNDICE(S) %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\appendix
-\chapter{Manual de usuario}
-\label{app:manual}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% BIBLIOGRAFIA %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-
-% Las siguientes dos instrucciones es todo lo que necesitas
-% para incluir las citas en la memoria
-\bibliographystyle{abbrv}
-\bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
-% las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
-% que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
-% formato BibTeX. Prueba a buscar en http://scholar.google.com por referencias
-% y verás que lo puedes hacer de manera sencilla.
-% Más información: 
-% http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
 \end{document}
