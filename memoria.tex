@@ -27,6 +27,7 @@
 \usepackage{url}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
+\usepackage{wrapfig} %preámbulo
 \usepackage{float}  %% H para posicionar figuras
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
@@ -370,16 +371,223 @@ A la hora de comenzar a usar Beetle  Blocks, estos son los pasos a seguir:
   
 \end{itemize}
 
+\clearpage
 
+\Large Guía de uso Beetleblocks
+\normalsize
+
+Para empezar a usar bettleblocks vamos a empezar a crear una serie de figuras básicas.
+Para aprender a usar beetleblocks expongo a continuación una serie de ejemplos prácticos, en los que enseño como crear figuras básicas, crear círculos, moverse en los 3 ejes espaciales y por último un objeto que usa todo lo aprendido para la creación de unos auriculares.
+
+
+\begin{itemize}
+
+	\item \large Figuras \\
+	\normalsize
+
+\begin{enumerate}
+
+	\item Dibujar línea: Usamos la orden
+	\includegraphics[width=0.2\textwidth]{img_b/Dibujar_linea}
+ 	que se encuentra en la pestaña de Shapes 
+ 	
+	 \item Creación de variable: En la pestaña Variables tenemos una primera opción make a variable que nos permite crear una variable global para utilizar.
+	 \item Creamos una variable x a la que podemos asignar un valor gracias al bloque \\
+	 \includegraphics[width=0.22\textwidth]{img_b/Variables}
+	 en el que introducimos el valor que queremos que tenga
+	 \item Ahora usamos un bucle para repetir el proceso de la creación de las líneas de una figura geométrica, los bucles vienen indicados en bettleblocks por el bloque
+	 \includegraphics[width=0.1\textwidth]{img_b/Repetir}
+	 en el hueco del bloque insertaremos nuestra variable, esto provoca que todos los bloques que insertemos a posteriori se repiten el número de veces que valor tenga nuestra variable.
+	 \item Dentro del bucle insertaremos 2 bloques
+	 \begin{itemize}
+	 \item El bloque 
+	 \includegraphics[width=0.1\textwidth]{img_b/move_empty}
+	 el cual dibujará una línea que tendrá la longitud igual al valor que insertemos en su hueco. En este hueco insertaremos nuestra variable arrastrándola, de tal forma que quedara así  
+	\includegraphics[width=0.12\textwidth]{img_b/move_x}
+	\item El bloque 
+	 \includegraphics[width=0.12\textwidth]{img_b/girar}
+	 nos permite girar la dirección de nuestro puntero en este caso lo queremos girar tantos grados como lados tenga nuestra figura geométrica esto lo haremos de una forma muy sencilla con el bloque
+	\includegraphics[width=0.12\textwidth]{img_b/div}
+	Con el que dividimos por el valor de nuestra variable y los combinamos
+	\includegraphics[width=0.22\textwidth]{img_b/giro_div}
+	\item Por lo tanto, nuestro bucle completo quedaría así. \\ \\
+	\includegraphics[width=0.25\textwidth]{img_b/bucle}
+	
+	 \end{itemize}
+	 
+	 \item Dos bloques más que nos serán muy útiles para crear cualquier figura son 
+	\includegraphics[width=0.15\textwidth]{img_b/click_event}
+	 que nos inicia la serie de bloques que anidemos cuando hagamos click.\\
+	 Y \includegraphics[width=0.08\textwidth]{img_b/reset}		 
+	  que nos deja el plano en blanco.
+	\item Finalmente, nuestro bloque para crear figuras geométricas quedaría así. \\ \\
+	\includegraphics[width=0.22\textwidth]{img_b/figuras}
+
+
+\end{enumerate}
+
+	\item \large Círculos \\
+	\normalsize
+
+	Para crear círculos de una manera muy sencilla simplemente 			empezando a dibujar curvas o líneas nos moveremos hasta completar 	los 360 grados del circulo girando x grados uno de los ejes.
+	En este ejemplo dibujaríamos un círculo rojo moviéndonos 0.25 		hacia delante cada ver que giramos 18 grados, esto lo haríamos 20 	veces para completar los 360 grados.
+
+	\includegraphics[width=0.22\textwidth]{img_b/Circulos}
+
+	\item \large Moverse por los ejes \\
+	\normalsize
+	Dependiendo de como dibujemos nuestras figuras deberemos movernos por los ejes y orientar la mariquita que sirve como puntero de orientación para dibujar.
+El bloque que se usa para movernos y situarnos en donde queremos es este.
+	\includegraphics[width=0.22\textwidth]{img_b/axis}
+	
+	\item \large Rellenar \\
+	\normalsize
+	
+	\item \large Figuras predeterminadas \\
+	\normalsize
+	Las figuras predeterminadas que nos ofrece bettleblocks son el cubo (en dos formas), el cilindro y la esfera cuyos bloques se corresponden con: 
+	
+	\includegraphics[width=0.28\textwidth]{img_b/figuras_4}
+	
+	\item \large Auriculares \\
+	\normalsize
+	
+	Para probar el manejo de Bettleblocks he creado una figura sencilla , se trata de unos cascos en los que uso una serie de bloques parra dibujarlos.
+	
+	
+	\includegraphics[width=0.4\textwidth]{img_b/cascos_pic}
+	
+	
+	
+\end{itemize}
+
+\Large Formato \\
+\normalsize
+	
+
+
+Por último para continuar usaremos AFRAME para poder visualizar nuestra imagen en 3D y para esto necesitaremos exportar nuestra figura en formato .STL.
+El siguiente programa que usaremos será Blender para poder dar un formato compatible  con A-Frame a nuestra figura.
+
+\clearpage
 \subsection{Blender}
 \label{subsec:Blender}
 
+Blender es una potente herramienta open source de creación 3D.
+En este trabajo de fin de grado le vamos a dar un uso muy concreto, se trata de pasar nuestra figura creada con Beetleblocks a un formato compatible con A-Frame (.obj)
+
+Abrimos Blender lo primero que vemos será una pantalla como esta
+	\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=15cm, keepaspectratio]{img/blender_0}
+		\caption{Blender}
+		\label{figura:foro_hilos}
+ 	\end{figure} 
+
+
+
+\begin{itemize}
+\item Los pasos a seguir para exportar nuestra figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
+\begin{enumerate}
+
+	 \item Nos posicionamos encima  del cubo y presionamos \textbf{\textit{x}} para borrarlo.  
+	 
+	 \item pulsamos espacio y escribimos \textbf{\textit{import stl}}.
+	 
+	 \item Pulsamos espacio de nuevo y escribimos \textbf{\textit{export obj}} seleccionando las 			checkboxes\textbf{\textit{Write Normals, Write Materials}}
+
+\end{enumerate}
+	 
+\end{itemize}
+
+\clearpage
+
 \section{A-frame}
 \label{subsec:Aframe}
+Como ya sabemos A-Frame es el framework que nos permite crear nuestra experriencia de realidad virtual, su aplicación es posible mediante HTML o JavaScript aunque en la serie de talleres , el uso que le daremos será mediante documentos HTML, en este capítulo aprenderemos a usarlo en las dos vertientes.
+
+A continuación expongo una breve guía de uso de ambas 
+
+
+a-Frame is a web framework for building virtual reality (VR) experiences. A-Frame is based on top of HTML, making it simple to get started. But A-Frame is not just a 3D scene graph or a markup language; the core is a powerful entity-component framework that provides a declarative, extensible, and composable structure to three.js.
+
+Originally conceived within Mozilla and now maintained by the co-creators of A-Frame within Supermedium, A-Frame was developed to be an easy yet powerful way to develop VR content. As an independent open source project, A-Frame has grown to be one of the largest VR communities.
+
+A-Frame supports most VR headsets such as Vive, Rift, Windows Mixed Reality, Daydream, GearVR, Cardboard, Oculus Go, and can even be used for augmented reality. Although A-Frame supports the whole spectrum, A-Frame aims to define fully immersive interactive VR experiences that go beyond basic 360° content, making full use of positional tracking and controllers.
 
 \subsection{Programación A-frame mediante HTML}
 \label{subsec:HTML}
 
+A-Frame  puede ser utilizado desde un documento plano de HTML sin la necesidad de instalar nada.
+
+Para empezar a usar A-Frame en nuestro index.html debemos importarlo en la cabecera de esta manera:{\footnotesize
+\begin{verbatim}
+
+	<head>
+    		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+\end{verbatim}
+}
+
+El siguiente paso a realizar es cargar nuestro objeto creado con Beetleblocks y ya con el formato \textbf{\textit{.obj}} que le hemos conseguido dar con Blender.
+
+\begin{itemize}
+\item El proceso para cargarlo en nuestro index.html es el siguiente:
+\begin{enumerate}
+
+	 \item Inicializamos nuestras variables \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y \textbf{\textit{textura}}.  
+	 
+	 {\footnotesize
+	\begin{verbatim}
+	<a-entity 
+		obj-model="obj: #crate-obj;" mtl="#crate-mtl" 
+		material="src: #crate-texture">
+	</a-entity>.
+	\end{verbatim}
+	}
+	 
+	 \item Cargamos el \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y \textbf{\textit{textura}}
+	 \footnote{Para la textura nos vale cualquier \textbf{\textit{.jpg}}. } que queramos\footnote{En la propiedad  \textbf{\textit{src}} indicamos la ruta del archivo.}.
+	 
+	{\footnotesize
+\begin{verbatim}
+	<a-assets>
+		<a-asset-item id="crate-obj" src="models/cascos3.obj"></a-asset-item>
+		<a-asset-item id="crate-mtl" src="models/cascos3.mtl"></a-asset-item>
+		<img id="crate-texture" src="img/military-camouflage.jpg">
+	</a-assets>	
+
+\end{verbatim}
+	}
+\end{enumerate}
+	 
+\end{itemize}
+
+Ya tenemos nuestra gifura cargada en A-Frame de forma local.Pero como ya sabemos para visualizar el entorno de realidad virtual, necesitamos algo más y es un visor, la forma más rapida y sencilla de ver nuestra experiencia, es a traves de nuestro smartphone, para exportar nuestro index.html a internet nos vamos a ayudar de una utilidad llamada ngrok.
+
+\begin{itemize}
+\item Para usar ngrok hacemos lo siguiente
+\begin{enumerate}
+	\item Abrimos una terminal y no vamos a nuestra carpeta raiz del proyecto, lanzamos nuestro servidor de forma local:
+	\begin{verbatim}
+	python -m SimpleHTTPServer 1234
+	\end{verbatim}
+	\item instalamos ngrok, simplemente descargando el .zip y descomprimiéndolo en nuestra carpeta raíz.
+	
+	\item después de esto lo ejecutamos pasándole como argumento el puerto de nuestro servidor.
+	
+	\begin{verbatim}
+	./ngrok http 1234
+	\end{verbatim}
+	
+	\item Ngrok nos devuelve una pantalla con la Url de nuestra aplicación. 
+	\\
+	\\
+	\includegraphics[width=0.8\textwidth]{img/ngrok}
+	
+\end{enumerate}
+\end{itemize}
+
+\clearpage 
 \subsection{Programación A-frame mediante JS}
 \label{subsec:JS}
 
