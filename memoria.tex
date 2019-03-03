@@ -373,6 +373,8 @@ Beetleblocks es un proyecto creado por Eric Rosenbaum, Duks Koschitz, y Bernat R
 
 Beetle Blocks esta basado en  Scratch e implementado usando Snap! y ThreeJS.
 
+\includegraphics[width=0.3\textwidth]{img/Beetlelogo}
+
 A la hora de comenzar a usar Beetle  Blocks, estos son los pasos a seguir:
 
 \begin{itemize}
@@ -485,14 +487,6 @@ El bloque que se usa para movernos y situarnos en donde queremos es este.
 	
 	
 \end{itemize}
-
-\Large Formato \\
-\normalsize
-	
-
-
-Por último para continuar usaremos AFRAME para poder visualizar nuestra imagen en 3D y para esto necesitaremos exportar nuestra figura en formato .STL.
-El siguiente programa que usaremos será Blender para poder dar un formato compatible  con A-Frame a nuestra figura.
 
 \clearpage
 \subsection{Blender}
@@ -642,13 +636,81 @@ En este taller convertiremos nuestro Micro:bit en un controlador para nuestra ex
 
 \section{Taller 1 (Creación y exportación de un objeto 3D  )}
 \label{sec:In_VR}
-
-Este primer taller tiene el objetivo de que aprendas a crear un objeto en 3D con Beetleblocks y su accesible método de programación mediante bloques. Además en la última parte del taller dejaremos nuestro objeto preparado para usarlo en un entorno VR creado con A-Frame.
-
+Este primer taller tiene el objetivo de que aprendas a crear un objeto en 3D con Beetleblocks y su accesible método de programación mediante bloques. Además en la segunda parte del taller usaremos Blender para dejar nuestro objeto preparado para usarlo en un entorno VR creado con A-Frame.\\
+El objetivo de este taller es introducir el diseño en 3D a  alumnos de enseñanzas medias de tal forma que con una sesión, sean capaces de crear algún objeto básico en 3D y darle las herramientas necesarias para que puedan desarrollar algo más complejo en un futuro 
 \subsection{ Bettleblocks}
 \label{subsec:In_3D1}
 
-Beettleblocks nos pone las cosas faciles a la hora de crear objetos 3D, con este taller aprenderemos a \dots
+Beettleblocks nos pone las cosas faciles a la hora de crear objetos 3D, con este taller se pretende que un alumno con conocimientos muy básicos acerca de la programación consiga crear una figura en 3D, con unos pocos pasos.\\
+
+Antes de comenzar a programar nuestra primera figura debemos crear una cuenta  en Bettleblocks para tener nuestros proyectos guardados.
+\begin{itemize}
+ \item Vamos a la web de Beetleblocks\footnote{http://beetleblocks.com} y en la esquina superior derecha vemos la opción para crear/iniciar sesión.
+ \item Una vez hecho esto podemos comenzar a usar Beetleblocks, pulsando en \textit{Run Beetleblocks}.\\
+\end{itemize}
+\clearpage
+\Large El Primer Objeto\\
+\normalsize
+Abrimos Beetleblocks y tendremos una pantalla como la de la Figura~\ref{figura:Init_beetle}
+
+	\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=11cm, keepaspectratio]{img/Init_Beetle}
+		\caption{Beetleblocks}
+		\label{figura:Init_beetle}
+ 	\end{figure} 
+A la izquierda tenemos el menú en el que encontramos los diferentes bloques ordenados por categorías. En el centro tenemos el área de trabajo, y a la derecha una pre visualización en 3D de nuestra área de trabajo.\\
+ En esta última encontramos una mariquita la cual es muy importante porque nos indica nuestra orientación respecto a los 3 ejes, siendo su cabeza la dirección hacia la que estamos apuntando actualmente. en la Figura ~\ref{figura:Orientacion} estaríamos mirando hacia la parte positiva del eje \textit{x}.\\
+ \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.5\textwidth, keepaspectratio]{img/Beetle_Or}
+		\caption{Orientación en Beetleblocks}
+		\label{figura:Orientacion}
+ \end{figure} 
+ 
+ Sabiendo esto ya podemos empezar a crear programar nuestro primer objeto.
+
+\begin{enumerate}
+
+	\item Dibujar línea: Usamos la orden
+	\includegraphics[width=0.2\textwidth]{img_b/Dibujar_linea}
+ 	que se encuentra en la pestaña de Shapes 
+ 	
+	 \item Creación de variable: En la pestaña Variables tenemos una primera opción make a variable que nos permite crear una variable global para utilizar.
+	 \item Creamos una variable x a la que podemos asignar un valor gracias al bloque \\
+	 \includegraphics[width=0.22\textwidth]{img_b/Variables}
+	 en el que introducimos el valor que queremos que tenga
+	 \item Ahora usamos un bucle para repetir el proceso de la creación de las líneas de una figura geométrica, los bucles vienen indicados en bettleblocks por el bloque
+	 \includegraphics[width=0.1\textwidth]{img_b/Repetir}
+	 en el hueco del bloque insertaremos nuestra variable, esto provoca que todos los bloques que insertemos a posteriori se repiten el número de veces que valor tenga nuestra variable.
+	 \item Dentro del bucle insertaremos 2 bloques
+	 \begin{itemize}
+	 \item El bloque 
+	 \includegraphics[width=0.1\textwidth]{img_b/move_empty}
+	 el cual dibujará una línea que tendrá la longitud igual al valor que insertemos en su hueco. En este hueco insertaremos nuestra variable arrastrándola, de tal forma que quedara así  
+	\includegraphics[width=0.12\textwidth]{img_b/move_x}
+	\item El bloque 
+	 \includegraphics[width=0.12\textwidth]{img_b/girar}
+	 nos permite girar la dirección de nuestro puntero en este caso lo queremos girar tantos grados como lados tenga nuestra figura geométrica esto lo haremos de una forma muy sencilla con el bloque
+	\includegraphics[width=0.12\textwidth]{img_b/div}
+	Con el que dividimos por el valor de nuestra variable y los combinamos
+	\includegraphics[width=0.22\textwidth]{img_b/giro_div}
+	\item Por lo tanto, nuestro bucle completo quedaría así. \\ \\
+	\includegraphics[width=0.25\textwidth]{img_b/bucle}
+	
+	 \end{itemize}
+	 
+	 \item Dos bloques más que nos serán muy útiles para crear cualquier figura son 
+	\includegraphics[width=0.15\textwidth]{img_b/click_event}
+	 que nos inicia la serie de bloques que anidemos cuando hagamos click.\\
+	 Y \includegraphics[width=0.08\textwidth]{img_b/reset}		 
+	  que nos deja el plano en blanco.
+	\item Finalmente, nuestro bloque para crear figuras geométricas quedaría así. \\ \\
+	\includegraphics[width=0.22\textwidth]{img_b/figuras}
+\end{enumerate}
+\Large Formato \\
+\normalsize Por último necesitamos exportar nuestra figura, en formato \textit{.stl}. \\
+Beetleblocks no nos permite la exportación en un formato compatible con A-Frame, en la siguiente sección veremos como conseguirlo gracias a Blender.
 
 \subsection{ Blender}
 \label{subsec:In_3D1}
@@ -662,7 +724,7 @@ Abrimos Blender lo primero que vemos será una pantalla como esta
     		\centering
     		\includegraphics[width=15cm, keepaspectratio]{img/blender_0}
 		\caption{Blender}
-		\label{figura:foro_hilos}
+		\label{figura:Init_Blender}
  	\end{figure} 
 
 
@@ -672,16 +734,16 @@ Abrimos Blender lo primero que vemos será una pantalla como esta
 \begin{enumerate}
 
 	 \item Nos posicionamos encima  del cubo y presionamos \textbf{\textit{x}} para borrarlo.  
-	 
-	 \item pulsamos espacio y escribimos \textbf{\textit{import stl}}.
-	 
-	 \item Pulsamos espacio de nuevo y escribimos \textbf{\textit{export obj}} seleccionando las checkboxes \textbf{\textit{Write Normals, Write Materials}}
+	 \item Pulsamos \textit{espacio}, escribimos \textbf{\textit{import stl}} y seleccionamos nuestro objeto importado de Bettleblocks. 
+	 \item Con nuestro objeto cargado en Blender pulsamos \textit{espacio} y escribimos \textbf{\textit{export obj}} seleccionando las checkboxes \textbf{\textit{Write Normals, Write Materials}} y guardamos lo exportamos a la ruta deseada.
 	 \\\\
 	 \includegraphics[width=0.25\textwidth]{img/export_obj}
 
 \end{enumerate}
 	 
 \end{itemize}
+
+Veremos que han aparecido dos nuevos archivos \textit{xxx.obj} y \textit{xxx.mtl}.\\Con esto conseguimos el formato apropiado de nuestro objeto para el siguiente taller, en el que aprenderemos a crear una experiencia de realidad virtual con A-frame. 
 
 \clearpage
 
