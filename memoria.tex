@@ -259,7 +259,14 @@ Gracias a ella aprenderemos a crear un entorno de realidad virtual básico en el 
 \section{Microbit}
 \label{sec:In_Microbit}
 
-BBC micro: bit es una pequeña tarjeta programable de 4x5 cm diseñada para que aprender a programar sea fácil, divertido y al alcance de todos.
+
+"Micro:bit es una pequeña computadora programable, diseñada para hacer que el aprendizaje y la enseñanza sean fáciles y divertidos!"
+
+Esta es la frase que encontramos al entrar en \textit{https://microbit.org/es}, y eso es Micro:bit, un sistema de Hardware embebido, diseñado por la BBC para la enseñanza informática en UK.
+Su primera aparición fue el 12 de Marzo de 2015, y se empezó a distribuir en Febrero de 2016, consta de un procesador ARM CortexM0, acelerómetro y magnetómetro, conectividad Blueethoot y USB, 25 leds, 2 botones programables y puede ser alimentada por medio de pilas o USB. LAs entradas y salidas del dispositivo están formadas por 5 anillos conectores que forman parte de un conector mayor de 23 pines.
+\\
+\includegraphics[width=0.8\textwidth]{img/microbit}
+
 
 Gracias a la gran cantidad de sensores que incorpora, sólo con la tarjeta se pueden llevar a cabo centenares de proyectos. BBC Micro: bit también es una plataforma IoT (Internet of Things), lo que la hace muy interesante para usuarios avanzados.
 
@@ -267,7 +274,7 @@ Y es Open Source, por supuesto. Tanto el hardware como el software de micro:bit 
 
 
 \subsection{Microbit como interfaz de usuario}
-\label{subsubsec:In_Microbit1}
+\label{subsec:In_Microbit_I}
 
 Como ya hemos visto Microbit posee múltiples aplicaciones.
 Su función en este trabajo de fin grado va dirigida a la interfaz de usuario, es decir, será el controlador de la experiencia de realidad virtual que se conseguirá crear al finalizar la serie de talleres didácticos.
@@ -613,16 +620,29 @@ Tomamos como ejemplo particle system, su uso sería de la siguiente forma:
 \section{Microbit}
 \label{subsec:Microbit}
 
-"Micro:bit es una pequeña computadora programable, diseñada para hacer que el aprendizaje y la enseñanza sean fáciles y divertidos!"
+La última tecnología en introducir en este trabajo de fin de grado es el Microbit, ya vimos en el capítulo~\ref{sec:In_Microbit} su definición y características, su función no es otra que servir de controlador de nuestra experiencia.
 
-Esta es la frase que encontramos al entrar a \textit{https://microbit.org/es}, y eso es Micro:bit, un sistema de Hardwarre embebido, diseñado por la BBC para la enseñanza informática en UK.
-Su primera aparición fue el 12 de Marzo de 2015, y se empezó a distribuir en Febrero de 2016, consta de un procesador ARM CortexM0, acelerómetro y magnetómetro, conectividad Blueethoot y USB, 25 leds, 2 botones programables y puede ser alimentada por medio de pilas o USB. LAs entradas y salidas del dispositivo están formadas por 5 anillos conectores que forman parte de un conector mayor de 23 pines.
-\\
-\includegraphics[width=0.8\textwidth]{img/microbit}
- 
-Hay dos principales editores de código en la web de Micro:bit, Makecode, basado en la programación mediante bloques, y MicroPython una variación de Python.
+Para lograr convertirlo en una interfaz de usuario, hay dos herramientas fundamentales pyautogui y bitio.
 
-\clearpage
+Gracias a la ayuda del tutor, se partió de una base como es esta pequeña práctica  \textit{https://github.com/sarehp/microbit-aframe}, en ella podemos ver la aplicación de estas dos herramientas y fue idónea para comenzar la investigación.
+
+\subsection{Pyautogui}
+\label{subsec:pyautogui}
+Para aprender a utilizar pyautogui se han utilizado estas documentaciones 
+
+https://buildmedia.readthedocs.org/media/pdf/pyautogui/latest/pyautogui.pdf
+https://pyautogui.readthedocs.io/en/latest/
+
+Como se puede leer en ellas, pyautogui es un módulo de python que nos permite mapear el teclado y el ratón, es decir controlar mediante la programación todas las teclas de ambos dispositivos.
+
+Gracias a pyautogui, se ha podido trasladar las pulsaciones y gestos del microbit a teclas de nuestro teclado o movimientos de nuestro ratón.
+
+El código fuente se encuentra en https://github.com/asweigart/pyautogui
+
+\subsection{Bitio}
+\label{subsec:Bitio}
+
+Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Microbit en un controlador, se trata de una libreria de Microbit para Python, como podemos ver en su documentación nos permite correr código de python en nuestro PC y poder interactuar directamente con nuestro Microbit. 
 
 \subsection{Programación Microbit mediante bloques(Makecode)}
 \label{subsec:Microbit_prog}
