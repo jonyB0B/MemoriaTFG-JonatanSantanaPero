@@ -265,9 +265,13 @@ Gracias a ella aprenderemos a crear un entorno de realidad virtual básico en el 
 Esta es la frase que encontramos al entrar en \textit{https://microbit.org/es}, y eso es Micro:bit, un sistema de Hardware embebido, diseñado por la BBC para la enseñanza informática en UK.
 Su primera aparición fue el 12 de Marzo de 2015, y se empezó a distribuir en Febrero de 2016, consta de un procesador ARM CortexM0, acelerómetro y magnetómetro, conectividad Blueethoot y USB, 25 leds, 2 botones programables y puede ser alimentada por medio de pilas o USB. LAs entradas y salidas del dispositivo están formadas por 5 anillos conectores que forman parte de un conector mayor de 23 pines.
 \\
+\begin{figure}
+
 \includegraphics[width=0.8\textwidth]{img/microbit}
+\caption{Microbit}
+\label{figura:Microbit_In}
 
-
+\end{figure}
 Gracias a la gran cantidad de sensores que incorpora, sólo con la tarjeta se pueden llevar a cabo centenares de proyectos. BBC Micro: bit también es una plataforma IoT (Internet of Things), lo que la hace muy interesante para usuarios avanzados.
 
 Y es Open Source, por supuesto. Tanto el hardware como el software de micro:bit es de código abierto. 
@@ -374,8 +378,7 @@ Posteriormente se contempló el uso de Tensorflow para añadir un tipo de interfaz
 en detrimento de la introducción del Micro: bit, la popularidad y variedad de aplicaciones de este último fue determinante, y por último se desarrolló una interfaz de usuario en la que el controlador era el Micro: bit.
 
 Una vez cimentado un conocimiento acerca de Beetleblocks, A-Frame y Micro:bit se pasó a plantear los talleres y se dividieron en una serie de 3 talleres autoconclusivos pero a su vez recursivos entre ellos.
-Con esto conseguiamos que realizando uno de ellos se obtuvieran conocimientos acerca de la tecnología en cuestión y a su vez alguien que realizara los tres obtuviera una experiencia completa de realidad virtual
-.
+Con esto conseguiamos que realizando uno de ellos se obtuvieran conocimientos acerca de la tecnología en cuestión y a su vez alguien que realizara los tres obtuviera una experiencia completa de realidad virtual.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Creación de experiencias VRs%
@@ -626,6 +629,9 @@ Para lograr convertirlo en una interfaz de usuario, hay dos herramientas fundame
 
 Gracias a la ayuda del tutor, se partió de una base como es esta pequeña práctica  \textit{https://github.com/sarehp/microbit-aframe}, en ella podemos ver la aplicación de estas dos herramientas y fue idónea para comenzar la investigación.
 
+El siguiente paso fue llevar a cabo una serie de test y pruebas con estas dos herramientas.
+A continuación se entra más en detalle en estas dos herramientas.
+
 \subsection{Pyautogui}
 \label{subsec:pyautogui}
 Para aprender a utilizar pyautogui se han utilizado estas documentaciones 
@@ -642,27 +648,47 @@ El código fuente se encuentra en https://github.com/asweigart/pyautogui
 \subsection{Bitio}
 \label{subsec:Bitio}
 
-Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Microbit en un controlador, se trata de una libreria de Microbit para Python, como podemos ver en su documentación nos permite correr código de python en nuestro PC y poder interactuar directamente con nuestro Microbit. 
+Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Microbit en un controlador, se trata de una libreria de Microbit para Python,  nos permite correr código de python en nuestro PC y poder interactuar directamente con nuestro Microbit. 
 
-\subsection{Programación Microbit mediante bloques(Makecode)}
-\label{subsec:Microbit_prog}
+Para aprender su uso se siguió la documentación, la cual se puede ver en el sigiente enlace:
+https://github.com/whaleygeek/bitio
 
-Para la programación mediante bloques del Micro:bit vamos a utilizar \textit{Makecode}
-\footnote{https://makecode.microbit.org}
-\\\\
-\includegraphics[width=1\textwidth]{img/Makecode}
-
-Con una interfaz muy parecida a la de Beetleblocks divide sus bloques en grupos, que aportan distintas funciones como Bucles , acciones para los LEDs, Lógica, Matemática \dots etc
-
-En la web de Makecode disponemos de numerosos tutoriales para familiarizarnos con su uso.
+En ella encontramos desde como instalarlo en nuestro programa de python en la sección \textit{Getting Started}, como hacer la conexión con nuestro Microbit y una serie de ejemplos de las funciones propias de bitio como puede ser leer los valores del acelerómetro o detectar cuando pulsamos uno de los botones.
 
 \subsection{Micropython}
 \label{subsec:Microbit_py}
-Mycropython es el otro editor de código que esta presente en la web oficial de Micro:bit, permite al usuario escribir scripts de Python en el editor web de Micro bit los cuales se combinan con el firmware de MicroPython y se cargan en el dispositivo.
 
-A la hora de usar  Python en el microbit necesitamos un editor 
+Mycropython es el lenguaje de programación propio del Microbit. En este trabajo de fin de grado es el utilizado a la hora de realizar los programas que correran las acciones de nuestra placa.
 
+Basado en python se usa de una forma practicamente idéntica. Cualquier editor de texto es válido para programar los scripts, en este caso se ha optado por la recomendación oficial que es el editor Mu.
+\\
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{img/Mu_editor}
+\caption{Editor Mu}
+\label{figura:Mu}
+\end{figure}
 
+Nos permite de una forma intuitiva cargar el código en el dispositivo con un botón dedicado para ello y ofrece entre sus distintos modos la posibilidad de visualizar la salida estándar.
+
+\clearpage
+\subsection{Programación Microbit mediante bloques(Makecode)}
+\label{subsec:Microbit_prog}
+
+Makecode es un editor para programar el Microbit que usa el método de bloques.
+
+Con una interfaz muy parecida a la de Beetleblocks divide sus bloques en grupos, que aportan distintas funciones como Bucles , acciones para los LEDs, Lógica, Matemática \dots etc
+
+En la web de Makecode\footnote{https://makecode.microbit.org/} disponemos de numerosos tutoriales para familiarizarnos con su uso.
+Aunque en este trabajo Makecode no ha sido utilizado para la realización de talleres 
+se profundizó en cada uno de los tutoriales ya que ofrecen una mejor visión global de las posibilidades del Microbit, pudiendo programarse sencillos juegos de una forma rápida y amena.
+
+En la siguiente figura~\ref{figura:Makecode} podemos ver su aspecto inicial con  una distribución común de la programación por bloques con los diferentes grupos de funciones y variables a la izquierda \textbf{(2)} y una área de trabajo grande para arrastras los bloques \textbf{(3)}.
+Como complemento se puede hacer una previsualización del resultado de la ejecución de nuestros bloques \textbf{(1)}.
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{img/Makecode}
+\caption{Makecode}
+\label{figura:Makecode}
+\end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diseño e implementación de los talleres %
@@ -963,6 +989,92 @@ Ya tenemos nuestra figura cargada en A-Frame de forma local.Pero como ya sabemos
 
 \section{Taller 3(Microbit como IU en entorno VR)}
 \label{sec:In_VR}
+
+En este tercer taller se mostrará como convertir nuestro Microbit en un controlador para una experiencia de realidad virtual creada con A-Frame.
+
+El propósito de este taller es partir del anterior a la hora de usar el controlador en la experiencia, pero no necesariamente es obligatorio ya que el Microbit debe funcionar en cualquier entorno de A-Frame que permita movimiento independientemente de como sea la experiencia en si.
+
+Las funciones que llevara a cabo el Microbit una vez finalizado el taller, serán las siguientes:
+
+\begin{itemize}
+\item Movimiento hacia adelante, atrás, izquierda y derecha.
+\item Movimiento de la cámara.
+\item Click con el botón izquierdo del Microbit.
+\end{itemize}
+
+Para programar el Microbit primero se debe preparar el entorno, como ya se indica en la introducción el lenguaje utilizado será python, o en su defecto micropython.
+El sistema operativo será Linux, Microbit también dispone de compatibilidad con Windows mediante la instalación de un driver, esto será abordado en el anexo del trabajo.
+
+Los pasos a realizar por tanto serán:
+\begin{itemize}
+\item Disponer de un editor de texto.
+\item Instalar bitio.
+\item Instalar pyautogui.
+\end{itemize}
+
+Con esto ya se dispone de un entorno apto para empezar a programar nuestra placa.
+
+\subsection{Instalación de Bitio}
+\label{subsec:Install_Bitio}
+
+El primer paso es instalar Bitio, para ello lo primero que se debe hacer es ir a su repositorio de github.
+
+\textit{https://github.com/whaleygeek/bitio}
+
+Como la propia documentación indica la mejor forma de usar bitio en un entorno educativo es copiar la carpeta `src/microbit' en el directorio Home del proyecto actual.
+
+Con esto se consigue que automáticamente cualquier programa que esté en el mismo directorio acceda a la carpeta de bitio cuando se importe el paquete microbit, al principio del programa \textbf{.py}
+
+\textit{import microbit}
+
+Dentro de la carpeta `src' se ecuentran una serie de programas para probar las distintas funcionalidades de bitio.
+
+La forma de probar si se ha instalado bitio correctamente es tan simple como hacer una prueba con uno de ellos.Tomando como prueba \textit{button.py} se obtienen estos valores en la terminal al ejecutar el programa.
+
+python button.py
+
+\begin{verbatim}
+No micro:bit has previously been detected
+Scanning for serial ports
+remove device, then press ENTER
+scanning...
+port[0]:COM1
+found 1 device(s)
+plug in device, then press ENTER
+scanning...
+port[0]:COM1
+port[1]:COM6
+found 2 device(s)
+found 1 new device
+selected:COM6
+Do you want this device to be remembered? (Y/N)
+connecting...
+Your micro:bit has been detected
+Now running your program
+micro:bit connected - press button A to test
+Button A pressed
+Button A pressed
+Button A pressed
+\end{verbatim}
+
+El funcionamiento de cualquier programa de bitio  es el siguiente primero escanea los dispositivos conectados a nuestro pc, sin el Microbit entre ellos, a continuación pide al usuario que lo conecte y establece la conexión con él que corresponde al puerto nuevo encontrado.
+Una vez que el programa está corriendo la última línea que se encuentra es.
+
+\textit{Now running your program}
+
+En este caso el programa nos devuelve una línea de texto cada vez que se pulsa el botón \textbf{A}.
+
+
+\subsection{Instalación de Pyautogui}
+\label{subsec:Install_Pyauto}
+
+A continuación se debe instalar pyautogui para poder correr código de python en el Microbit.
+
+El método de instalación difiere un poco en función del sistema operativo que se utiliza, en este trabajo de fin de grado los test han sido tanto en Linux como en Windows 10.
+
+Al igual que con bitio el método de instalción que se describe aquí esta basado en la propia documentación:
+
+\textit{https://github.com/asweigart/pyautogui}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
