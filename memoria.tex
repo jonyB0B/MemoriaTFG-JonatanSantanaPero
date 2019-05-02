@@ -1076,6 +1076,51 @@ Al igual que con bitio el método de instalción que se describe aquí esta basado 
 
 \textit{https://github.com/asweigart/pyautogui}
 
+Para instalar pyautogui en Linux:
+\begin{verbatim}
+pip3 install python3-xlib
+sudo apt-get install scrot
+sudo apt-get install python3-tk
+sudo apt-get install python3-dev
+pip3 install pyautogui
+\end{verbatim}
+
+Con esto ya se cuenta con pyautogui totalmente funcional al importar el paquete al principio del programa mediante la línea.
+
+\textit{import pyautogui}
+\clearpage
+
+Una prueba sencilla para saber si pyautogui es funcional es probar el programa testpy.py que se adjunta en este trabajo.
+Su contenido es el siguiente.
+
+\begin{verbatim}
+import microbit
+import pyautogui
+while True:
+	if microbit.button_a.was_pressed():
+		microbit.display.show("PULSA A")
+		screenWidth, screenHeight = pyautogui.size()
+		pyautogui.moveTo(screenWidth / 2, screenHeight / 2)
+		microbit.sleep(500)
+		microbit.display.clear()
+\end{verbatim}
+
+La funcionalidad del programa es hacer centrar la posición de nuestro ratón cuando se pulsa A en el microbit, para saber si pyautogui esta correctamente instalado basta con lanzar este programa y ver si el puntero del ratón se desplaza al centro de la pantalla al pulsar A.
+
+\subsection{Programación del Microbit}
+\label{subsec:Prog_Microbit}
+
+Una vez se tiene el entorno preparado y todas las herramientas instaladas se puede proceder a programar el microbit y convertirlo en el controlador de la experiencia.
+
+Como ya se hace referencia anteriormente en el trabajo, el punto de partida se corresponde con el siguiente repositorio de github.
+
+\textit{https://github.com/sarehp/microbit-aframe}.
+
+El objetivo del taller será optimizar este código base para crear un controlador con más funcionalidades.
+
+
+
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CONCLUSIONES %

@@ -9,7 +9,7 @@ while True:
 
     if x > THRESHOLD:
         pyautogui.keyDown("right")
-    elif x < -THRESHOLD: 
+    elif x < -THRESHOLD:
         pyautogui.keyDown("left")
     else:
         pyautogui.keyUp("right")
@@ -18,10 +18,9 @@ while True:
 
     if y > THRESHOLD:
         pyautogui.keyDown("down")
-    elif y < -THRESHOLD: 
+    elif y < -THRESHOLD:
         pyautogui.keyDown("up")
     else:
         pyautogui.keyUp("down")
         pyautogui.keyUp("up")
-        
 
