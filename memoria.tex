@@ -994,13 +994,21 @@ En este tercer taller se mostrará como convertir nuestro Microbit en un controla
 
 El propósito de este taller es partir del anterior a la hora de usar el controlador en la experiencia, pero no necesariamente es obligatorio ya que el Microbit debe funcionar en cualquier entorno de A-Frame que permita movimiento independientemente de como sea la experiencia en si.
 
-Las funciones que llevara a cabo el Microbit una vez finalizado el taller, serán las siguientes:
+Las funciones que llevará cabo el Microbit una vez finalizado el taller, serán las siguientes:
 
 \begin{itemize}
-\item Movimiento hacia adelante, atrás, izquierda y derecha.
-\item Movimiento de la cámara.
-\item Click con el botón izquierdo del Microbit.
+\item Movimiento físico en la experiencia al pulsar B.
+\item Movimiento de la cámara al pulsar A.
+\item Interacción al pulsar los dos botones a la vez del Microbit.
 \end{itemize}
+
+
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=15cm, keepaspectratio]{img/Microbit_functions}
+		\caption{Funciones del Microbit}
+		\label{figura:Microbit_functions}
+\end{figure} 
 
 Para programar el Microbit primero se debe preparar el entorno, como ya se indica en la introducción el lenguaje utilizado será python, o en su defecto micropython.
 El sistema operativo será Linux, Microbit también dispone de compatibilidad con Windows mediante la instalación de un driver, esto será abordado en el anexo del trabajo.
@@ -1088,7 +1096,7 @@ pip3 install pyautogui
 Con esto ya se cuenta con pyautogui totalmente funcional al importar el paquete al principio del programa mediante la línea.
 
 \textit{import pyautogui}
-\clearpage
+
 
 Una prueba sencilla para saber si pyautogui es funcional es probar el programa testpy.py que se adjunta en este trabajo.
 Su contenido es el siguiente.
@@ -1107,6 +1115,7 @@ while True:
 
 La funcionalidad del programa es hacer centrar la posición de nuestro ratón cuando se pulsa A en el microbit, para saber si pyautogui esta correctamente instalado basta con lanzar este programa y ver si el puntero del ratón se desplaza al centro de la pantalla al pulsar A.
 
+
 \subsection{Programación del Microbit}
 \label{subsec:Prog_Microbit}
 
@@ -1118,6 +1127,74 @@ Como ya se hace referencia anteriormente en el trabajo, el punto de partida se c
 
 El objetivo del taller será optimizar este código base para crear un controlador con más funcionalidades.
 
+A continuación se describe el estudio y realización de cada una de ellas correspondientes a la figura~\ref{figura:Microbit_functions}
+
+\begin{itemize}
+\item[A) ] Movimiento
+\item[B) ] Control de la cámara.
+\item[C) ] Interacción.
+
+\end{itemize}
+
+\Large
+A) Movimiento \\
+\normalsize
+Para programar el movimiento dentro de A-Frame se tomó el código del repositorio de github y se le añadió la funcionalidad de centrar la cámara antes de comenzar el movimiento para facilitar la experiencia.
+Esto esprogramado con pyautogui.
+
+\begin{verbatim}
+	screenWidth, screenHeight = pyautogui.size()
+	pyautogui.mouseDown()
+	pyautogui.moveTo(screenWidth / 2, screenHeight / 2)
+	pyautogui.mouseUp()
+\end{verbatim}
+\begin{itemize}
+\item Con la primera línea se guarda la resolución de la pantalla en dos variable una para el ancho y otra para el alto.
+\item Se deja el ratón pulsado con la orden mouseDown, se hace esto para entrar en el control de la cámara en A-frame.
+\item Se mueve el ratón al centro de la pantalla
+\item Por último se suelta el botón izquierdo del ratón para salir del control de la cámara.
+\end{itemize}
+\clearpage
+
+\Large
+A) Control de la Cámara \\
+\normalsize
+El primer paso para programar el control de la cámara fue estudiar las diferentes funciones que ofrece pyautogui a la hora de poder interactuar con la pantalla y el ratón.
+
+Para poder implementar el movimiento de la cámara con el accelerómetro del Microbit, primero es necesario entender como se maneja la cámara en A-Frame con un ratón común.Para mover la cámara es necesario pulsar dentro del escenario de A-Frame y a continuación desplazar el ratón en la dirección deseada sin soltar el botón izquierdo del ratón.
+
+Por tanto lo que se ha hecho en este caso es mapear el movimiento del ratón por la pantalla en base a los valores que ofrece el acelerómetro del Microbit.
+Los diferentes pasos que se han seguido son los siguientes.
+ 
+En lo relativo a la pantalla se extrae la resolución. Como se ve en la figura~\ref{figura:Resolutions} existen multitud de resoluciones posibles en función de la pantalla en la que se ejecuta la experiencia de A-Frame, en concreto en la realización de este trabajo de fin de grado se disponía de una pantalla 4k con una resolución de 3840x2160 pixeles, esta no es una resolución muy común en la actualidad, por ello aquí se describirá la programación de la funciónalidad en base a una pantalla Full HD (1920x1080)
+
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=15cm, keepaspectratio]{img/resolutions}
+		\caption{Resoluciones}
+		\label{figura:Resolutions}
+\end{figure} 
+
+Tomando como base por tanto la resolución Full HD tenemos 1920 pixeles de ancho y 1080 pixeles de alto.
+Ahora se necesita saber como funciona el acelerómetro del Microbit.
+Con la función \textit{microbit.accelerometer.get\_ x()} y \textit{microbit.accelerometer.get\_ y()} se extraen los valores del acelerómetro
+los cuales van de 1000 a -1000 en cada uno de los ejes como se ve en la figura~\ref{figura:acc_vals}.
+
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=10cm, keepaspectratio]{img/acc_vals}
+		\caption{Valores del acelerómetro}
+		\label{figura:acc_vals}
+\end{figure} 
+
+Como el objetivo es mapear el movimiento del ratón con los valores del acelerómetro solo se necesitan dos ejes, debido a que la pantalla es un plano de dos dimensiones.
+
+
+
+\clearpage
+\Large
+A) Interacción \\
+\normalsize
 
 
  

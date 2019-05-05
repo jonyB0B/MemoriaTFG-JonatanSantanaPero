@@ -38,9 +38,9 @@ def Camera(Width):
 		y = microbit.accelerometer.get_y()
 			
 		if x > SENX:
-			pyautogui.moveRel(x, None)
+			pyautogui.moveRel(Height*x, None)
 		elif x < -SENX:
-			pyautogui.moveRel(x, None)			
+			pyautogui.moveRel(Height*x, None)			
 		if y > SENY:
 			pyautogui.moveRel(None, -y*Width)
 		elif y < -SENY:
@@ -85,9 +85,10 @@ while True:
 	elif microbit.button_a.is_pressed():
 		print("Button A pressed, camera mode, press B to exit")
 		screenWidth, screenHeight = pyautogui.size()
-		Factor = 1000*2 # Factor 2 porque la pantalla es 4k, Full Hd sería 1
-		Width = screenWidth / Factor # Sacamos el multiplo para igualar a la resolución de la pantalla
-		Height = screenHeight
+		Factor_y = 1920*2 # Factor 2 porque la pantalla es 4k, Full Hd sería 1
+		Factor_x = 1080
+		Width = screenWidth / Factor_x # Sacamos el multiplo para igualar a la resolución de la pantalla
+		Height = screenHeight/ Factor_y
 		pyautogui.mouseDown()
 		Camera(Width)
 		
@@ -100,5 +101,5 @@ while True:
 		#Centramos la poscion de la camara antes de movernos
 		Move()
 		
-	#print(microbit.accelerometer.get_values())
+	print(microbit.accelerometer.get_values())
 	microbit.sleep(500)
