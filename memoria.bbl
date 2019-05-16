@@ -1,13 +1,69 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{bonabeau:_swarm}
-E.~Bonabeau, M.~Dorigo, and G.~Theraulaz.
-\newblock {\em Swarm Intelligence: From Natural to Articial Systems}.
-\newblock Oxford University Press, Inc., 1999.
+\bibitem{Prog:_bloques}
+Computing education research blog.
+\newblock Aug. 2018.
 
-\bibitem{bonabeau:_swarm}
-E.~Bonabeau, M.~Dorigo, and G.~Theraulaz.
-\newblock {\em Swarm Intelligence: From Natural to Articial Systems}.
-\newblock Oxford University Press, Inc., 1999.
+\bibitem{Prog:_bloques2}
+U.~W. DAVID~WEINTROP.
+\newblock Comparing block-based and text-based programming in high school
+  computer science classrooms.
+\newblock 2017.
+
+\bibitem{A-Frame:_doc}
+D.~M. donmccurdy.
+\newblock A-frame proxy-controls component, 2016.
+\newblock \\ https://aframe.io/docs/0.9.0/introduction/.
+
+\bibitem{A-Frame:_proxy}
+D.~M. donmccurdy.
+\newblock A-frame proxy-controls component, 2016.
+\newblock \\ https://github.com/donmccurdy/aframe-proxy-controls.
+
+\bibitem{A-Frame:_extras}
+D.~M. donmccurdy.
+\newblock A-frame extras, Feb. 2019.
+\newblock \\ https://github.com/donmccurdy/aframe-extras.
+
+\bibitem{BeetleBlocks:_info}
+E.~R. Duks~Koschitz, Bernat~Ramagosa.
+\newblock Beetle blocks a new visual language for designers and makers.
+\newblock 2016.
+
+\bibitem{Python:_doc}
+P.~S. Foundation.
+\newblock The python standard library, 2019.
+\newblock \\ https://docs.python.org/2/library/index.html.
+
+\bibitem{Latex:_tuto}
+Luis.
+\newblock Miniejercicios con latex.
+\newblock Mar. 2012.
+
+\bibitem{PyAutoGUI:_doc}
+A.~Sweigart.
+\newblock Pyautogui documentation, 2014.
+\newblock \\ https://pyautogui.readthedocs.io/en/latest/index.html \\
+  https://buildmedia.readthedocs.org/media/pdf/pyautogui/latest/pyautogui.pdf.
+
+\bibitem{Blender:_doc}
+B.~D. Team.
+\newblock Blender 2.79 manual.
+\newblock \\ https://docs.blender.org/manual/en/latest/index.html.
+
+\bibitem{MicroPython:_doc}
+R.~the Docs.
+\newblock P ucl tutorial: Bbc micro:bit micropython, 2016.
+\newblock \\ https://microbit-challenges.readthedocs.io/en/latest/index.html.
+
+\bibitem{Bitio:_git}
+D.~W. whaleygeek.
+\newblock Bitio - a micro:bit io device, Apr. 2019.
+\newblock \\https://github.com/whaleygeek/bitio.
+
+\bibitem{BeetleBlocks:_info2}
+J.~G. Yeste.
+\newblock Beetle blocks y un caso práctico.
+\newblock 2016.
 
 \end{thebibliography}
