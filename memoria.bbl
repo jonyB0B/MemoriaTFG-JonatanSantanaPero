@@ -5,7 +5,7 @@ Computing education research blog.
 \newblock Aug. 2018.
 
 \bibitem{Prog:_bloques2}
-U.~W. DAVID~WEINTROP.
+U.~W. David~Weintrop.
 \newblock Comparing block-based and text-based programming in high school
   computer science classrooms.
 \newblock 2017.
@@ -14,16 +14,6 @@ U.~W. DAVID~WEINTROP.
 D.~M. donmccurdy.
 \newblock A-frame proxy-controls component, 2016.
 \newblock \\ https://aframe.io/docs/0.9.0/introduction/.
-
-\bibitem{A-Frame:_proxy}
-D.~M. donmccurdy.
-\newblock A-frame proxy-controls component, 2016.
-\newblock \\ https://github.com/donmccurdy/aframe-proxy-controls.
-
-\bibitem{A-Frame:_extras}
-D.~M. donmccurdy.
-\newblock A-frame extras, Feb. 2019.
-\newblock \\ https://github.com/donmccurdy/aframe-extras.
 
 \bibitem{BeetleBlocks:_info}
 E.~R. Duks~Koschitz, Bernat~Ramagosa.
@@ -35,10 +25,10 @@ P.~S. Foundation.
 \newblock The python standard library, 2019.
 \newblock \\ https://docs.python.org/2/library/index.html.
 
-\bibitem{Latex:_tuto}
-Luis.
-\newblock Miniejercicios con latex.
-\newblock Mar. 2012.
+\bibitem{BeetleBlocks:_Bernat}
+B.~Romagosa.
+\newblock El zoo de la computacion.
+\newblock 2015.
 
 \bibitem{PyAutoGUI:_doc}
 A.~Sweigart.
@@ -63,7 +53,7 @@ D.~W. whaleygeek.
 
 \bibitem{BeetleBlocks:_info2}
 J.~G. Yeste.
-\newblock Beetle blocks y un caso práctico.
+\newblock Beetle blocks y un caso practico.
 \newblock 2016.
 
 \end{thebibliography}

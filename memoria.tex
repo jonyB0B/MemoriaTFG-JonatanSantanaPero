@@ -279,17 +279,18 @@ Y es Open Source, por supuesto. Tanto el hardware como el software de micro:bit 
 \label{figura:Microbit_In}
 \end{figure}
 
-\subsection{Microbit como interfaz de usuario}
+\subsection{Micro Bit como interfaz de usuario}
 \label{subsec:In_Microbit_I}
 
 Como ya hemos visto Micro Bit posee múltiples aplicaciones.
 Su función en este trabajo de fin grado va dirigida a la interfaz de usuario, es decir, será el controlador de la experiencia de realidad virtual que previamente es creada mediante A-Frame.
 
 A la hora de buscar una funcionalidad para el Micro Bit el alumno poseía un ejemplo de movimiento físico en un entorno de A-frame, tras el estudio de las posibilidades que ofrece la programación del Micro Bit se ha conseguido implementar una serie de funciones extras.
-Al finalizar el último de los talleres El Micro Bit permitirá un movimiento dentro de la experiencia 
-tanto físico como de la cámara mediante el acelerómetro integrado, también se añade un método de interacción con el objeto creado con BeetleBlocks y animado con A-Frame.
+Al finalizar el último de los talleres El Micro Bit permitirá un movimiento dentro de la experiencia tanto físico como de la cámara mediante el acelerómetro integrado, también se añade un método de interacción con el objeto creado con BeetleBlocks y animado con A-Frame.
 
-Para hacer esto se ha realizado un programa en micropython una variación de python adaptada al Micro Bit que nos permite ejecutar programas de python en nuestro dispositivo mediante a la importación de una serie de módulos de python todo esto se describe en el la sección~\ref{subsec:Microbit_prog}, pero esto es solo un ejemplo de la versatilidad del Micro Bit.
+Para hacer esto se ha realizado un programa en micropython una variación de Python adaptada al Micro Bit que nos permite ejecutar programas de python en nuestro dispositivo mediante a la importación de una serie de módulos de Python todo esto se describe en el la sección~\ref{subsec:Microbit_prog}, pero esto es solo un ejemplo de la versatilidad del Micro Bit.
+
+Como forma de apoyo en el aprendizaje de micropython y diversas funciones y metodología de Python se ha hecho uso de las siguientes documentaciones~\cite{MicroPython:_doc}~\cite{Python:_doc}.
 
 \section{Estructura de la memoria}
 \label{sec:In_Estruc}
@@ -590,70 +591,128 @@ A continuación se exponen una serie de ejemplos prácticos que se utilizaron para
 \label{subsec:Blender}
 
 Blender es una potente herramienta open source de creación 3D.
-En este trabajo de fin de grado le vamos a dar un uso muy concreto, se trata de pasar nuestra figura creada con BeetleBlocks a un formato compatible con A-Frame (.obj)
+En este trabajo de fin de grado se le ha dado un uso muy concreto, se trata de convertir la figura creada con BeetleBlocks a un formato compatible con A-Frame ( \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} ). Como es \textit{Open Source} su documentación~\cite{Blender:_doc} es accesible para todo aquel que la desee y es la que se ha utilizado para este trabajo de fin de grado.
+La pantalla mostrada al iniciar Blender se puede ver en la Figura \ref{figura:Init_BlenderA}
 
-Abrimos Blender lo primero que vemos será una pantalla como esta
-	\begin{figure}[H]
+\begin{figure}[H]
     		\centering
-    		\includegraphics[width=15cm, keepaspectratio]{img/blender_0}
+    		\includegraphics[width=14cm, keepaspectratio]{img/blender_0}
 		\caption{Blender}
-		\label{figura:foro_hilos}
+		\label{figura:Init_BlenderA}
  	\end{figure} 
 
+Estos son los pasos necesarios para exportar la figura en el formato correcto: \begin{wrapfigure}{r}{0.35\linewidth}
+    \centering
+  \includegraphics[width=0.25\textwidth, height=0.4\textwidth]{img_b/export_blender}
+  \caption{Exportar objeto}
+		\label{figura:Check}
+\end{wrapfigure}
 
-
-\begin{itemize}
-\item Los pasos a seguir para exportar nuestra figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
 \begin{enumerate}
 
-	 \item Nos posicionamos encima  del cubo y presionamos \textbf{\textit{x}} para borrarlo.  
+	 \item Borrar el cubo, posicionando el ratón encima y presionando    	\textbf{\textit{x}} para borrarlo.  
 	 
-	 \item pulsamos espacio y escribimos \textbf{\textit{import stl}}.
+	 \item Se pulsa \textit{espacio} y se introduce en el cuadro de texto \textbf{\textit{import stl}}, se importa la figura de Beetle Blocks previamente creada y exportada con un formato \textit{stl}.
 	 
-	 \item Pulsamos espacio de nuevo y escribimos \textbf{\textit{export obj}} seleccionando las 			~[Checkbox]es\textbf{\textit{Write Normals, Write Materials}}
+	 \item Se pulsa \textit{espacio} de nuevo y se introduce \textbf{\textit{export obj}} en el cuadro de texto, como se ve en la Figura~\ref{figura:Check} se deben marcar las \textit{Checkboxes} 						\textbf{\textit{Write Normals, Write Materials}}.
 
 \end{enumerate}
-	 
-\end{itemize}
 
 \clearpage
 
 \section{A-frame}
 \label{sec:Aframe}
-Como ya sabemos A-Frame es el framework que nos permite crear nuestra experriencia de realidad virtual, su aplicación es posible mediante HTML o JavaScript aunque en la serie de talleres , el uso que le daremos será mediante documentos HTML, en este capítulo aprenderemos a usarlo en las dos vertientes.
 
-A continuación expongo una breve guía de uso de ambas 
+A-Frame es un framework que permite crear experiencias de realidad virtual.Originalmente fue concebido dentro de Mozilla Firefox, y ahora es administrado por desarrolladores de Supermedium (Diego Marcos, Kevin Ngo) y Google (Don McCurdy). A-Frame fue diseñado para ofrecer una manera potente de desarrollar contenido VR. Al ser una plataforma independiente Open Source, A-Frame ha crecido hasta convertirse en una de las comunidades de realidad virtual más grandes.
 
+Se integra en un documento HTML haciendolo simple de usar en primera instancia, aunque el núcleo es un potente framework ECS\footnote{Entity Component System} para Three.js donde los desarrolladores  de software pueden crear escenas WebVR y 3D usando HTML.
 
-a-Frame is a web framework for building virtual reality (VR) experiences. A-Frame is based on top of HTML, making it simple to get started. But A-Frame is not just a 3D scene graph or a markup language; the core is a powerful entity-component framework that provides a declarative, extensible, and composable structure to three.js.
+Por tanto se compone de elementos propios basados en HTML y de la importación de archivos en Javascript para complementar  y añadir funcionalidades, todo esto se puede ver de una forma más detallada en su documentación~\cite{A-Frame:_doc}.
 
-Originally conceived within Mozilla and now maintained by the co-creators of A-Frame within Supermedium, A-Frame was developed to be an easy yet powerful way to develop VR content. As an independent open source project, A-Frame has grown to be one of the largest VR communities.
+A-Frame  da soporte a la mayoría de dispositivos de realidad virtual como Vive, Rift, Windows Mixed Reality, Daydream, GearVR, Cardboard, Oculus Go, e incluso puede ser usada para realidad aumentada. El objetivo de A-Frame es definir una experiencia inmersiva completa yendo más allá del contenido en 360º, y dando soporte completo para controladores y seguimiento posicional.
 
-A-Frame supports most VR headsets such as Vive, Rift, Windows Mixed Reality, Daydream, GearVR, Cardboard, Oculus Go, and can even be used for augmented reality. Although A-Frame supports the whole spectrum, A-Frame aims to define fully immersive interactive VR experiences that go beyond basic 360° content, making full use of positional tracking and controllers.
-
-\subsection{Programación A-frame mediante HTML}
+\subsection{ A-frame dentro de HTML}
 \label{subsec:HTML}
+A-Frame se integra dentro del documento HTML, para usarlo es necesario importarlo en la cabecera del documento:
+\begin{verbatim}
+<head>
+ <script src="https://aframe.io/releases/0.8.0/aframe.min.js">
+ 	</script>
+ [...]    		
+</head>		
+\end{verbatim}
 
-REKLLLENAR
-\subsection{Programación A-frame mediante JS}
-\label{subsec:JS}
-
-Gracias a la importación de archivos en JavaScript podemos añadir multiples funcionalidades a A-Frame.
-
-Un paquete muy utilizado es el aframe-extras
-\footnote{https://github.com/donmccurdy/aframe-extras. } se trata de una serie de Add-ons y helpers para A-Frame, e incluye componentes de control, modelos predefinidos, primitives \dots.
-
-Otro recurso muy utilizado para A-Frame y basado en JavaScript son los components
-\footnote{https://aframe.io/docs/0.9.0/introduction/entity-component-system.html.},
-estos nos habilitan una serie de funciones y funcionas como módulos, existe una amplia biblioteca de components, entre ellos hay algunos que se organizan en paquetes como superframe.
-\footnote{https://github.com/supermedium/superframe.}
-
-El uso de cada component es particular  y puede encontrarse en su documentación~\cite{A-Frame:_doc}, pero generalmente el uso conlleva a vincularlo con una entidad \textit{$<$a-entity$>$} y configurarlo.\\
-Tomamos como ejemplo particle system, su uso sería de la siguiente forma:
+\clearpage
+De entre los  principales conceptos y elementos que introduce A-Frame se van a destacar cuatro de ello las escenas~ \footnote{https://aframe.io/docs/0.9.0/core/scene.html}, las entidades~\footnote{https://aframe.io/docs/0.9.0/core/entity.html} y los componentes~\footnote{https://aframe.io/docs/0.9.0/core/component.html} y los primitivos~\footnote{https://aframe.io/docs/0.9.0/introduction/html-and-primitives.html}.
 
 \begin{itemize}
-\item Importamos el component de la misma manera que ya lo hicimos con A-Frame en nuestro index.html 
 
+	\item \textit{Escene}: es el núcleo de A-Frame,  el lugar donde se desarrolla todo, todas las entidades son creadas dentro de la escena, por lo tánto sería el `` escenario" vacío de la experiencia 3D creada. Para crear una escena dentro del documento HTML hay que añadirla en el $<$body$>$ del documento.
+\begin{verbatim}
+<html>
+  <head> [...]
+      </head>
+  <body>
+    <a-scene>
+      </a-scene>
+  </body>
+</html>
+\end{verbatim}
+	
+	\item \textit{Entity}: como se especifica en el patrón ECS(Sistema-entidad-componente), las entidades son objetos a los que se le añaden componentes, por defecto las entidades tienen las componentes de posición rotación y escala, para explicarlo de una forma más sencillas las entidades representan los objetos 3D en la escena.En A-Frame las entidades se representan mediante el elemento $<$entity $>$.A continuación se muestra como añadir un objeto de tipo box, con color rojo, a la escena:
+\begin{verbatim}
+<body>
+ <a-scene>
+  <a-entity geometry="primitive: box" material="color: red">
+    </a-entity>
+ </a-scene>
+</body>
+
+\end{verbatim}
+
+	\item \textit{Component}: Como se define en el patrón ECS, una componente es una porción modular de datos que se añade a una entidad para otorgarla una apariencia, comportamiento y funcionalidad determinada. Las componentes pueden ser de dos formatos, con una propiedad única o con varias.A continuación se muestra un ejemplo de ambas.
+\begin{verbatim}
+<body>
+ <a-scene>	
+  <a-entity position="1 2 3"></a-entity>
+  <a-entity light="type: point; color: crimson"></a-entity>
+ </a-scene>
+</body> 
+\end{verbatim}
+	\item \textit{Primitives}: A-Frame proporciona una gran cantidad de objetos predeterminados como $<$a-box $>$ $<$a-sky $>$ , los cuales son identificados como primitives o también nombrados primitivos en este trabajo, proporcionan una manera sencilla de usar figuras 3D para empezar a usar A-Frame,y admiten la adición de componentes . Los desarrollados además pueden crear sus propios primitivos. Unos ejemplos de los primitivos precargados son:
+\setlength{\columnsep}{0.1in}
+ \begin{multicols}{2}
+ \begin{itemize}
+	\item $<$a-box$>$	
+	\item $<$a-camera$>$	
+	\item $<$a-circle$>$
+	\item $<$a-cursor$>$
+	\item $<$a-cylinder$>$
+	\item $<$a-image$>$
+	\item $<$a-ring$>$
+	\item $<$a-plane$>$
+		
+\end{itemize}
+\end{multicols}
+
+\end{itemize} 
+
+\subsection{Uso de JavaScript dentro de A-Frame}
+\label{subsec:JS}
+
+Gracias a la importación de archivos en JavaScript se pueden añadir multiples funcionalidades a A-Frame.
+
+Un módulo o paquete muy extendido entre los desarrolladores es el aframe-extras~\cite{A-Frame:_extras} se trata de una serie de Add-ons y helpers para A-Frame, e incluye componentes de control, modelos predefinidos, primitives \dots.
+
+Otro recurso muy utilizado para A-Frame y basado en JavaScript es la importación de components
+\footnote{https://aframe.io/docs/0.9.0/introduction/entity-component-system.html.}, como se puede ver anteriormente estos nos habilitan una serie de funciones, existe una amplia biblioteca de components para importar, entre ellos hay algunos que se organizan en paquetes o módulos como superframe.
+\footnote{https://github.com/supermedium/superframe.}
+
+El uso de cada component es particular  y puede encontrarse en su documentación~\cite{A-Frame:_doc}, pero generalmente para usar un component hay que vincularlo con una entidad \textit{$<$a-entity$>$} y configurarlo.\\
+Tomando como ejemplo particle system, su importación y uso sería de la siguiente forma:
+
+\begin{itemize}
+\item Se importa el componente en el index.html de la misma manera que ya se mostró con A-Frame:
 \begin{verbatim}
 <head>
  <script src="https://aframe.io/[...].min.js">
@@ -663,9 +722,7 @@ Tomamos como ejemplo particle system, su uso sería de la siguiente forma:
 </head>		
 \end{verbatim}
 
-
-
-\item Y a continuación vinculamos particle system con una entidad
+\item Y a continuación se vincula particle system con una entidad
 \begin{verbatim}
 <body>
  <a-scene>
@@ -675,73 +732,68 @@ Tomamos como ejemplo particle system, su uso sería de la siguiente forma:
 </body>
 \end{verbatim}
 
-
 \end{itemize}
+
+\clearpage
 
 \section{BBC Micro Bit}
 \label{sec:Microbit}
 
-La última tecnología en introducir en este trabajo de fin de grado es el Micro Bit, ya vimos en el capítulo~\ref{sec:In_Microbit} su definición y características, su función no es otra que servir de controlador de nuestra experiencia.
+La última tecnología en introducir en este trabajo de fin de grado es el Micro Bit, ya se expone en el capítulo~\ref{sec:In_Microbit} su definición y características, su función y objetivo en este trabajo es programar las funcionalidades necesarias para que se convierta en el controlador del escenario de A-Frame previamente creado.
 
-Para lograr convertirlo en una interfaz de usuario, hay dos herramientas fundamentales pyautogui y bitio.
+Dentro del proceso de implementación de esta funcionalidad en el MicroBit cabe destacar dos herramientas fundamentales \textit{pyautogui} y \textit{bitio}, son unos módulos de micropython que aportan diversas funcionalidades.
 
-Gracias a la ayuda del tutor, se partió de una base como es esta pequeña práctica  \textit{https://github.com/sarehp/microbit-aframe}, en ella podemos ver la aplicación de estas dos herramientas y fue idónea para comenzar la investigación.
+Para el inicio del desarrollo y estudio de esta funcionalidad se tuvo la ayuda de esta práctica \footnote{github.com/sarehp/microbit-aframe}, que se encuentra en el repositorio de GuitHub del tutor. En ella se puede observar el uso de estas dos herramientas y fue idónea para servir de punto de partida por parte del alumno.
 
-El siguiente paso fue llevar a cabo una serie de test y pruebas con estas dos herramientas.
-A continuación se entra más en detalle en estas dos herramientas.
-
+El siguiente paso fue llevar a cabo una serie de test y pruebas con Bitio y Pyautogui para aprender sus distintas funcionalidades.
+En las siguientes secciones \ref{subsec:pyautogui} y ~\ref{subsec:Bitio} se expone más detalladamente documentación y función de estos dos módulos.
 \subsection{Pyautogui}
 \label{subsec:pyautogui}
-Para aprender a utilizar pyautogui se han utilizado estas documentaciones 
-
-https://buildmedia.readthedocs.org/media/pdf/pyautogui/latest/pyautogui.pdf
-https://pyautogui.readthedocs.io/en/latest/
+Para aprender a utilizar pyautogui se han utilizado estas documentaciones~\cite{PyAutoGUI:_doc}
 
 Como se puede leer en ellas, pyautogui es un módulo de python que nos permite mapear el teclado y el ratón, es decir controlar mediante la programación todas las teclas de ambos dispositivos.
 
-Gracias a pyautogui, se ha podido trasladar las pulsaciones y gestos del Micro Bit a teclas de nuestro teclado o movimientos de nuestro ratón.
+Gracias a pyautogui, se ha podido mapear las pulsaciones de las teclas del teclado o movimientos del ratón a las interacciones con el Micro Bit en forma de gestos y pulsaciones de los botones.
 
-El código fuente se encuentra en https://github.com/asweigart/pyautogui
+El código fuente se encuentra en el siguiente repositorio de GitHub~\footnote{ https://github.com/asweigart/pyautogui}.
 
 \subsection{Bitio}
 \label{subsec:Bitio}
 
-Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Micro Bit en un controlador, se trata de una libreria de Micro Bit para Python,  nos permite correr código de python en nuestro PC y poder interactuar directamente con nuestro Micro Bit. 
+Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Micro Bit en un controlador, se trata de una libreria de Micro Bit para Python,  nos permite correr código de python en nuestro PC y poder interactuar directamente con el Micro Bit. 
 
-Para aprender su uso se siguió la documentación, la cual se puede ver en el sigiente enlace:
-https://github.com/whaleygeek/bitio
+Para aprender su uso se siguió la documentación~\cite{Bitio:_git} que se encuentra en un repositorio de GitHub creado por David Whale, el encargado de desarrollarlo.
 
-En ella encontramos desde como instalarlo en nuestro programa de python en la sección \textit{Getting Started}, como hacer la conexión con nuestro Micro Bit y una serie de ejemplos de las funciones propias de bitio como puede ser leer los valores del acelerómetro o detectar cuando pulsamos uno de los botones.
+En la sección \textit{Getting Started} se exponen los pasos necesarios para instalarlo en el programa de python, además se explica como hacer la conexión con el Micro Bit y una serie de ejemplos de las funciones propias de bitio como pueden ser leer los valores del acelerómetro o detectar cuando se pulsa uno de los botones.
 
 \subsection{Micropython}
 \label{subsec:Microbit_py}
 
-Mycropython es el lenguaje de programación propio del Micro Bit. En este trabajo de fin de grado es el utilizado a la hora de realizar los programas que correran las acciones de nuestra placa.
+Mycropython es el lenguaje de programación propio del Micro Bit. En este trabajo de fin de grado  todas las acciones se han desarrollado en este lenguaje y a la hora de realizar los programas que corren las acciones de la placa se ha contado con un apoyo en su documentación~\cite{MicroPython:_doc}.
+Esta basado en Python~\cite{Python:_doc} se usa de una forma prácticamente idéntica. Cualquier editor de texto es válido para programar los scripts, el recomendado oficialmente es el editor Mu Figura~\ref{figura:Mu}.
+Permite de una forma intuitiva cargar el código en el dispositivo con un botón dedicado para ello y ofrece entre sus distintos modos la posibilidad de visualizar la salida estándar.
 
-Basado en python se usa de una forma practicamente idéntica. Cualquier editor de texto es válido para programar los scripts, en este caso se ha optado por la recomendación oficial que es el editor Mu.
-\\
 \begin{figure}[H]
-\includegraphics[width=1\textwidth]{img/Mu_editor}
+\centering
+\includegraphics[width=0.7\textwidth]{img/Mu_editor}
 \caption{Editor Mu}
 \label{figura:Mu}
 \end{figure}
 
-Nos permite de una forma intuitiva cargar el código en el dispositivo con un botón dedicado para ello y ofrece entre sus distintos modos la posibilidad de visualizar la salida estándar.
-
-\clearpage
+Si no se cuenta con el editor de Mu la forma de cargar los programas en el MicroBit es mediante una terminal, para ello ya sea en Windows como en Linux es necesario tener una compilación de Python instalada en el sistema operativo y lanzar el programa.
 \subsection{Programación del Micro:bit mediante bloques(Makecode)}
 \label{subsec:Microbit_prog}
 
-Makecode es un editor para programar el Micro:bit que usa el método de bloques.
+Makecode es un editor para programar el Micro:bit que usa el método de programación por bloques~\cite{Prog:_bloques}~\cite{Prog:_bloques2}.
 
 Con una interfaz muy parecida a la de BeetleBlocks divide sus bloques en grupos, que aportan distintas funciones como Bucles , acciones para los LEDs, Lógica, Matemática \dots etc
 
-En la web de Makecode\footnote{https://makecode.microbit.org/} disponemos de numerosos tutoriales para familiarizarnos con su uso.
-Aunque en este trabajo Makecode no ha sido utilizado para la realización de talleres 
-se profundizó en cada uno de los tutoriales ya que ofrecen una mejor visión global de las posibilidades del Micro:bit, pudiendo programarse sencillos juegos de una forma rápida y amena.
+En la web de Makecode\footnote{https://makecode.microbit.org/} están disponibles numerosos tutoriales para familiarizarse con su uso.
+Aunque en este trabajo Makecode no ha sido utilizado para el desarrollo de las funcionalidades, se profundizó en cada uno de los tutoriales ya que ofrecen una mejor visión global de las posibilidades del Micro:bit, pudiendo programarse sencillos juegos de una forma rápida y amena.
 
-En la siguiente figura~\ref{figura:Makecode} podemos ver su aspecto inicial con  una distribución común de la programación por bloques con los diferentes grupos de funciones y variables a la izquierda \textbf{(2)} y una área de trabajo grande para arrastras los bloques \textbf{(3)}.
-Como complemento se puede hacer una previsualización del resultado de la ejecución de nuestros bloques \textbf{(1)}.
+En la siguiente figura~\ref{figura:Makecode} se puede ver su aspecto inicial al arrancarlo, posee una distribución común de la programación por bloques con los diferentes grupos de funciones y variables a la izquierda \textbf{(2)} y una área de trabajo grande para arrastras los bloques y crear los \textit{sprites} \textbf{(3)}.
+Como complemento se puede hacer una previsualización del resultado de la ejecución de los bloques creados\textbf{(1)}.
+
 \begin{figure}[H]
 \includegraphics[width=1\textwidth]{img/Makecode}
 \caption{Makecode}
@@ -752,171 +804,187 @@ Como complemento se puede hacer una previsualización del resultado de la ejecuci
 % Diseño e implementación de los talleres %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cleardoublepage
-\chapter{Diseño e implementación de los talleres}
+\chapter{Diseño y desarrollo de los talleres}
 \label{chap:talleres}
 
 \section{Introducción y propósito de los talleres}
 \label{sec:In_Taller}
 
-El principal motivo de este trabajo de fin de grado es introducir todas estas herramientas que hemos explicado previamente a alumnos de enseñanzas medias, y para ello voy a desarrollar una serie de tres talleres, estos son autoconclusivos pero a su vez cada uno de ellos utiliza lo que aprendimos en el anterior haciendo que una vez finalizamos los tres tengamos una experiencia de realidad virtual completa creada con A-Frame en la que veamos un objeto creado con BeetleBlocks y que puede ser controlada con nuestro Micro:bit para movernos por ella.
+El principal objetivo de este trabajo de fin de grado es introducir todas estas herramientas que hemos explicado previamente a alumnos de enseñanzas medias, y para ello se han a desarrollado una serie de tres talleres, estos son autoconclusivos pero a su vez cada uno de ellos utiliza lo aprendido en el anterior, resultando en que una vez finalizados los tres se tenga una experiencia de realidad virtual completa creada con A-Frame en la que se introduce un objeto creado con BeetleBlocks y que puede ser controlada con un Micro:bit para moverse por ella.
 
-Por tanto el desarrollo y contenido de los talleres es el siguiente:
+El desarrollo y contenido de los talleres es el siguiente:
 \begin{itemize}
-\item \textbf{Taller 1}: Crea tu objeto 3D con BeetleBlocks.\\
-En este taller nos centraremos en la creación de un objeto 3D con Bettleblocks, aprenderemos a exportarlo y a darle el formato adecuado para el siguiente taller.
-\item \textbf{Taller 2}: Crea tu experiencia de realidad virtual con A-frame.\\
-En este taller aprenderemos a usar A-Frame creando un entorno de realidad virtual en el que esta incluido nuestro objeto creado anteriormente con BeetleBlocks.
-\item \textbf{Taller 3}: Micro:bit como interfaz de usuario para tu experiencia de realidad virtual.\\
-En este taller convertiremos nuestro Micro:bit en un controlador para nuestra experiencia de realidad virtual
+\item \textbf{Taller 1}: Creación de un objeto 3D con Beetleblocks.\\
+Este taller se centra en la creación de un objeto 3D con Bettleblocks, además se aprende a exportarlo y a darle el formato adecuado para usarlo en el siguiente taller.
+\item \textbf{Taller 2}: Diseñar una experiencia VR con A-frame.\\
+En este taller se aprende a usar A-Frame, creando un entorno de realidad virtual en el que se añade el objeto creado anteriormente con BeetleBlocks.
+\item \textbf{Taller 3}: Micro:bit como interfaz de usuario para una experiencia de realidad virtual.\\
+En este taller se convierte el Micro:bit en un controlador para la experiencia de realidad virtual creada con A-Frame, el Micro Bit permite moverse por la escena, mover la cámara y una pequeña interacción con el objeto.
 \end{itemize}
 
-\section{Taller 1 (Creación y exportación de un objeto 3D  )}
+\section{Taller 1 (Creación de un objeto 3D con Beetleblocks. )}
 \label{sec:Taller1}
-Este primer taller tiene el objetivo de que aprendas a crear un objeto en 3D con BeetleBlocks y su accesible método de programación mediante bloques. Además en la segunda parte del taller usaremos Blender para dejar nuestro objeto preparado para usarlo en un entorno VR creado con A-Frame.\\
-El objetivo de este taller es introducir el diseño en 3D a  alumnos de enseñanzas medias de tal forma que con una sesión, sean capaces de crear algún objeto básico en 3D y darle las herramientas necesarias para que puedan desarrollar algo más complejo en un futuro 
-\subsection{ Bettleblocks}
+Este primer taller pretende enseñar a crear un objeto en 3D con BeetleBlocks y su accesible método de programación mediante bloques. Además en la segunda parte del taller se introduce Blender otra herramienta de diseño 3D que permite dar el formato correcto al objeto para usarlo en un entorno VR creado con A-Frame, que será el núcleo del segundo Taller\ref{sec:Taller2}.\\
+El objetivo de este taller es introducir el diseño en 3D a alumnos de enseñanzas medias de tal forma que con una sesión, sean capaces de crear algún objeto básico en 3D y darle las herramientas necesarias para que puedan desarrollar algo más complejo en un futuro.
+\subsection{ Introducción a Bettleblocks}
 \label{subsec:T_Beetle}
 
-Beettleblocks nos pone las cosas faciles a la hora de crear objetos 3D, con este taller se pretende que un alumno con conocimientos muy básicos acerca de la programación consiga crear una figura en 3D, con unos pocos pasos.\\
+Beettleblocks pone las cosas fáciles a la hora de crear objetos 3D, con este taller se pretende que un alumno con conocimientos muy básicos acerca de la programación consiga crear una figura en 3D, con unos pocos pasos.\\
 
-Antes de comenzar a programar nuestra primera figura debemos crear una cuenta  en Bettleblocks para tener nuestros proyectos guardados.
+Antes de comenzar a programar la primera figura se debe crear una cuenta en Bettleblocks para  de una forma accesible poder acceder a los proyectos guardados.
 \begin{itemize}
- \item Vamos a la web de BeetleBlocks\footnote{http://BeetleBlocks.com} y en la esquina superior derecha vemos la opción para crear/iniciar sesión.
- \item Una vez hecho esto podemos comenzar a usar BeetleBlocks, pulsando en \textit{Run BeetleBlocks}.\\
+ \item El primer paso es ir a la web de BeetleBlocks\footnote{http://BeetleBlocks.com} y en la esquina superior derecha pulsar sobre la opción \textit{Log in} para crear el usuario.
+ \item Una vez hecho esto se puede comenzar a usar BeetleBlocks, para ello se debe pulsar en \textit{Run BeetleBlocks} como se ve en la Figura~\ref{figura:Run_Beetle}.\\
 \end{itemize}
-\clearpage
-\Large El Primer Objeto\\
-\normalsize
-Abrimos BeetleBlocks y tendremos una pantalla como la de la Figura~\ref{figura:Init_beetle}
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=8cm, keepaspectratio]{img_b/run_beetle}
+		\caption{Crear perfil e iniciar BeetleBlocks}
+		\label{figura:Run_Beetle}
+\end{figure} 
 
-	\begin{figure}[H]
-    		\centering
-    		\includegraphics[width=11cm, keepaspectratio]{img/Init_Beetle}
-		\caption{BeetleBlocks}
-		\label{figura:Init_beetle}
- 	\end{figure} 
-A la izquierda tenemos el menú en el que encontramos los diferentes bloques ordenados por categorías. En el centro tenemos el área de trabajo, y a la derecha una pre visualización en 3D de nuestra área de trabajo.\\
- En esta última encontramos una mariquita la cual es muy importante porque nos indica nuestra orientación respecto a los 3 ejes, siendo su cabeza la dirección hacia la que estamos apuntando actualmente, en la Figura ~\ref{figura:Orientacion} estaríamos mirando hacia la parte positiva del eje \textit{x}.\\
- \begin{figure}[H]
-    		\centering
-    		\includegraphics[width=0.5\textwidth, keepaspectratio]{img/Beetle_Or}
-		\caption{Orientación en BeetleBlocks}
-		\label{figura:Orientacion}
- \end{figure} 
- 
- Sabiendo esto ya podemos empezar a crear programar nuestro primer objeto.
+\clearpage
+\subsection{El Primer Objeto }
+\label{subsec:1_Beetle}
+
+Una vez abierto BeetleBlocks se muestra una pantalla como la de la Figura~\ref{figura:Init_beetle}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=14cm, keepaspectratio]{img_b/Bettleblocks}
+  \caption{Inicio Beetle Blocks}
+  \label{figura:Init_beetle}
+\end{figure} 
+A la izquierda se tiene el menú con los diferentes bloques ordenados por categorías. En el centro se encuentra el área de trabajo en el que se colocan los bloques, y a la derecha una previsualización en 3D del resultado de los bloques colocados en el área de trabajo en ella se puede observar un escarabajo, que resulta muy importante, porque indica la orientación actual respecto a los 3 ejes, siendo su cabeza la dirección hacia la que se está ``apuntando", en la Figura~\ref{figura:Orientacion} la orientación es hacia la parte positiva del eje \textit{x} y por lo tanto si se ordena un movimiento positivo con valor 1 el escarabajo avanzaría una casilla en ese eje Figura~\ref{figura:move}.\\
+\begin{figure}[H]
+ \centering
+  \subfloat[Posición inicial]{
+   \label{figura:Orientacion}
+  \includegraphics[width=0.5\textwidth, height=0.3\textwidth]{img_b/beetle}}
+    \subfloat[Movimiento en el eje x]{
+   \label{figura:move}
+   \includegraphics[width=0.5\textwidth, height=0.3\textwidth]{img_b/move}}
+   \caption{Orientación y movimiento en Beetle Blocks}
+ \label{figura:Beetle_headphones}
+\end{figure}
+Sabiendo esto ya se puede empezar a crear/programar el primer objeto.
+A continuación se exponen las ordenes y funciones útiles para familiarizarse con Beetleblocks y crear un primer objeto:
 
 \begin{enumerate}
 
-	\item Dibujar línea: Usamos la orden
+	\item Dibujar una línea: usando la orden
 	\includegraphics[width=0.2\textwidth]{img_b/Dibujar_linea}
  	que se encuentra en la pestaña de Shapes 
- 	
-	 \item Creación de variable: En la pestaña Variables tenemos una primera opción make a variable que nos permite crear una variable global para utilizar.
-	 \item Creamos una variable x a la que podemos asignar un valor gracias al bloque \\
+ 	\item Creación de una variable: en la pestaña \textit{Variables} se encuentra la opción \textit{make a variable} que nos permite crear una variable global para utilizar.
+	 \item Al crear una variable x, se le puede asignar un valor gracias al bloque \\
 	 \includegraphics[width=0.22\textwidth]{img_b/Variables}
-	 en el que introducimos el valor que queremos que tenga
-	 \item Ahora usamos un bucle para repetir el proceso de la creación de las líneas de una figura geométrica, los bucles vienen indicados en bettleblocks por el bloque
-	 \includegraphics[width=0.1\textwidth]{img_b/Repetir}
-	 en el hueco del bloque insertaremos nuestra variable, esto provoca que todos los bloques que insertemos a posteriori se repiten el número de veces que valor tenga nuestra variable.
-	 \item Dentro del bucle insertaremos 2 bloques
+	 en el que se introduce el valor deseado.
+	 \item Un elemento muy común en la programación son los bucles estos se representan en BeetleBlocks con el bloque  \includegraphics[width=0.08\textwidth]{img_b/Repetir}, para continuar con la creación de la figura se debe repetir el proceso de la creación de las líneas de una figura geométrica, en el hueco del bloque se inserta la variable creada, esto provoca que todos los bloques que son insertados a posteriori se repiten el número de veces que valor tenga la variable.
+	 \item Dentro del bucle se deben insertar 2 bloques:
 	 \begin{itemize}
 	 \item El bloque 
-	 \includegraphics[width=0.1\textwidth]{img_b/move_empty}
-	 el cual dibujará una línea que tendrá la longitud igual al valor que insertemos en su hueco. En este hueco insertaremos nuestra variable arrastrándola, de tal forma que quedara así  
+	 \includegraphics[width=0.1\textwidth]{img_b/move_empty} este permite el movimiento y al haber ordenado previamente dibujar se ``pintará" una línea que tendrá la longitud igual al valor que insertemos en su hueco. En este  caso se debe insertar la variable y no un número concreto, más adelante se justifica este paso. El resultado por tanto debe ser el siguiente:
+	 
 	\includegraphics[width=0.12\textwidth]{img_b/move_x}
 	\item El bloque 
 	 \includegraphics[width=0.12\textwidth]{img_b/girar}
-	 nos permite girar la dirección de nuestro puntero en este caso lo queremos girar tantos grados como lados tenga nuestra figura geométrica esto lo haremos de una forma muy sencilla con el bloque
-	\includegraphics[width=0.12\textwidth]{img_b/div}
-	Con el que dividimos por el valor de nuestra variable y los combinamos
-	\includegraphics[width=0.22\textwidth]{img_b/giro_div}
-	\item Por lo tanto, nuestro bucle completo quedaría así. \\ \\
-	\includegraphics[width=0.25\textwidth]{img_b/bucle}
-	
-	 \end{itemize}
+	 permite girar la dirección en la que está orientado el escarabajo, el valor que debe introducirse en cada hueco debe ser en grados. En este caso se quiere girar tantos grados como lados tenga la figura geométrica que se quiere conseguir, para hacerlo de una forma muy sencilla el bloque de división debe contener el número total de grados de un circulo entre los lados de la figura en este caso la variable x previamente creada, quedando de la siguiente manera 	\includegraphics[width=0.12\textwidth]{img_b/div} sólo queda combinar ambos bloques \includegraphics[width=0.22\textwidth]{img_b/giro_div}.
+	\item Por último se combinan los tres bloques, tanto el bucle como los dos resultantes anteriores, el \textit{sprite} o conjunto de bloques final debería quedar como en la Figura~\ref{figura:loop}.
+\begin{figure}[H]
+    	\centering
+    		\includegraphics[width=4cm, keepaspectratio]{img_b/bucle}
+		\caption{Bloque combinado}
+		\label{figura:loop}
+\end{figure}
+\end{itemize}
 	 
-	 \item Dos bloques más que nos serán muy útiles para crear cualquier figura son 
-	\includegraphics[width=0.15\textwidth]{img_b/click_event}
-	 que nos inicia la serie de bloques que anidemos cuando hagamos click.\\
-	 Y \includegraphics[width=0.08\textwidth]{img_b/reset}		 
-	  que nos deja el plano en blanco.
-	\item Finalmente, nuestro bloque para crear figuras geométricas quedaría así. \\ \\
-	\includegraphics[width=0.22\textwidth]{img_b/figuras}
+	 \item Dos bloques que resultan muy útiles para crear cualquier objeto son los de la Figura~\ref{figura:Bloques} el primero inicia la serie de bloques anidados al hacer click sobre ellos, esto permite un control de la ejecución. Y el segundo que nos deja el plano en blanco, proporciona una manera de inicializar el escenario a su valor por defecto, para prevenir resultados no deseados.
+	 
+\begin{figure}[H]
+ \centering
+  \subfloat[Evento de Click]{
+   \label{figura:Orientacion}
+  \includegraphics[width=3cm, keepaspectratio]{img_b/click_event}}
+    \subfloat[reset]{
+   \label{figura:move}
+   \includegraphics[width=1.5cm, keepaspectratio]{img_b/reset}}
+   \caption{Bloques útiles}
+ \label{figura:Bloques}
+\end{figure}	 
+
+	\item Finalmente, el resultado de la combinación de los diferentes bloques expuestos se puede ver en la Figura~\ref{figura:Figuras}, permite formar un sprite que dibuje figuras geométricas con el número de lados que se le da a la variable \textbf{x} creada.
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=5cm, keepaspectratio]{img_b/figuras}
+		\caption{Sprite para crear figuras}
+		\label{figura:Figuras}
+\end{figure}
 \end{enumerate}
-\Large Formato \\
-\normalsize Por último necesitamos exportar nuestra figura, en formato \textit{.stl}. \\
-BeetleBlocks no nos permite la exportación en un formato compatible con A-Frame, en la siguiente sección veremos como conseguirlo gracias a Blender.
+\subsection{Formato }
+\label{subsec:2_Beetle} 
+
+El último paso por exponer es la exportación de la figura final de entre los diferentes formatos que ofrece Beetleblocks, ninguno es compatible con A-Frame, en la siguiente sección veremos como conseguirlo gracias a Blender, pero en este paso es necesario exportarlo en formato \textit{.stl}.
 
 \subsection{ Blender}
 \label{subsec:T_Blender}
 
-Ya hemos aprendido como crear nuestro objeto, ahora solo nos falta que tenga una extensión .obj para ello vamos a usar un software OpenSource de diseño 3D como es Blender.
-
-Los pasos a realizar son muy sencillos, solo usaremos Blender como si de una herramienta de conversión se tratase.
-
-Abrimos Blender lo primero que vemos será una pantalla como esta
-	\begin{figure}[H]
-    		\centering
-    		\includegraphics[width=15cm, keepaspectratio]{img/blender_0}
-		\caption{Blender}
-		\label{figura:Init_Blender}
- 	\end{figure} 
-
-
-
-\begin{itemize}
+Una vez que se ha creado un objeto con Beeetleblocks el paso final es conseguir que tenga una extensión \textit{.obj} que es la apropiada para poder usar el objeto en el siguiente taller, en el que mostrará la manera de crear una experiencia de realidad virtual con A-frame.De entre las múltiples maneras de conseguirlo, en este trabajo se ha optado por usar usar Blender un software OpenSource de diseño 3D.La pantalla de inicio de Blender se puede ver en la Figura~\ref{figura:Init_Blender}.\begin{itemize}
 \item Los pasos a seguir para exportar nuestra figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
 \begin{enumerate}
 
-	 \item Nos posicionamos encima  del cubo y presionamos \textbf{\textit{x}} para borrarlo.  
-	 \item Pulsamos \textit{espacio}, escribimos \textbf{\textit{import stl}} y seleccionamos nuestro objeto importado de Bettleblocks. 
-	 \item Con nuestro objeto cargado en Blender pulsamos \textit{espacio} y escribimos \textbf{\textit{export obj}} seleccionando las ~[Checkbox]es \textbf{\textit{Write Normals, Write Materials}} y guardamos lo exportamos a la ruta deseada.
-	 \\\\
-	 \includegraphics[width=0.25\textwidth]{img/export_obj}
-
-\end{enumerate}
+	 \item Borrar el cubo, posicionando el ratón encima y presionando    	\textbf{\textit{x}} para borrarlo.  
 	 
+	 \item Se pulsa \textit{espacio} y se introduce en el cuadro de texto \textbf{\textit{import stl}}, se importa la figura de Beetle Blocks previamente creada y exportada con un formato \textit{stl}.
+	 
+	 \item Se pulsa \textit{espacio} de nuevo y se introduce \textbf{\textit{export obj}} en el cuadro de texto, como se ve en la Figura~\ref{figura:Check}, se deben marcar las \textit{Checkboxes} 						\textbf{\textit{Write Normals, Write Materials}} y exportar el objeto a la ruta deseada, si todos los pasos se han realizado correctamente, deben aparecer dos nuevos archivos \textbf{\textit{xxx.obj}} y \textbf{\textit{xxx.mtl}}.
+\end{enumerate}
+\begin{figure}[H]
+ \centering
+  \subfloat[Blender]{
+  \label{figura:Init_Blender}
+   \includegraphics[width=10cm, height=5cm]{img/blender_0}}
+    \subfloat[Checkboxes]{
+      \label{figura:Check}
+  \includegraphics[width=4cm, height=4.6cm]{img/export_obj}}
+   \caption{inicio de Blender y exportación}
+ \label{figura:Blender_0}
+\end{figure}	
 \end{itemize}
-
-Veremos que han aparecido dos nuevos archivos \textit{xxx.obj} y \textit{xxx.mtl}.\\Con esto conseguimos el formato apropiado de nuestro objeto para el siguiente taller, en el que aprenderemos a crear una experiencia de realidad virtual con A-frame. 
-
 \clearpage
 
 \section{Taller 2 (Creación de un entorno VR ) }
 \label{sec:Taller2}
 
-En este segundo taller aprenderemos a crear una experiencia de realidad virtual con A-Frame, además importaremos nuestro objeto creado en el primer taller con BeetleBlocks, y podremos visualizarla en nuestro smartphone.
+En este segundo taller se enseñará a crear una experiencia de realidad virtual con A-Frame, además se añadirá el objeto previamente creado con  BeetleBlocks en el primer taleer, y se indicaran los pasos a seguir para visualizar el escenario de A-Frame en un smartphone.
 \subsection{Creación de entorno VR con A-Frame}
 \label{subsec:T_Aframe}
 
-Para crear nuestra experiencia de realidad virtual el primer paso es crear nuestro index.html en el directorio de nuestro proyecto, para esto crearemos un repositorio de la siguiente manera:\\
-En un terminal unix escribimos
+Para crear la experiencia de realidad virtual con A-Frame el primer paso es crear un documento index.html y el repositorio en el que se van a incluir los archivos necesarios.
+Todos los comandos de terminal descritos en este taller se basan en un terminal Linux, con los siguientes se procede a crear el directorio de la práctica y el archivo html.
 \begin{verbatim}
 mkdir A-Frame
 cd A-Frame
 makefile index.html
 \end{verbatim}
 
-A-Frame  puede ser utilizado desde un documento plano de HTML sin la necesidad de instalar nada.
+A-Frame puede ser utilizado desde un documento plano de HTML sin la necesidad de instalar nada.Simplemente para empezar a usarlo se debe importar en la cabecera  de index.html de esta manera:
 
-Para empezar a usar A-Frame en nuestro index.html debemos importarlo en la cabecera de esta manera:{\footnotesize
 \begin{verbatim}
 
 	<head>
-    		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    		<script src="https://aframe.io/releases/0.9.0/aframe.min.js">
+    				</script>
 \end{verbatim}
-}
-Con esto ya hemos cargado la versión de A-Frame y podemos dar paso a nuestra primera prueba.
-\begin{itemize}
-\item \large Primera figura \\
-\normalsize
-Un ejemplo sencillo para aprender a usar A-Frame consiste en cargar un primitive, plantillas de elementos que están dentro del código de A-Frame, gracias a ellos podemos crear un cubo , un cilindro, una esfera \dots. de una forma muy sencilla.
-A la hora de usarlos en nuestro \textit{index.html} basta con nombrarlos como si se tratara de una entidad, a los primitives se le pueden dar diferentes propiedades.
-Siempre que cargamos una figura en A-Frame tiene que ser dentro de la escena, en nuestro documento html $<$\textit{a-scene}$>$.
 
-Cargamos un cubo y una esfera en nuestra escena de la siguiente manera:
-{
+
+\subsection{Explorando A-Frame}
+\label{subsec:Ex_Aframe}
+Una vez se ha cargado la versión de A-Frame se puede dar paso a un primer acercamiento. Un ejemplo sencillo para aprender a usar A-Frame consiste en cargar un primitive, plantillas de elementos que están dentro del código de A-Frame, gracias a ellos se puede crear un cubo , un cilindro, una esfera \dots. de una forma muy sencilla.
+A la hora de usarlos en el \textit{index.html} basta con nombrarlos como si se tratara de una entidad, a los primitives se le pueden dar diferentes propiedades.
+Siempre que se carga una figura en A-Frame tiene que ser dentro de la escena,esta se identifica en el documento HMTL con $<$\textit{a-scene}$>$.
+
+A continuación se expone un ejemplo, en el que se introducen una serie de primitives como un cubo y una esfera dentro de la escena de A-Frame, y el resultado puede verse en la Figura~\ref{figura:A_frame_ex}.
+{\footnotesize
 \begin{verbatim}
 <body>
  <a-scene>
@@ -929,16 +997,21 @@ Cargamos un cubo y una esfera en nuestra escena de la siguiente manera:
 </body>
 \end{verbatim}
 }
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=15cm, keepaspectratio]{img/A_frame_ex}
+		\caption{Cubo y esfera primitives en A-Frame}
+		\label{figura:A_Frame-ex}
+\end{figure}
+Además es posible crear nuestros primitives propios, algo que se puede ver en la siguiente sección de este taller, para ello es necesario exportar un archivo JavaScript.
 
-Además podemos crear nuestros propios primitives, algo que veremos en la siguiente sección de este capítulo, exportando un archivo JavaScript.
-
-Ahora que ya sabemos la metodología para cargar objetos en A-Frame, el siguiente paso a realizar es cargar nuestro objeto creado con BeetleBlocks, ya con el formato \textbf{\textit{.obj}} que le hemos conseguido dar con Blender.
-
+Ahora que ya se ha explicado la metodología para cargar objetos en A-Frame, el siguiente paso a realizar es cargar el objeto creado con BeetleBlocks, ya con el formato \textbf{\textit{.obj}} que se le ha dado previamente con Blender.
+\clearpage
 \begin{itemize}
-\item El proceso para cargarlo en nuestro index.html es el siguiente:
+\item El proceso para cargarlo en el index.html es el siguiente:
 \begin{enumerate}
 
-	 \item Inicializamos nuestras variables \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y \textbf{\textit{textura}}.  
+	 \item Se inicializan las variables \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y \textbf{\textit{textura}}.  
 	 
 	 {\footnotesize
 \begin{verbatim}
@@ -950,8 +1023,7 @@ Ahora que ya sabemos la metodología para cargar objetos en A-Frame, el siguiente
 \end{verbatim}
 	}
 	 
-	 \item Cargamos el \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y \textbf{\textit{textura}}
-	 \footnote{Para la textura nos vale cualquier \textbf{\textit{.jpg}}. } que queramos\footnote{En la propiedad  \textbf{\textit{src}} indicamos la ruta del archivo.}.
+	 \item Se cargan el \textbf{\textit{.obj}}, \textbf{\textit{.mtl}}, y la  \textbf{\textit{textura}}.Para la textura vale cualquier \textbf{\textit{.jpg}}, es recomendable que se trate de algún tipo de imagen que sea una textura.En la propiedad  \textbf{\textit{src}} se indica la ruta de cada archivo a importar.A continuación se puede ver un ejemplo:
 	 
 	{\footnotesize
 \begin{verbatim}
@@ -964,26 +1036,26 @@ Ahora que ya sabemos la metodología para cargar objetos en A-Frame, el siguiente
 \end{verbatim}
 	}
 \end{enumerate}
-	 
-\end{itemize}
 
-
-\clearpage 
 \subsection{Animación básica con A-frame.}
 \label{subsec:T_Aframe_Animacion}
 
-A-Frame nos permite añadir algo de animación básica a nuestra figura, gracias a la importación de paquetes en javaScript.
+A-Frame nos permite añadir algo de animación básica a nuestra figura, gracias a la importación de paquetes en JavaScript.
 
-Nuestro objetivo va a ser que nuestra figura rote, para hacerlo vamos a valernos del paquete aframe-animation-component.
+El ejemplo expuesto aquí consigue aportarle una animación al objeto que consiste en una rotación al hacer click sobre él, para hacerlo se debe importar el paquete aframe-animation-component.
 
-Lo importamos en nuestra cabecera $<$\textit{head}$>$
+Lo importamos en la cabecera $<$\textit{head}$>$ del documento de la misma forma que se hace con A-Frame.
+	 {\footnotesize
 \begin{verbatim}
 <script src="https://rawgit.com/ngokevin/aframe-animation-component
   /master/dist/aframe-animation-component.min.js">
 
 </script>
 \end{verbatim}
-Para usar la animación usamos $<$\textit{a-animation}$>$ dentro de $<$\textit{a-entity}$>$
+}
+Para usar la animación $<$\textit{a-animation}$>$ es necesario invocarla dentro del objeto, representado en A-Frame como $<$\textit{a-entity}$>$, de la siguiente manera:
+
+	 {\footnotesize
 \begin{verbatim}
 <a-entity [...]>
 
@@ -995,11 +1067,13 @@ Para usar la animación usamos $<$\textit{a-animation}$>$ dentro de $<$\textit{a-
  
 </a-entity>
 \end{verbatim}
+}
 
-Con esto conseguimos que el objeto rote cuando hacemos click con el ratón en él.
+Como se puede observar uno de los atributos de $<$\textit{a-animation}$>$  es begin="click", este permite que la animación sólo se ejecute cuando se hace click sobre el objeto.
+Al estar en un entorno de realidad virtual, no se dispone del ratón y lo que funciona sería el equivalente del es el centro de la mirada, para conseguir simular apuntar al objeto  con el puntero del ratón es necesario crear un cursor ``virtual" en el centro de la pantalla, que no es otra cosa que el centro de la perspectiva que tenemos en cada momento.
+El cursor se crea una vez se define la posición inicial de la cámara, en este caso se le da un color rojo para que resalte con el fondo de la escena.
 
-Al estar en un entorno de realidad virtual, no disponemos de nuestro ratón y lo que funciona como tal es el centro de nuestra mirada, para conseguir apuntar al objeto creamos un cursor en el centro de la pantalla que no es otra cosa que el centro de la perspectiva que tenemos en cada momento.
-El cursor se crea una vez definimos la posición inicial de la cámara, en este caso le daremos un color rojo que resalte con el fondo.
+Una vez aclarado este punto la creación del cursor y centrar la cámara es muy sencillo, y debe hacerse dentro del objeto:
 \begin{verbatim}
 [...]
  <a-camera position="1.5 1 6.5">
@@ -1011,36 +1085,47 @@ El cursor se crea una vez definimos la posición inicial de la cámara, en este ca
 [...]
 \end{verbatim}
 
-\subsection{Anexo: Lleva tu experiencia VR a tu smartphone}
+El resultado final puede verse en la Figura~\ref{figura:A_Frame}
+
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=14cm, keepaspectratio]{img/A_Frame}
+		\caption{Cursor en una escena de A-Frame}
+		\label{figura:A_Frame}
+\end{figure}
+
+\subsection{Llevar la experiencia VR a un smartphone}
 \label{subsec:T_smart}
-Ya tenemos nuestra figura cargada en A-Frame de forma local.Pero como ya sabemos para visualizar el entorno de realidad virtual, necesitamos algo más y es un visor, la forma más rapida y sencilla de ver nuestra experiencia, es a traves de nuestro smartphone, para exportar nuestro index.html a internet nos vamos a ayudar de una utilidad llamada ngrok.
+Con todo esto se consigue crear un entorno de realidad virtual con A-Frame de forma local.Pero para visualizar un entorno de realidad virtual, es necesario un visor, la forma más rapida y sencilla de ver obetener uno, es a través de un smartphone, para exportar el index.html a internet y poder visualizarla desde el navegador web del teléfono se va a contar con la ayuda una utilidad llamada ngrok.
 
 \begin{itemize}
-\item Para usar ngrok hacemos lo siguiente
+\item Estos los pasos necesarios para usar ngrok y exportar la escena de A-Frame:
 \begin{enumerate}
-	\item Abrimos una terminal y no vamos a nuestra carpeta raiz del proyecto, lanzamos nuestro servidor de forma local:
+	\item En una terminal y estando en carpeta la raiz del proyecto, se lanza el servidor de forma local:
 	\begin{verbatim}
 	python -m SimpleHTTPServer 1234
 	\end{verbatim}
-	\item instalamos ngrok, simplemente descargando el .zip y descomprimiéndolo en nuestra carpeta raíz.
+	\item Instalar ngrok, simplemente descargando el .zip y descomprimiéndolo en la carpeta raíz.
 	
-	\item después de esto lo ejecutamos pasándole como argumento el puerto de nuestro servidor.
+	\item Después de esto es necesario ejecutarlo pasándo como argumento el puerto del servidor local previamente creado.
 	
 	\begin{verbatim}
 	./ngrok http 1234
 	\end{verbatim}
 	
-	\item Ngrok nos devuelve una pantalla con la Url de nuestra aplicación. 
-	\\
-	\\
-	\includegraphics[width=0.8\textwidth]{img/ngrok}
-	
-	\item Introduciendo esta url en un navegador compatible como Google Chrome podemos visualizar nuestra experiencia en nuestro smartphone u otro dispositivo compatible.
+	\item Ngrok devuelve una pantalla, entre los datos que proporciona se encuentra la url pública de la aplicación, marcada en rojo en la Figura~\ref{figura:ngrok}. 
+	\item Introduciendo esta url en un navegador compatible, por ejemplo Google Chrome, se puede visualizar la experiencia de A-Frame en un smartphone u otro dispositivo compatible.
 	
 \end{enumerate}
 \end{itemize}
 
 \end{itemize}
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.8\textwidth]{img/ngrok}
+		\caption{Ngrok}
+		\label{figura:ngrok}
+\end{figure}
 
 
 \clearpage 
@@ -1083,9 +1168,7 @@ Con esto ya se dispone de un entorno apto para empezar a programar nuestra placa
 \subsection{Instalación de Bitio}
 \label{subsec:Install_Bitio}
 
-El primer paso es instalar Bitio, para ello lo primero que se debe hacer es ir a su repositorio de github.
-
-\textit{https://github.com/whaleygeek/bitio}
+El primer paso es instalar Bitio, para ello lo primero que se debe hacer es ir a su repositorio de GitHub\footnote{https://github.com/whaleygeek/bitio}.
 
 Como la propia documentación indica la mejor forma de usar bitio en un entorno educativo es copiar la carpeta `src/microbit' en el directorio Home del proyecto actual.
 
@@ -1097,8 +1180,11 @@ Dentro de la carpeta `src' se ecuentran una serie de programas para probar las d
 
 La forma de probar si se ha instalado bitio correctamente es tan simple como hacer una prueba con uno de ellos.Tomando como prueba \textit{button.py} se obtienen estos valores en la terminal al ejecutar el programa.
 
+\begin{verbatim}
+
 python button.py
 
+\end{verbatim}
 \begin{verbatim}
 No micro:bit has previously been detected
 Scanning for serial ports
