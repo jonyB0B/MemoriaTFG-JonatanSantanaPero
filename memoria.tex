@@ -831,7 +831,7 @@ El objetivo de este taller es introducir el diseño en 3D a alumnos de enseñanzas
 
 Beettleblocks pone las cosas fáciles a la hora de crear objetos 3D, con este taller se pretende que un alumno con conocimientos muy básicos acerca de la programación consiga crear una figura en 3D, con unos pocos pasos.\\
 
-Antes de comenzar a programar la primera figura se debe crear una cuenta en Bettleblocks para  de una forma accesible poder acceder a los proyectos guardados.
+Antes de comenzar a programar la primera figura, se debe crear una cuenta en Bettleblocks para  de una forma accesible poder acceder a los proyectos guardados.
 \begin{itemize}
  \item El primer paso es ir a la web de BeetleBlocks\footnote{http://BeetleBlocks.com} y en la esquina superior derecha pulsar sobre la opción \textit{Log in} para crear el usuario.
  \item Una vez hecho esto se puede comenzar a usar BeetleBlocks, para ello se debe pulsar en \textit{Run BeetleBlocks} como se ve en la Figura~\ref{figura:Run_Beetle}.\\
@@ -929,7 +929,7 @@ El último paso por exponer es la exportación de la figura final de entre los dif
 \label{subsec:T_Blender}
 
 Una vez que se ha creado un objeto con Beeetleblocks el paso final es conseguir que tenga una extensión \textit{.obj} que es la apropiada para poder usar el objeto en el siguiente taller, en el que mostrará la manera de crear una experiencia de realidad virtual con A-frame.De entre las múltiples maneras de conseguirlo, en este trabajo se ha optado por usar usar Blender un software OpenSource de diseño 3D.La pantalla de inicio de Blender se puede ver en la Figura~\ref{figura:Init_Blender}.\begin{itemize}
-\item Los pasos a seguir para exportar nuestra figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
+\item Los pasos a seguir para exportar la figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
 \begin{enumerate}
 
 	 \item Borrar el cubo, posicionando el ratón encima y presionando    	\textbf{\textit{x}} para borrarlo.  
@@ -983,7 +983,7 @@ Una vez se ha cargado la versión de A-Frame se puede dar paso a un primer acerca
 A la hora de usarlos en el \textit{index.html} basta con nombrarlos como si se tratara de una entidad, a los primitives se le pueden dar diferentes propiedades.
 Siempre que se carga una figura en A-Frame tiene que ser dentro de la escena,esta se identifica en el documento HMTL con $<$\textit{a-scene}$>$.
 
-A continuación se expone un ejemplo, en el que se introducen una serie de primitives como un cubo y una esfera dentro de la escena de A-Frame, y el resultado puede verse en la Figura~\ref{figura:A_frame_ex}.
+A continuación se expone un ejemplo, en el que se introducen una serie de primitives como un cubo y una esfera dentro de la escena de A-Frame, y el resultado puede verse en la Figura~\ref{figura:A_Frame_ex}.
 {\footnotesize
 \begin{verbatim}
 <body>
@@ -1001,7 +1001,7 @@ A continuación se expone un ejemplo, en el que se introducen una serie de primit
     		\centering
     		\includegraphics[width=15cm, keepaspectratio]{img/A_frame_ex}
 		\caption{Cubo y esfera primitives en A-Frame}
-		\label{figura:A_Frame-ex}
+		\label{figura:A_Frame_ex}
 \end{figure}
 Además es posible crear nuestros primitives propios, algo que se puede ver en la siguiente sección de este taller, para ello es necesario exportar un archivo JavaScript.
 
@@ -1293,13 +1293,12 @@ Esto esprogramado con pyautogui.
 	pyautogui.mouseUp()
 \end{verbatim}
 \begin{itemize}
-\item Con la primera línea se guarda la resolución de la pantalla en dos variable una para el ancho y otra para el alto.
+\item Con la primera línea se guarda la resolución de la pantalla en dos variables una para el ancho y otra para el alto.
 \item Se deja el ratón pulsado con la orden mouseDown, se hace esto para entrar en el control de la cámara en A-frame.
 \item Se mueve el ratón al centro de la pantalla
 \item Por último se suelta el botón izquierdo del ratón para salir del control de la cámara.
 \end{itemize}
 
-\clearpage
 \Large
 B) Interacción \\
 \normalsize
