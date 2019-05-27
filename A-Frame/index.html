@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+	<meta charset="utf-8" />
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="js/aframe-extras.min.js"></script>
+	<script src="js/audio.js"></script>
+</script>
+	
+	<script src="https://unpkg.com/aframe-animation-component@5.1.2/dist/aframe-animation-component.min.js"></script> 
+  </head>
+  <body>
+    <a-scene>
+		<!-- Exportamos nuestra figura y su textura -->
+		<a-assets>
+			<a-asset-item id="cascos-obj" src="models/cascos3.obj"></a-asset-item>
+			<a-asset-item id="cascos-mtl" src="models/cascos3.mtl"></a-asset-item>
+			<img id="cascos-texture" src="img/colors.jpg">
+		    <img id="fondo" crossorigin="anonymous" src="https://live.staticflickr.com/65535/47928040488_86735cf557_o.jpg">
+			<img id="fondo2" crossorigin="anonymous" src="https://cdn.glitch.com/e6225ccd-c32e-4cf8-b039-e78814a8cb78%2Fbg-1.jpg">
+			<!--<audio id="asd" crossorigin="anonymous" src="audio/sample.mp3">-->
+			<audio id="click-sound" crossorigin="anonymous" src="audio/sample.mp3"></audio>
+  		</a-assets>
+		
+		<!-- FONDO CON EL PRIMITIVE SKY-->
+		<a-sky src="#fondo2">  </a-sky>
+		
+	  	<!--ANIMACION a primitive -->
+		<a-torus-knot audiohandler color="#B84A39" arc="180" p="2" q="7" radius="2" radius-tubular="0.1" position="-5.5 2.5 2.5"
+			animation="property: rotation; startEvents: click; loop: true; to: 0 360 0"	
+			animation__2="property: position; startEvents: click; loop: true; to: -3.2 14 2.2"
+			animation__color="property: components.material.material.color; type: color; dir: alternate; dur: 1000;
+                                easing: easeInSine; loop: true; to: #EF2D5E">
+		</a-torus-knot>
+
+		<!-- Definimos nuestra figura. -->
+		<a-entity obj-model="obj:#cascos-obj" mtl="src:#cascos-mtl" material="src:#cascos-texture"
+			position="1.5 1 2.5"  
+			animation="property: rotation; loop: 5; to: 0 360 0"
+			animation__scale="property: scale; dir: alternate; dur: 200;
+                           easing: easeInSine; startEvents: click; loop: true; to: 1.5 1 1.5"
+			sound="on: click; src: #click-sound">
+		</a-entity>
+		
+		<!--OCEANO DE A-FRAME EXTRAS-->
+		<a-ocean color="#92E2E2" width="25" depth="25" density="15" speed="2" position="4.5 -5.5 6.5" ></a-ocean>
+		
+		<!--sonido-->
+		<!--<a-sound src="src: url(audio/tie.wav)" autoplay="true" position="0 2 5"></a-sound>
+		sound.components.sound.pauseSound()-->
+		
+		<!-- Posicionamos la cámara y creamos el cursor-->
+		<a-camera position="1.5 1.5 7.5">
+			<a-cursor color="#FF0000"> </a-cursor>
+		</a-camera>
+							
+		<!-- Podemos elegir el foco de luz que la ilumina y su color  -->
+		<a-light type="ambient" intensity="1.1" color="#00000" ></a-light>
+  </body>
+</html>
