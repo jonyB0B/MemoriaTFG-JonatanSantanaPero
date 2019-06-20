@@ -32,6 +32,35 @@
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 
+%\usepackage{minted}
+\usepackage{listings}%para código de python
+\usepackage{color}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,          
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=3
+}
+ 
+\lstset{style=mystyle}
+
 \usepackage{multicol} %%varias columnas
 \usepackage{subfig} %%varias figuras
 \title{Memoria del Proyecto}
@@ -78,7 +107,7 @@ Trabajo Fin de Grado
 \vspace{2.5cm}
 
 \LARGE
-TALLERES DIDÁCTICOS ORIENTADOS A LA DIFUSIÓN DE EXPERIENCIAS VR ENTRE ALUMNOS DE ENSEÑANZAS MEDIAS.
+TALLERES DIDÁCTICOS ORIENTADOS A LA DIFUSIÓN DEL DISEÑO 3D, EXPERIENCIAS VR Y EL MICRO BIT ENTRE ALUMNOS DE ENSEÑANZAS MEDIAS.
 
 \vspace{4cm}
 
@@ -143,12 +172,11 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2019
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Dedicatoria
-
 \chapter*{}
 %\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
-mi mismo} \\
+mi familia} \\
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,12 +185,9 @@ mi mismo} \\
 \chapter*{Agradecimientos}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
-
-
-
+Agradezco el apoyo que he recibido por parte de mi familia para llegar a la finalización de este proyecto y así poner fin a esta etapa de mi vida.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
-
 \chapter*{Resumen}
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
@@ -171,17 +196,20 @@ La finalidad de este proyecto es la introducción de diferentes tecnologías relac
 
 La tres tecnologías que suponen el núcleo de este proyecto son:
 \begin{itemize}
-\item BeetleBlocks.
+\item Beetle Blocks.
 \item A-Frame.
 \item Micro Bit.
 \end{itemize}
-El desarrollo de este proyecto está basado en la ejecución de 3 talleres enfocados en cada una de las mencionadas tecnologías. Los talleres a su vez forman muestran detalladamente el proceso para conseguir una experiencia VR completa, en la que primeramente se creará un objeto 3D con programación mediante bloques, a continuación se mostrará como crear un entorno de realidad virtual con A-Frame y por último se explicará como usar el Micro Bit como interfaz de usuario de la experiencia anteriormente creada.
+El desarrollo de este proyecto está basado en la ejecución de 3 talleres enfocados en cada una de las mencionadas tecnologías. Los talleres a su vez forman un todo y son recursivos entre sí, de tal forma que todo lo aprendido en uno de ellos se usa en el siguiente.
 
-Para realizar el proyecto, primeramente se procedió a un estudio de cada una de las tecnologías y con la ayuda del tutor, se acordó que la mejor forma de introducir el conocimiento era con talleres prácticos que incidieran en cada una de la técnicas empleadas.
+En primera instancia se mostrará como crear un objeto 3D con la programación mediante bloques que ofrece Beetle Blocks, en el segundo taller se introduce A-frame y se mostrará como crear un entorno de realidad virtual en el que se inserte el objeto creado en el primer taller, por último en el tercer taller se explicará la programación y aplicación del Micro Bit como interfaz de usuario para poder moverse e interactuar dentro de la experiencia VR creada con A-Frame.
 
-Para la realización de los talleres, se ha escogido un formato de ejercicios en el que los alumnos tienen unos pasos guiados que seguir, dejando lugar a su vez al fomento de la creatividad.
+Para realizar el proyecto, primeramente se procedió a un estudio de cada una de las tecnologías y con la ayuda del tutor, se acordó que la mejor forma de introducir el conocimiento de las tres tecnologías era con una serie talleres prácticos que incidieran en cada una de la técnicas empleadas.
+Para la realización de los talleres, se ha escogido un formato de diapositivas en \textit{PowerPoint} en las que se hace una introducción de las tecnologías a utilizar con una serie de ejemplos y ejercicios en los que los alumnos tienen que aplicar lo expuesto de una forma práctica.
+\clearpage
+Un ejemplo de los ejercicios planteados puede ser  la utilización obligatoria de una serie de bloques a la hora de crear una figura con Beetle Blocks o completar un programa de \textit{python} dado para añadir una funcionalidad al Micro Bit.
 
-
+En conclusión, al finalizar los talleres se consigue un hilo conductor entre ellos. El alumno comienza creando un objeto 3D con la programación mediante bloques de Bettleblocks, conoce y aprende la utilización de A-Frame y finalmente se le motiva a terminar la programación, en \textit{python}, de una serie de funcionalidades básicas para el Micro Bit y poner su funcionamiento en práctica en un escenario de A-frame.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ÍNDICES %
@@ -212,119 +240,107 @@ Para la realización de los talleres, se ha escogido un formato de ejercicios en 
 
 \section{Experiencias VR}
 \label{sec:In_VR}
-
-La realidad virtual,es la sensación de estar inmerso en un entorno con objetos o escenas de apariencia real. El usuario puede sumergirse en imágenes 3D realistas generadas por ordenador a través de tecnología, y al igual que los visores de realidad virtual, es una experiencia que luego puede enriquecerse con otros dispositivos.
-
-En los últimos años el crecimiento e implementación de esta tecnología ha ido aumentando, ya que se trata de una tecnología relativamente temprana, tanto en su concepción como en su aplicación. Hasta los años 90 no se consiguió simplificar los grandes simuladores de realidad virtual en dispositivos portátiles, que pueden tratarse desde cascos de realidad virtual, a gafas de plástico o cartón, con las que los smartphones se encargan de hacer realidad la experiencia.
+La realidad virtual ,es la sensación de estar inmerso en un entorno con objetos o escenas de apariencia real. A través de esta tecnología, el usuario puede sumergirse en imágenes 3D realistas generadas por ordenador, y al igual que los visores de realidad virtual, es una experiencia que luego puede enriquecerse con otros dispositivos.
+Se trata de una tecnología relativamente temprana, tanto en su concepción como en su aplicación, en los últimos años el crecimiento e implementación de esta tecnología ha ido en aumento. Hasta los años 90 no se consiguió simplificar los grandes simuladores de realidad virtual en dispositivos portátiles, que pueden tratarse desde cascos de realidad virtual, a gafas de plástico o cartón, con las que los \textit{smartphones} se encargan de hacer realidad la experiencia.
 
 Entre los años 2015 y 2016, se vivió el gran avance en el desarrollo de los dispositivos VR por parte de grandes marcas como HTC o Sony, que introdujeron en el mercado diferentes propuestas al alcance del público.
 
-A la hora de hablar de la realidad virtual en este trabajo de fin de grado, se ha profundizado en las denominadas experiencias, la cuales consisten en 
-entornos de realidad virtual que permiten al usuario transportarse al lugar de la escena, siendo espectadores o interactuándo en ellas a través de sensores o controladores. 
-
-A pesar de que actualmente, el mayor uso de la realidad virtual se desarrolla vinculado a los videojuegos, también se está consolidando en áreas relacionadas con la investigación médica o la educación, siendo ésta última el motivo de este trabajo y ofreciendo ejemplo de aplicación en el aprendizaje de diferentes técnicas y sistemas.
-
-\clearpage
-
+A la hora de hablar de la realidad virtual en este trabajo, se ha profundizado en las denominadas experiencias, la cuales consisten en 
+entornos de realidad virtual que permiten al usuario transportarse al lugar de la escena, ya sea como espectadores o interactuando con ellas a través de sensores o controladores. Actualmente, el mayor uso de la realidad virtual esta orientado a videojuegos, pero también se está consolidando en áreas relacionadas con la investigación médica o la educación, siendo ésta última uno de los motivos de la realización de este trabajo, ofreciendo ejemplos de su aplicación en el aprendizaje de diferentes técnicas y sistemas.
 
 \subsection{Utilidad VR en la educación }
 \label{subsec:In_VR1}
-
-
-La introducción y utilización de la realidad virtual en la educación, es algo que está empezando a introducirse cada vez en mayor medida en la sociedad, ya que representa un mundo de posibilidades en el que hay sitio para todo tipo de ideas e invenciones, que pueden adaptarse a distintos tópicos durante la etapa educativa. 
+La introducción y utilización de la realidad virtual en la educación, es algo que está empezando a introducirse cada vez en mayor medida en la sociedad. Representa un mundo de posibilidades en el que hay sitio para todo tipo de ideas e invenciones, que pueden adaptarse a distintos tópicos durante la etapa educativa. 
 
 Durante años ha estado limitada a la formación de pilotos aéreos en  simuladores con un alto coste, pero gracias a la mejora en la tecnología y la reducción  en costes, podemos ir viendo como poco a poco más universidades e institutos introducen la realidad virtual como apoyo para la enseñanza.
 
-Una gran baza de esta tecnología es su accesibilidad, los visores de realidad virtual ofrecen la mejor experiencia pero con unas gafas de cartón como las Cardboard de Google y un móvil podemos ser capaces de experimentar miles de experiencias en realidad virtual.
-Tampoco podemos obviar su inmersión, lo  que aumenta la motivación y aporta un mayor impacto en los procesos de aprendizaje haciendo al alumno partícipe activo de la experiencia y por tanto aumentando su capacidad de retención de lo enseñado. 
+Una gran baza de esta tecnología es su accesibilidad, aunque los visores de realidad virtual ofrecen la mejor experiencia, con la combinación de unas gafas de cartón como las \textit{Cardboard} de Google y un móvil se puede ser capaz de experimentar miles de experiencias en realidad virtual.
+Tampoco se puede obviar su inmersión, que aumenta la motivación y aporta un mayor impacto en los procesos de aprendizaje, haciendo al alumno partícipe activo de la experiencia y por tanto aumentando su capacidad de retención de lo mostrado. 
 
-Declaraciones como las de Baptiste Grève, creador de la plataformade experiencias virtuales \textit{Unimersiv}\footnote{https://unimersiv.com/}, no hace mas que fundamentar lo positivo de esta tecnología, dado que el cerebro humano retiene el 10\% de lo que lee, el 20\% de lo que oye y el 90\% de lo que experimenta. 
+Declaraciones como las de Baptiste Grève, creador de la plataforma de experiencias virtuales \textit{Unimersiv}\footnote{https://unimersiv.com/}, fundamentan lo positivo de esta tecnología, en las que se asegura que el cerebro humano retiene el 10\% de lo que lee, el 20\% de lo que oye y el 90\% de lo que experimenta. 
 
 \section{Diseño de figuras 3D}
 \label{sec:In_3D}
 
-El diseño de las figuras en 3D se realiza mediante software de diseño, existen multiples herramientas de creación y diseño 3D tanto de pago como gratuitas.Este trabajo de fin grado se va a dar uso a dos de ellas.
+El diseño de las figuras en 3D se realiza mediante software de diseño, existen múltiples herramientas de creación y diseño 3D tanto de pago como gratuitas.Este trabajo de fin grado va a mostrar el uso de dos de ellas.
 
-Principalmente BeetleBlocks\footnote{http://Beetleblocks.com/} una plataforma Open Source que nos propone un método de diseño mas sencillo y basado en la programación por bloques lo cual resulta perfecto para introducirse en el diseño 3D como se puede leer en el artículo \cite{Prog:_bloques}, será uno de los núcleos de este trabajo y la que es usada para llevar a cabo el diseño de las figuras en este trabajo.
-La segunda Blender \footnote{https://www.blender.org/} un software Open Source de creación 3D más clásico y cuyo uso se limitará a pequeños retoques a las figuras creadas previamente con BeetleBlocks.
-\clearpage
-Más adelante en este trabajo se describe la manera de crear objetos con BeetleBlocks en el capítulo \ref{sec:3D_Design}, estos irán desde figuras geométricas básicas, a formas tan complejas como uno quiera debido a la versatilidad de la plataforma.
+La primera y en la que más se profundiza es Beetle Blocks\footnote{http://BeetleBlocks.com/}, una plataforma Open Source que propone un método de diseño basado en la programación por bloques, siendo más sencillo, resulta perfecto para introducirse en el diseño 3D.
+Como se puede leer en el artículo \cite{Prog:_bloques}, será uno de los núcleos de este trabajo y la que es usada para llevar a cabo el diseño de las figuras en este trabajo.
+La segunda, Blender, \footnote{https://www.blender.org/} un software Open Source de creación 3D más clásico y complejo, cuyo uso se limitará a proporcionar ligeras modificaciones a las figuras creadas previamente con Beetle Blocks.
 
-Como este trabajo de fin grado esta focalizado en la creación de talleres didácticos para gente sin experiencia en el diseño 3D, BeetleBlocks nos permite mostrar el diseño 3D de una forma amena y menos compleja que si usáramos una herramienta más potente, esta afirmación queda fundamentada en este par de artículos ~\cite{BeetleBlocks:_info} ~\cite{BeetleBlocks:_info2}.
+Más adelante en este trabajo, se describe la manera de crear objetos con Beetle Blocks en el capítulo \ref{sec:3D_Design}, se ofrecen ejemplos para la creación de figuras geométricas básicas, y se proporcionan las bases para llegar a crear formas tan complejas como uno quiera debido a la versatilidad de la plataforma.
+
+El principal objetivo de este trabajo es la creación de talleres didácticos para gente sin experiencia en el diseño 3D, por este motivo y sirviendo como apoyo este par de artículos ~\cite{BeetleBlocks:_info2} ~\cite{BeetleBlocks:_info}, se ha elegido Beetle Blocks para mostrar el diseño 3D de una forma amena y menos compleja que si se usara una herramienta más potente.
 
 \subsection{Entornos VR con figuras en 3D}
 \label{subsec:In_3D1}
 
-Los entornos de realidad virtual se componen de figuras en 3 dimensiones. Es el propio entorno en si el que hace que la experiencia se denomine de realidad virtual.
-Al igual que para para el diseño 3D existen multiples programas de software que nos permiten la creación de estos entornos.
+Los entornos de realidad virtual suelen estar formados por la combinación de figuras en 3 dimensiones.Al igual que para para el diseño 3D, existen múltiples programas de software que nos permiten la creación de estos entornos.
 
-Tal y como está planteado este trabajo, no hemos buscado una experiencia realista sino una centrada en el aprendizaje de una experiencia básica que nos permita familiarizarnos con su creación.
-Debido a esto en este trabajo de fin de grado hemos optado por A-Frame una utilidad de creación de experiencias y entornos VR Open Source y gratuito.
-
-Gracias a ella se puede aprender a crear un entorno de realidad virtual básico en el que se pueden exportar todo tipo de figuras. La creación del entorno de realidad virtual con A-Frame se llevará a cabo en el capítulo~\ref{sec:Aframe}
+Tal y como está planteado este trabajo no se ha buscado buscado una experiencia realista, sino una centrada en el aprendizaje de la creación de una experiencia básica que permita familiarizarse con alguno de sus principales elementos de creación.
+Teniendo esto en cuenta, se ha optado por A-Frame, una utilidad de creación de experiencias y entornos VR Open Source, A-frame supone el núcleo del segundo taller didáctico y una vez se ha creado el entorno de realidad virtual permite la exportación de figuras 3D, en este caso y a modo de hilo conductor con el primer taller se mostrará como insertar una figura creada con Beetle Blocks.
+La creación del entorno de realidad virtual con A-Frame se llevará a cabo en el capítulo~\ref{sec:Aframe}
 
 \section{Micro Bit}
-\label{sec:In_Microbit}
-``Micro:bit es una pequeña computadora programable, diseñada para hacer que el aprendizaje y la enseñanza sean fáciles y divertidos!"
+\label{sec:In_Micro Bit}
+Como se puede leer en su página oficial~\footnote{\textit{https://microbit.org/es}}, Micro Bit es una pequeña computadora programable, diseñada para hacer que el aprendizaje y la enseñanza sean fáciles y divertidos.
 
-Esta es la frase que se puede encontrar cuando se entra en su página oficial~\footnote{\textit{https://microbit.org/es}}, y eso es Micro:bit, un sistema de Hardware embebido, diseñado por la BBC para la enseñanza informática en el Reino Unido.
-\clearpage
-Su primera aparición fue el 12 de Marzo de 2015, y se empezó a distribuir en Febrero de 2016, consta de un procesador ARM CortexM0, acelerómetro y magnetómetro, conectividad Blueethoot y USB, 25 leds, 2 botones programables y puede ser alimentada por medio de pilas o USB. Las entradas y salidas del dispositivo están formadas por 5 anillos conectores que forman parte de un conector mayor de 23 pines, la mayoria de esto puede verse en la Figura ~\ref{figura:Microbit_In}.
+De una forma más técnica se trata de un sistema de Hardware embebido diseñado por la BBC, para la enseñanza informática en el Reino Unido.
+Su primera aparición fue el 12 de Marzo de 2015, y se empezó a distribuir en Febrero de 2016, consta de un procesador ARM CortexM0, acelerómetro y magnetómetro, conectividad Blueethoot y USB, 25 leds, 2 botones programables y puede ser alimentado por medio de pilas o USB. Las entradas y salidas del dispositivo están formadas por 5 anillos conectores que forman parte de un conector mayor de 23 pines, la mayoría de estos componentes puede verse en la Figura ~\ref{figura:MicroBit_In}.
 
-Gracias a la gran cantidad de sensores que incorpora, sólo con la tarjeta se pueden llevar a cabo centenares de proyectos. BBC Micro: bit también es una plataforma IoT (Internet of Things), lo que la hace muy interesante para usuarios avanzados.
-Y es Open Source, por supuesto. Tanto el hardware como el software de micro:bit es de código abierto un requisito indispensable ya que como todas las técnologías utilizadas en este trabajo, esto ha ayudado a que todo el que realice los talleres pueda continuar experimentando en su propio ordenador una vez han sido finalizados. 
+Gracias a la gran cantidad de sensores que incorpora, sólo con la placa se pueden llevar a cabo centenares de proyectos. BBC Micro Bit también es una plataforma IoT (Internet of Things), lo que la hace muy interesante para usuarios avanzados. Tanto el hardware como el software de Micro Bit es de código abierto un requisito indispensable ya que como todas las tecnologías utilizadas en este trabajo, esto facilita que una vez finalizados cada uno de los talleres, todo aquel alumno interesado pueda continuar experimentando con las herramientas y tecnologías mostradas, por ejemplo, en su propia casa.
 
 \begin{figure}[H]
 \includegraphics[width=0.8\textwidth]{img/microbit}
-\caption{BBC Micro:bit}
-\label{figura:Microbit_In}
+\caption{BBC Micro Bit}
+\label{figura:MicroBit_In}
 \end{figure}
 
 \subsection{Micro Bit como interfaz de usuario}
-\label{subsec:In_Microbit_I}
+\label{subsec:In_Micro Bit_I}
 
-Como ya hemos visto Micro Bit posee múltiples aplicaciones.
-Su función en este trabajo de fin grado va dirigida a la interfaz de usuario, es decir, será el controlador de la experiencia de realidad virtual que previamente es creada mediante A-Frame.
+Como ya hemos visto, Micro Bit posee múltiples aplicaciones.
+Su aplicación en este trabajo de fin grado va a ser darle una funcionalidad de interfaz de usuario, es decir, será el controlador de la experiencia de realidad virtual creada con A-Frame.
 
-A la hora de buscar una funcionalidad para el Micro Bit el alumno poseía un ejemplo de movimiento físico en un entorno de A-frame, tras el estudio de las posibilidades que ofrece la programación del Micro Bit se ha conseguido implementar una serie de funciones extras.
-Al finalizar el último de los talleres El Micro Bit permitirá un movimiento dentro de la experiencia tanto físico como de la cámara mediante el acelerómetro integrado, también se añade un método de interacción con el objeto creado con BeetleBlocks y animado con A-Frame.
+A la hora de comenzar a programar esta funcionalidad para el Micro Bit, al alumno se le proporciona un programa de ejemplo de movimiento físico en un entorno de A-frame. Tras analizar las posibilidades que ofrece la programación del Micro Bit, se consigue implementar una serie de funcionalidades extras.
 
-Para hacer esto se ha realizado un programa en micropython una variación de Python adaptada al Micro Bit que nos permite ejecutar programas de python en nuestro dispositivo mediante a la importación de una serie de módulos de Python todo esto se describe en el la sección~\ref{subsec:Microbit_prog}, pero esto es solo un ejemplo de la versatilidad del Micro Bit.
+Al finalizar el último de los talleres, las funcionalidades implementadas en el Micro Bit permitirán un movimiento tanto físico como de la cámara dentro de la experiencia, basados en la combinación de los valores que ofrece el acelerómetro integrado, también se añade una funcionalidad de interacción con el objeto de Beetle Blocks insertado en el escenario de A-frame.
 
-Como forma de apoyo en el aprendizaje de micropython y diversas funciones y metodología de Python se ha hecho uso de las siguientes documentaciones~\cite{MicroPython:_doc}~\cite{Python:_doc}.
+Para la implementación de estas funcionalidades, se desarrolla un programa en micropython, una variación de Python adaptada al Micro Bit, que permite ejecutar programas de Python en el dispositivo. Para ello, será necesaria la importación de dos módulos, este proceso se describe en más detalle en la sección~\ref{subsec:Micro Bit_prog}.
+
+Como forma de apoyo en el aprendizaje de micropython y para el uso y metodología de diversas funciones implementadas en Python, se ha hecho uso de las siguientes documentaciones~\cite{MicroPython:_doc}~\cite{Python:_doc}.
 
 \section{Estructura de la memoria}
 \label{sec:In_Estruc}
 
-Tras esta introducción en la que se ha visto una visión de la realidad virtual origen y evolución, así como la descripción y significado de las experiencias VR y su continua introducción en la educación como método didáctico y de gran valor práctico.
-Seguidamente se describen las herramientas de diseño 3D  BeetleBlocks y Blender y se describe el diseño de objetos en 3D mediante bloques ya que es el método que se usará en este trabajo de fin de grado y el cual resulta perfecto para introducirse en la creación y diseño de estas figuras.
-La última tecnología a describir es el Micro Bit y dentro de sus múltiples posibilidades, se explica el porqué introducirlo en una experiencia de A-Frame y es para darle un uso como interfaz de usuario con esto se consigue complementar la experiencia de realidad virtual.\\
+En el capítulo de introducción de este trabajo se ofrece una visión general de la realidad virtual, así como, la descripción y significado de las experiencias VR, y además se muestra su emergente introducción en la educación como método didáctico y de gran valor práctico.
 
+A continuación, se describen las herramientas de diseño 3D Beetle Blocks y Blender en la sección \ref{sec:In_3D} y se fundamenta la elección de la programación de objetos en 3D mediante bloques, que resulta perfecto para introducirse en la creación y diseño de estas figuras.
+\clearpage
+La última tecnología a introducida es el Micro Bit, en esta sección también se explica la razón de incluirlo en una experiencia de A-Frame, para darle un uso como interfaz de usuario y así complementar la experiencia de realidad virtual.
 
-En el siguiente capítulo se describen los objetivos que se presentan en este trabajo de fin de  grado, en el Capítulo~\ref{chap:Obj}, en el que también hablamos de la motivación que que se ha tenido para la elección de este proyecto, como de la metodología y el plan de trabajo que se ha seguido.\\
+En el el Capítulo~\ref{chap:Obj}, se describen los objetivos que se presentan en este trabajo de fin de  grado, en el que también se habla de la motivación para la elección de esta tématica, así como de la metodología y el plan de trabajo que se ha seguido.
 
+A continuación en el Capítulo~\ref{chap:Cr_VR}, se ofrece una explicación del proceso de estudio de las diferentes tecnologías que se han usado en este trabajo, así como una breve explicación del uso o práctica de cada una de ellas para ayudar a comprender su funcionamiento.
 
-A continuación en el Capítulo~\ref{chap:Cr_VR} se ofrece una explicación del proceso de estudio de las diferentes tecnologías que se han usado en este trabajo así como un breve explicación de uso o práctica de cada una de ellas para ayudar a comprender su funcionamiento.
-Se puede dividir por tanto en tres partes diferenciadas.
+Este capítulo se puede dividir en tres partes diferenciadas.
 \begin{itemize}
 \item Sección~\ref{sec:3D_Design}.
 
-Su contenido corresponde al diseño de objetos en 3D con la descripción de las dos tecnologías usadas  BeetleBlocks y Blender.
+Su contenido corresponde al diseño de objetos en 3D con la descripción de las dos tecnologías usadas  Beetle Blocks y Blender.
 \item Sección~\ref{sec:Aframe}.
 
-Centrada en A-Frame en esta sección se describeel método y creación de experiencias de realidad virtual usando este \textit{framework}.
-\item Sección~\ref{sec:Microbit}.
+Centrada en A-Frame, en esta sección se describe el método y creación de experiencias de realidad virtual usando este \textit{framework}.
+\item Sección~\ref{sec:Micro Bit}.
 
-Se describen los distintos métodos de programación del Micro:bit y se definen los módulos que se usan para implementar la función de controlador. 
+Se describen los distintos métodos de programación del Micro Bit y se definen los módulos que se usan para implementar la función de interfaz de usuario. 
 \end{itemize} 
 
-En el capítulo~\ref{chap:talleres} se encuentra la serie de 3 talleres o prácticas de las que consta el núcleo práctico de este trabajo.
-
-El contenido y tecnología implementada de cada uno puede verse en la Tabla ~\ref{tabla:ejemplo} y es el siguiente 
+En el capítulo~\ref{chap:talleres} se encuentra el proceso de desarrollo y creación de las tres talleres o prácticas que suponen el núcleo práctico de este trabajo. El contenido y tecnología implementada de cada uno puede verse en la Tabla 1.1 y es el siguiente:
 \begin{itemize}
-\item Primer taller, sección~\ref{sec:Taller1}, el objetivo de este taller es la creación de una figura 3D mediante BeetleBlocks y su método de programación mediante bloques.
-\item Segundo taller, sección~\ref{sec:Taller2},la pretensión de este taller es conseguir impartir el método de creación de una experiencia de realidad virtual haciendo uso de las herramientas que ofrece A-frame.
-\item Por último un tercer taller, sección~\ref{sec:Taller3},centrado en el proceso de programación del Micro Bit para implementarlo en A-Frame como controlador y así poder moverse con él.
+\item Primer taller, sección~\ref{sec:Taller1}, el objetivo de este taller es la creación de una figura 3D mediante Beetle Blocks y su método de programación mediante bloques.
+\item Segundo taller, sección~\ref{sec:Taller2}, la pretensión de este taller es conseguir impartir el método de creación de una experiencia de realidad, virtual haciendo uso de las herramientas que proporciona A-frame.
+\item Por último un tercer taller, sección~\ref{sec:Taller3}, centrado en el proceso de programación del Micro Bit, y su implementación en A-Frame como controlador de la experiencia.
 \end{itemize} 
 
 
@@ -333,21 +349,28 @@ El contenido y tecnología implementada de cada uno puede verse en la Tabla ~\ref
   \begin{tabular}{ | c | c | c | c |} % tenemos tres colummnas, la primera alineada a la izquierda (l), la segunda al centro (c) y la tercera a la derecha (r). El | indica que entre las columnas habrá una línea separadora.
     \hline
      & TALLER 1 & TALLER 2 &TALLER 3\\ \hline % el hline nos da una línea vertical
-    Tecnología & BeetleBlocks & A-Frame & Microbit \\ \hline
-    Contenido & Diseño de un objeto 3D & Creación de experiencia VR & Programar Micro:bit como IU \\
+    Tecnología & Beetle Blocks & A-Frame & Micro Bit \\ \hline
+    Contenido & Diseño de un objeto 3D & Creación de experiencia VR & Programar Micro Bit como IU \\
     \hline
   \end{tabular}
-  \label{tabla:ejemplo}
+  \label{figura:tabla}
   \caption{Talleres didácticos}
  \end{center}
 \end{table}
 
-El capítulo~\ref{chap:conclusiones} corresponde a las conclusiones, es donde se analizan los resultados obtenidos y si por tanto se ha alcanzado a conseguir los objetivos propuestos previamente.\\
-Además se expone la aplicación de los conocimientos obtenidos por el alumno durante la realización de este grado que han sido fundamentales para la consecución de este trabajo de fin grado.
-Los dos últimos puntos corresponden a los conocimientos útiles aprendidos propios de este trabajo y a las posibles mejoras y trabajos futuros relacionados con los expuestos aquí que se podrían realizar o aplicar en un futuro.\\
+El capítulo~\ref{chap:conclusiones} corresponde a las conclusiones, donde se analizan los resultados obtenidos y se expone la consecución de los objetivos propuestos previamente.
+Además se pone de manifiesto, la aplicación de los conocimientos obtenidos por el alumno durante la realización de este grado, los cuales son fundamentales para la consecución de este trabajo de fin grado.
+Los dos últimos puntos de este capítulo corresponden a los conocimientos útiles aprendidos en consecuencia de este trabajo, así como los posibles avances y mejoras aplicables a trabajos futuros.\\
 
+Las últimas secciones de este trabajo corresponden a la Bibliografía y a los  Apéndices ~\ref{chap:apen}, ~\ref{chap:apen2}, ~\ref{chap:apen3} y ~\ref{chap:apen4}.
+\begin{itemize}
+\item En el primero de ellos se describe de una forma más detallada la función y descripción de todos los bloques de Beetle Blocks.
+\item En el segundo de ellos se exponen los pasos necesarios para programar el Micro Bit en Windows.
+\item El tercero por su parte esta formado por la serie de diapositivas que forman los tres talleres, además de los programas que conforman la parte práctica del taller del Micro Bit.
 
-Las últimas secciones de este trabajo corresponden a la Bibliografía y los Apéndice~\ref{chap:apen} y Apéndice~\ref{chap:apen2} en el que se describe de una forma más detallada  una guia de uso y descripción de todos los bloques de BeetleBlocks y el proceso de creación de un objeto en 3D con BeetleBlocks.
+\item En el cuarto y último se presentan las diapositivas que conforman los talleres didácticos.
+
+\end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Objetivos%
@@ -359,60 +382,62 @@ Las últimas secciones de este trabajo corresponden a la Bibliografía y los Apénd
 \section{Objetivos}
 \label{sec:objetivos}
 
-Una vez han sido descritas las experiencias de realidad virtual, el diseño 3D así como las tecnologías que van a ser usadas en este trabajo, el siguiente paso es describir la serie de objetivos que se proponen conseguir con este trabajo de fin de grado.
+Una vez han sido descritas las experiencias de realidad virtual, el diseño 3D así como las tecnologías que van a ser usadas en este trabajo, se describe la serie de objetivos que se proponen conseguir con este trabajo de fin de grado.
 
 \subsection{Exponer la utilidad de la VR en la educación}
 \label{subsec:Obj1}
 
 El primer objetivo a la hora de realizar este trabajo de fin de grado, es exponer la utilidad de la realidad virtual en la educación, y como gracias a ella podemos llegar a aprender y experimentar con un entorno de realidad virtual de una forma práctica.
 
-Gracias a la novedad y el gran valor interactivo que proporciona la realidad virtual la retención de las tecnologías aplicadas por los alumnos son retenidas de una manera efectiva.  
+Gracias a la novedad y el gran valor interactivo que proporciona la realidad virtual, la retención de las tecnologías aplicadas por los alumnos son retenidas de una manera efectiva.  
 
 \subsection{Creación de un objeto 3D y una experiencia VR}
 \label{subsec:Obj2}
 
-El segundo objetivo a conseguir es lograr crear una dirección didáctica en la que los alumnos de enseñanzas medias sean introducidos ala creación de objetos 3D y de una experiencia de realidad virtual.
+El segundo objetivo a conseguir es lograr crear una dirección didáctica en la que los alumnos de enseñanzas medias sean introducidos a la creación de objetos 3D y de una experiencia de realidad virtual.
 
-Para conseguirlo se ha optado por la programación mediante bloques para el diseño 3D en base a este artículo~\cite{Prog:_bloques} que corrobora su efectividad como método introductorio a la hora de realizar un primer acercamiento a este campo.
+Para conseguirlo se ha optado por la programación mediante bloques para el diseño 3D de los objetos que proporciona Beetle Blocks, sirviendo como apoyo este artículo~\cite{Prog:_bloques} que corrobora su efectividad como método introductorio a la hora de realizar un primer acercamiento a este campo.
+
+Para introducir la creación de un entorno de realidad virtual la utilidad elegida es A-Frame, creado con el fin de permitir a los desarrolladores web y diseñadores de 3D y VR experiencias con HTML sin tener que conocer WebGL.
 
 
-\subsection{Implementar el Micro:bit dentro de A-Frame}
+\subsection{Implementar el Micro Bit dentro de A-Frame}
 \label{subsec:OBj3}
 
-El tercer y último objetivo esta relacionado con el Micro:bit.
-La introducción de este dispositivo se introduce en este trabajo gracias a la recomendación del tutor.
+El tercer y último objetivo, está relacionado con el Micro Bit.
+La introducción de este dispositivo se introduce en el trabajo gracias a la recomendación del tutor.
 
-A la hora de implementar alguna función del Micro:bit que estuviera relacionada con los dos talleres previos, se concluyó que la mejor opción es darle funciones de controlador o interfaz de usuario en la experiencia de A-Frame.
+A la hora de implementar alguna función del Micro Bit que estuviera relacionada con los dos talleres previos, se concluyó que la mejor opción es darle funciones de controlador o interfaz de usuario en la experiencia de A-Frame.
 
-El objetivo por tanto es integrarlo en A-Frame programándolo con su lenguaje propio micropython.Esto llevará a cabo una investigación previa del alumno de este lenguaje y sus diferentes módulos.
+El objetivo por tanto es integrarlo en A-Frame programándolo con su lenguaje propio micropython. Esto llevará a cabo una investigación previa del alumno de este lenguaje y sus diferentes módulos.
 
 \section{Motivación}
 \label{sec:Motiv}
 
-La principal motivación para llevar a cabo a la realización de este trabajo de fin de grado, es la propia tecnología en sí, el alunmo siempre se ha visto interesado en las temáticas tratadas, tanto el diseño de objetos en 3D, como las experiencias en realidad virtual y la programación embebida.
+La principal motivación para llevar a cabo la realización de este trabajo de fin de grado, es la propia tecnología en sí, el alumno se interesa en las temáticas tratadas, tanto el diseño de objetos en 3D, como las experiencias en realidad virtual y la programación embebida.
 
-El gran potencial que tienen, y los múltiples usos que se le pueden dar han sido muy interesantes desde un primer momento, para el alunmo ha sido una gran motivacíon la  realización de este trabajo ya que podía aprender acerca de estos ámbitos, que resultaban una novedad en sus conocimientos y además darle una utilidad en forma de talleres para que más gente pueda aprovechar la investigación llevada a cabo.
+El gran potencial que tienen, y los múltiples usos que se le pueden dar han sido una gran fuente de interés desde un primer momento para el alumno, lo que ha generado una gran motivación para la realización de este trabajo y ha ayudado al aprendizaje de este área. Además se ha otorgado utilidad a los conocimientos en forma de talleres para que más gente pueda aprovechar la investigación llevada a cabo.
 
-Otra motivación principal esta relacionada con los entornos de desarrollo de las 3 tecnologías principales, BeetleBlocks, A-Frame y Micro:bit incitan a la creatividad debido a su potencial y múltiples funciones con una interfaz sencilla.
+Otra de los impulsos principales al realizar este trabajo está relacionada con los entornos de desarrollo de las 3 tecnologías principales, Beetle Blocks, A-Frame y Micro Bit, los cuales incitan a la creatividad debido a su potencial y múltiples funciones con una interfaz sencilla.
 \clearpage
 \section{Metodología y Plan de Trabajo}
 \label{sec:MyP}  
- En esta sección se expone la metodología y el plan de trabajo que se han llevado a cabo para la realización de este  trabajo de fin de grado tanto para la memoria como para la serie de talleres.
+ En esta sección se expone la metodología y el plan de trabajo que se han llevado a cabo para la realización del trabajo de fin de grado, tanto para la memoria como para la serie de talleres.
 
 \subsection{Metodología}
 \label{subsec:Metod}
 
-La metodología que se ha seguido para la realización de este trabajo de fin grado, esta orientada en la construcción de una serie de talleres didácticos.
+La metodología que se ha seguido para la realización de este trabajo de fin grado, está orientada a la construcción de una serie de talleres didácticos.
 
 Un taller es un programa educacional corto e intensivo, para una cantidad relativamente pequeña de personas, en un área de conocimientos determinada que hace énfasis en la participación para la resolución de problemas. 
 
-Antes de la creación de los talleres ha sido necesario un estudio de las tecnologías utilizadas, realización de pequeños tutoriales y selección de las prácticas más adecuadas para el nivel de conocimientos de los participantes.
+Antes de la creación de los talleres ha sido necesario un estudio de las tecnologías utilizadas, una realización de pequeños tutoriales y una selección de las prácticas más adecuadas para el nivel de conocimientos de los participantes.
 
 Los pasos que se han seguido para la creación de los talleres son los siguientes:
 \begin{itemize}
 \item Definir los objetivos del taller.
-\item Adecuarlos a los participantes, en este caso se trata de alumnos de enseñanzas medias por lo que deben ser acordes a sus conocimientos.
-\item Definir el formato del taller, será un taller en el que los alumnos harán experiencias guiadas pero en las que participaran activamente en ciertos momentos para involucrarlos con el taller.
+\item Adecuar los conocimientos a los lectores, en este caso, alumnos de enseñanzas medias, buscando la concordancia a sus conocimientos.
+\item Definir el formato del taller, siendo un taller en el que los alumnos harán experiencias guiadas pero en las que participarán activamente para mantener el vínculo con el taller.
 \end{itemize}
 
 Cada taller a su vez sigue una metodología común que viene dada por los siguientes puntos:
@@ -420,23 +445,25 @@ Cada taller a su vez sigue una metodología común que viene dada por los siguient
 \item[$*$] Presentación del tema general del taller.
 \item[$*$] Planteamiento de los objetivos del taller.
 \item[$*$] Presentación del software que se usará.
-\item[$*$] Fomentar la participación activa
+\item[$*$] Fomentar la participación activa.
 \item[$*$] Una vez finalizado resumir la sesión y pedir feedback al grupo.
 \end{enumerate}
 \subsection{Plan de trabajo}
 \label{subsec:Plan} 
 
-En base a la realización de los talleres se debía tener un conocimiento profundo de todo el software que se usa en ellos,debido a esto se ha realizado un plan de trabajo en el que primeramente se estudiaron las 2 tecnologías BeetleBlocks y A-Frame.
+Para la realización de los talleres, se debe tener un conocimiento profundo de todo el software que se usa en ellos. Por ello, se ha realiza un plan de trabajo en el que primeramente se estudian las 2 tecnologías Beetle Blocks y A-Frame.
 
-Gracias a la ayuda del tutor mediante tutorias a través de Hanghouts y mediante la investigación y realización de tutoriales se obtuvo una base sólida acerca de ellas.\\
+Gracias a la ayuda del tutor mediante tutorías a través de Hanghouts y mediante la investigación y realización de tutoriales, se obtuvo una base sólida acerca de ellas.\\
 
-Posteriormente se contempló el uso de Tensorflow para añadir un tipo de interfaz de usuario a la experiencia de realidad virtual pero este primer planteamiento fue desechado en detrimento de la introducción del Micro: bit, la popularidad y variedad de aplicaciones de este último fue determinante, se llegó a la conclusión de introducirlo como interfaz de usuario por tanto se desarrolló un programa en python que le otorgara funciones de controlador dentro de las experiencias de A-Frame.\\
+Posteriormente se contempló el uso de Tensorflow para añadir un tipo de interfaz de usuario a la experiencia de realidad virtual, sin embargo este primer planteamiento fue descartado en detrimento de la introducción del Micro: bit. La popularidad y variedad de aplicaciones de este último fue determinante, se llegó a la conclusión de introducirlo como interfaz de usuario, por tanto se desarrolló un programa en Python que le otorgara funciones de controlador dentro de las experiencias de A-Frame.\\
 
-Una vez cimentado un conocimiento acerca de BeetleBlocks, A-Frame y Micro:bit se pasó a plantear los talleres y se dividieron en una serie de 3 talleres autoconclusivos pero a su vez recursivos entre ellos.
-Con esto se consigue que realizando uno de ellos se obtuvieran conocimientos acerca de la tecnología en cuestión y a su vez alguien que realizara los tres tenga una experiencia completa de realidad virtual.
-El formato de los talleres es del tipo Scratch.
+Una vez cimentado un conocimiento acerca de Beetle Blocks, A-Frame y Micro:bit, se pasó a plantear los talleres y se dividieron en una serie de 3 talleres autoconclusivos, pero a su vez, recursivos entre ellos.
+Con esto se consigue que realizando uno de ellos, se obtuvieran conocimientos acerca de la tecnología en cuestión y a su vez tener una experiencia completa de realidad virtual incorporando el Micro Bit como un controlador y una figura de Beetle Blocks al escenario de A-frame al completar los 3 talleres.\\
 
-[...]
+El formato de los talleres elegido es una presentación con PowerPoint.
+Cada taller, cuenta con una serie de diapositivas en las que se introduce la tecnología, se establecen unos pasos previos y una serie de ejemplos prácticos para ayudar a la comprensión y uso durante la práctica.
+Además dentro de la presentación, se intercalan una serie de ejercicios en los que se requiere utilizar lo aprendido, para que los alumnos pongan en práctica por ellos mismos las diferentes herramientas.
+Un ejemplo de lo anteriormente expuesto, se puede ver en el primer taller cuando se pide diseñar un objeto en Beetle Blocks con el requerimiento obligatorio de usar una serie de bloques dados.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -452,20 +479,20 @@ El formato de los talleres es del tipo Scratch.
 Este capítulo se centra en presentar y desarrollar el software y el hardware que va a ser usado en este trabajo, además se ofrece su forma de uso y varios ejemplos para facilitar su comprensión.
 \section{Diseño 3D}
 \label{sec:3D_Design}
-Dentro del diseño 3D, se ha decidido dividir tres partes diferenciadas correspondientes a los diferentes puntos en los que se divide esta sección.
+Dentro del diseño 3D, se ha decidido dividir tres partes diferenciadas, correspondientes a los diferentes puntos en los que se divide esta sección.
 
 En primer lugar en el punto \ref{subsec:Prog} se trata la programación mediante bloques, se explica la razón por la que es un método válido a la hora de ofrecer un taller didáctico centrado en introducir el diseño 3D.
 
-BeetleBlocks es una herramienta que usa la programación mediante bloques para el diseño de objetos 3D, tanto el análisis como el uso de esta herramienta es tratado en \ref{subsec:Beetle} y supone el núcleo del diseño 3D realizado por el alumno en este trabajo.
+Beetle Blocks es una herramienta que usa la programación mediante bloques para el diseño de objetos 3D, tanto el análisis como el uso de esta herramienta es tratado en \ref{subsec:Beetle} y supone el núcleo del diseño 3D realizado por el alumno en este trabajo.
 
-Por último en la subsección \ref{subsec:Blender} se expone Blender, la segunda de las herramientas de diseño 3D tratadas en este trabajo, su uso en este caso se limita a proporcionar el formato buscado para el objeto creado con BeetleBlocks, aunque cabe recalcar que se trata de un software de diseño mucho más complejo que este último.
+Por último en la subsección \ref{subsec:Blender} se expone Blender, la segunda de las herramientas de diseño 3D tratadas en este trabajo, su uso en este caso se limita a proporcionar el formato buscado para el objeto creado con Beetle Blocks, aunque cabe recalcar que se trata de un software de diseño mucho más complejo que este último.
 
 \subsection{Programación mediante bloques}
 \label{subsec:Prog}
 
-La programación mediante bloques, facilita mucho las cosas si no no se tiene experiencia de ningún tipo con la programación, en este trabajo de fin de grado aparece tanto en BeetleBlocks como en uno de los métodos de programación del Micro: bit.
+La programación mediante bloques, facilita la evolución si no se tiene experiencia de ningún tipo con la programación. En este trabajo de fin de grado aparece tanto en Beetle Blocks como en uno de los métodos de programación del Micro: bit.
  
-Artículos como los siguientes \cite{Prog:_bloques} \cite{Prog:_bloques2}, evidencian que el surgimiento de este tipo de programación esta empezando a introducirse en el comienzo de la dodencia de la programación y los resultados obtenidos son mejores en todos los conceptos de la programación, como se puede observar en la siguientes Figuras \ref{figura:Prog_bloques_Compare} y \ref{figura:Prog_bloques_Compare2}.
+Artículos como los siguientes \cite{Prog:_bloques} \cite{Prog:_bloques2}, evidencian que el surgimiento de este tipo de programación está empezando a introducirse en el comienzo de la docencia de la programación y los resultados obtenidos son mejores en todos los conceptos de la programación, como se puede observar en la siguientes Figuras \ref{figura:Prog_bloques_Compare} y \ref{figura:Prog_bloques_Compare2}.
 
 \begin{figure}[H]
     		\centering
@@ -481,18 +508,18 @@ Artículos como los siguientes \cite{Prog:_bloques} \cite{Prog:_bloques2}, eviden
 		\label{figura:Prog_bloques_Compare2}
 \end{figure} 
 
-\subsection{BeetleBlocks} 
+\subsection{Beetle Blocks} 
 \label{subsec:Beetle}
 \begin{wrapfigure}{r}{0.35\linewidth}
     \centering
   \includegraphics[width=0.4\textwidth]{img/Beetlelogo}\\
 \end{wrapfigure}
-Beetle Blocks es un entorno de programación visual por bloques que permite diseñar formas tridimensionales este proyecto es creado por Eric Rosenbaum, Duks Koschitz, y Bernat Romagosa, además de la ayuda en la programación de Jens Mönig.
-De acuerdo con lo que expone Bernat Romagosa, desarrollador principal de este software, en el artículo \cite{BeetleBlocks:_Bernat}, Beetle Blocks es más que una herramienta: es también una puerta de entrada muy atractiva al mundo de la programación.
-El editor de BeetleBlocks está basado en  Scratch e implementado usando Snap! y ThreeJS.
+Beetle Blocks es un entorno de programación visual por bloques que permite diseñar formas tridimensionales, este proyecto es creado por Eric Rosenbaum, Duks Koschitz, y Bernat Romagosa, además de la ayuda en la programación de Jens Mönig.
+De acuerdo con lo que expone Bernat Romagosa, desarrollador principal de este software, en el artículo \cite{Beetle Blocks:_Bernat}, Beetle Blocks es más que una herramienta: es también una puerta de entrada muy atractiva al mundo de la programación.
+El editor de Beetle Blocks está basado en  Scratch e implementado usando Snap! y ThreeJS.
 
-Para empezar a usar la herramienta basta con acceder a la web \footnote{http://beetleblocks.com/} y hacer click sobre \textit{``Run BeetleBlocks"}.
-La pantalla mostrada al arrancar Beetleblocks corresponde a la Figura~\ref{figura:Inicio Beetle Blocks}, se pueden 3 áreas diferenciadas a la izquierda el área de los bloques en el que se muestran los bloques correspondientes a la categoría seleccionada, en el centro el área de trabajo para colocar los sprites o conjuntos de bloques, y a la derecha el área de visualización 3D , para observar el resultado de computación de los bloques creados.
+Para empezar a usar la herramienta basta con acceder a la web \footnote{http://Beetle Blocks.com/} y hacer click sobre \textit{``Run Beetle Blocks"}.
+La pantalla mostrada al arrancar Beetle Blocks corresponde a la Figura~\ref{figura:Inicio Beetle Blocks}, se pueden 3 áreas diferenciadas a la izquierda el área de los bloques en el que se muestran los bloques correspondientes a la categoría seleccionada, en el centro el área de trabajo para colocar los sprites o conjuntos de bloques, y a la derecha el área de visualización 3D , para observar el resultado de computación de los bloques creados.
 \begin{figure}[H]
     		\centering
     		\includegraphics[width=15cm, keepaspectratio]{img_b/Bettleblocks}
@@ -500,14 +527,14 @@ La pantalla mostrada al arrancar Beetleblocks corresponde a la Figura~\ref{figur
 		\label{figura:Inicio Beetle Blocks}
 \end{figure} 
 
-Es recomendable crear una cuenta en BeetleBlocks antes de empezar a usarlo para este trabajo la cuenta que se ha usado ha sido con el usuario \textbf{jonybob}  y Contraseña \textbf{TFG2490}.
+Es recomendable crear una cuenta en Beetle Blocks antes de empezar a usarlo para este trabajo la cuenta que se ha usado ha sido con el usuario \textbf{jonybob}  y Contraseña \textbf{TFG2490}.
 \clearpage
 \subsection{Categorías de los bloques} 
 \label{subsec:Beetle}
-Como ya se expone anteriormente en el trabajo Beetle Blocks utiliza la promación mediante bloques para crear los objetos en 3D, estos tienen diferentes tipos de categorías según su función, el fundamento de Beetleblocks es programar un escarabajo virtual (Figura~\ref{figura:Beetle} para que, con su movimiento, vaya generando formas tridimensionales.
+Como ya se expone anteriormente en el trabajo Beetle Blocks, utiliza la promación mediante bloques para crear los objetos en 3D, estos tienen diferentes tipos de categorías según su función. El fundamento de Beetle Blocks es programar un escarabajo virtual (Figura~\ref{figura:Beetle} para que, con su movimiento, vaya generando formas tridimensionales.
 Las diferentes categorías de los bloques y su función es la siguiente:
   \begin{enumerate}
-  	\item Motion: Donde se engloban los bloques para movernos por la malla
+  	\item Motion: Donde se engloban los bloques para movernos por la malla.
   	\item Shapes: Figuras y formas predeterminadas.
   	\item Sensing: funciones para usar con los bloques. 
   	\item Variables: creación y uso de variables de entorno. 
@@ -526,10 +553,10 @@ Las diferentes categorías de los bloques y su función es la siguiente:
 
 En el Apéndice~\ref{chap:apen} se puede ver en más profundidad la descripción y uso de todos los bloques.
 
-\subsection{Prácticas de aprendizaje en BeetleBlocks} 
+\subsection{Prácticas de aprendizaje en Beetle Blocks} 
 \label{subsec:Beetle}
 A la hora de aprender el uso de Beetle Blocks el alumno comenzó diseñando figuras básicas para familiarizarse con el uso de los distintos bloques.
-A continuación se exponen una serie de ejemplos prácticos que se utilizaron para el aprendizaje del uso de la herramienta, se muestra como crear figuras básicas, moverse en los 3 ejes espaciales (x, y, z ) y el uso de diferentes funciones. y por último un objeto que usa todo lo aprendido para la creación de unos auriculares.
+A continuación, se exponen una serie de ejemplos prácticos que se utilizaron para el aprendizaje del uso de la herramienta. Se muestra como crear figuras básicas, moverse en los 3 ejes espaciales (x, y, z ) y el uso de diferentes funciones. Por último, se expone el proceso de creación de un objeto más complejo con el objetivo de justificar los conocimientos aprendidos, y que además sirva como figura práctica para la realización del segundo taller.
 
 
 \begin{itemize}
@@ -537,7 +564,7 @@ A continuación se exponen una serie de ejemplos prácticos que se utilizaron para
 	
 	\item \large Movimiento por los ejes \\
 	\normalsize
-	Dependiendo de como sea la orientación de las figuras dibujadas es necesario moverse por los ejes y orientar el escarabajo que como ya se sabe sirve como puntero de orientación para dibujar. El bloque que se usa para moverse y situarse en donde se quiere se puede observar en la siguiente Figura~\ref{figura:Beetle_move}
+	Dependiendo de como sea la orientación de las figuras dibujadas es necesario moverse por los ejes y orientar el escarabajo como puntero de orientación para dibujar. El bloque que se usa para moverse y situarse donde se desea se puede observar en la siguiente Figura~\ref{figura:Beetle_move}
 	\begin{figure}[H]
     		\centering
     		\includegraphics[width=0.22\textwidth]{img_b/axis}
@@ -559,27 +586,39 @@ A continuación se exponen una serie de ejemplos prácticos que se utilizaron para
 \clearpage	
 	\item \large Figuras predeterminadas \\
 	\normalsize
-	Las figuras predeterminadas que nos ofrece Bettleblocks son el cubo (en dos formas), el cilindro y la esfera cuyos bloques se corresponden con los de la Figura~\ref{figura:Beetle_figures} en orden respectivo de arriba hacia abajo. Estas figuras permiten hacer varias figuras más complejas combinándolas entre ellas.
+	Las figuras predeterminadas que nos ofrece Bettleblocks son el cubo (en dos formas), el cilindro y la esfera cuyos bloques se corresponden con los de la Figura~\ref{figura:Beetle_figures} en orden respectivo de arriba hacia abajo. Estas figuras permiten hacer varias creaciones más complejas combinándolas entre ellas.
 	
 	
 	\begin{figure}[H]
     		\centering
     		\includegraphics[width=0.28\textwidth]{img_b/figuras_4}
-		\caption{Bloques de las figuras predeterminadas de BeetleBlocks}
+		\caption{Bloques de las figuras predeterminadas de Beetle Blocks}
 		\label{figura:Beetle_figures}
 	\end{figure} 	
 		
 	\item \large Auriculares \\
 	\normalsize	
-	Como parte final en el aprendizaje de Beetleblocks, se ha creado una figura más compleja para corroborar lo aprendido.La figura en cuestión son unos auriculares, su proceso de creación al detalle se expone en el Apéndice~\ref{chap:apen2}, y el objeto y bloques que lo componen se puede ver en la Figura~\ref{figura:Beetle_headphones}
+	Como parte final en el aprendizaje de Beetle Blocks, se ha creado una figura más compleja para corroborar lo aprendido. La figura en cuestión son unos auriculares, el objeto y bloques que lo componen se pueden ver en la Figura~\ref{figura:Beetle_headphones}
+	
+	Desde un primer momento, se ha pensado que esta figura sirva como práctica para el taller, por lo tanto, su complejidad tampoco debía ser muy elevada. El requisito era que usara los bloques que son considerados más importantes para aprender el manejo y uso de Beetle Blocks.
+	
+	Con estos bloques se pretende que los alumnos además de aprender a diseñar objetos 3D en Beetle Blocks, aprendan algunos fundamentos de la programación tradicional, como pueden ser el uso de bucles, crear funciones o la inicialización de del escenario.
+	\begin{itemize}
+	\item Posicionamiento, fundamental para  mover el escarabajo a un punto exacto.
+	\item Movimiento, para aprender a moverse en los 3 ejes.
+	\item Dibujo de líneas/curvas, son los bloques de creación.
+	\item Bucle, recurso básico en programación.
+	\item Conjunto de bloques ``función", con el objetivo de mostrar como organizar los \\ bloques y controlar la ejecución.	
+	\end{itemize}
+		
 	
 \begin{figure}[H]
  \centering
   \subfloat[Bloques]{
-   \label{f:Colores}
+   \label{f:Bloques_Ob}
   \includegraphics[width=0.6\textwidth, height=0.5\textwidth]{img_b/headphones_blocks}}
     \subfloat[Imagen del objeto]{
-   \label{f:Funciones}
+   \label{f:Imagen_Ob}
     
      \includegraphics[width=0.4\textwidth, height=0.5\textwidth]{img_b/cascos_pic}}
    \caption{Bloques e imagen de auriculares}
@@ -587,12 +626,36 @@ A continuación se exponen una serie de ejemplos prácticos que se utilizaron para
 \end{figure}
 \end{itemize}
 
+	A continuación y apoyándose en la Figura~\ref{f:Bloques_Ob} se analiza la composición de los bloques de los auriculares y su función. 
+	Tanto el bloque central, como el de la izquierda representan 2 funciones, uno para crear la diadema y otro para crear una orejera, más adelante se explica su función al detalle. 
+	
+	El bloque de la derecha por tanto representa lo que vendría a ser el "main" si se mirara como un fichero en cualquier lenguaje de programación. Los primeros dos bloques, pueden ser llamados bloques de "control", con el primero de ellos se restringe la ejecución de los bloques anidados hasta que se pulse sobre ellos, el segundo sirve para hacer un reset al plano y dejarlo vacío.
+	Tras unos bloques de posicionamiento y rotación, se invoca por primera vez el conjunto de bloques encargado de dibujar una de las orejeras, su metodología consiste en crear una circunferencia, en rojo en el dibujo. Una vez terminado se vuelve a posicionar el escarabajo, en este caso en el centro del círculo creado por la función \textit{ear} y ayudándose del bloque que dibuja una esfera se rellena el interior formando así una de las orejeras, en amarillo en la Figura~\ref{figura:Orejeras}.
+	
+	El siguiente paso es replicar otra orejera paralela e invertida a la actualmente creada, por tanto se mueve el escarabajo a la misma posición pero, en este caso, a la parte negativa del \textbf{eje X} se vuelve a invocar la función \textit{ear} y posteriormente se dibuja la esfera, se puede ver el resultado en la Figura~\ref{figura:Orejeras}.
+	Por último solo queda crear la diadema, en naranja en la Figura~\ref{f:Imagen_Ob}, que viene a ser una curva que une ambas, en el último bloque del ``main" se invoca la función central, que es el encargado de dibujarla.
+	
+	En primera instancia, este conjunto de bloques, posiciona el escarabajo entre las dos orejeras, sin embargo lo sitúa en una posición superior en la parte positiva del \textbf{eje Z}. Se pueden observar dos bucles, el bucle interior dibuja media curva en el eje positivo del eje x que une el centro con la orejera derecha, Figura\ref{figura:Diadema}, el bucle exterior repite este proceso en la parte negativa del eje x, dando finalmente el resultado observado en la Figura\ref{f:Imagen_Ob}.
+		
+	\begin{figure}[H]
+ \centering
+  \subfloat[Orejeras]{
+   \label{figura:Orejeras}
+  \includegraphics[width=0.4\textwidth, height=0.5\textwidth]{img_b/ear}}
+    \subfloat[diadema]{
+   \label{figura:Diadema}
+    
+     \includegraphics[width=0.6\textwidth, height=0.5\textwidth]{img_b/diadema}}
+   \caption{Partes de los Auriculares}
+ \label{figura:Auriculares_1}
+\end{figure}
+
 \clearpage
 \subsection{Blender}
 \label{subsec:Blender}
 
-Blender es una potente herramienta open source de creación 3D.
-En este trabajo de fin de grado se le ha dado un uso muy concreto, se trata de convertir la figura creada con BeetleBlocks a un formato compatible con A-Frame ( \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} ). Como es \textit{Open Source} su documentación~\cite{Blender:_doc} es accesible para todo aquel que la desee y es la que se ha utilizado para este trabajo de fin de grado.
+Blender es una potente herramienta OpenSource de creación 3D.
+En este trabajo de fin de grado, se le ha dado un uso muy concreto, se trata de convertir la figura creada con Beetle Blocks a un formato compatible con A-Frame ( \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} ). Como es \textit{Open Source} su documentación~\cite{Blender:_doc} es accesible para todo aquel que la desee y es la que se ha utilizado para este trabajo de fin de grado.
 La pantalla mostrada al iniciar Blender se puede ver en la Figura \ref{figura:Init_BlenderA}
 
 \begin{figure}[H]
@@ -624,13 +687,13 @@ Estos son los pasos necesarios para exportar la figura en el formato correcto: \
 \section{A-frame}
 \label{sec:Aframe}
 
-A-Frame es un framework que permite crear experiencias de realidad virtual.Originalmente fue concebido dentro de Mozilla Firefox, y ahora es administrado por desarrolladores de Supermedium (Diego Marcos, Kevin Ngo) y Google (Don McCurdy). A-Frame fue diseñado para ofrecer una manera potente de desarrollar contenido VR. Al ser una plataforma independiente Open Source, A-Frame ha crecido hasta convertirse en una de las comunidades de realidad virtual más grandes.
+A-Frame es un framework que permite crear experiencias de realidad virtual. Originalmente fue concebido dentro de Mozilla Firefox, y ahora es administrado por desarrolladores de Supermedium (Diego Marcos, Kevin Ngo) y Google (Don McCurdy). A-Frame fue diseñado para ofrecer una manera potente de desarrollar contenido VR. Al ser una plataforma independiente, Open Source, A-Frame ha crecido hasta convertirse en una de las comunidades de realidad virtual más grandes.
 
-Se integra en un documento HTML haciendolo simple de usar en primera instancia, aunque el núcleo es un potente framework ECS\footnote{Entity Component System} para Three.js donde los desarrolladores  de software pueden crear escenas WebVR y 3D usando HTML.
+Se integra en un documento HTML haciéndolo simple de usar en primera instancia, aunque el núcleo es un potente framework ECS\footnote{Entity Component System} para Three.js donde los desarrolladores  de software pueden crear escenas WebVR y 3D usando HTML.
 
-Por tanto se compone de elementos propios basados en HTML y de la importación de archivos en Javascript para complementar  y añadir funcionalidades, todo esto se puede ver de una forma más detallada en su documentación~\cite{A-Frame:_doc}.
+Por tanto se compone de elementos propios basados en HTML y de la importación de archivos en JavaScript para complementar  y añadir funcionalidades, todo esto se puede ver de una forma más detallada en su documentación~\cite{A-Frame:_doc}.
 
-A-Frame  da soporte a la mayoría de dispositivos de realidad virtual como Vive, Rift, Windows Mixed Reality, Daydream, GearVR, Cardboard, Oculus Go, e incluso puede ser usada para realidad aumentada. El objetivo de A-Frame es definir una experiencia inmersiva completa yendo más allá del contenido en 360º, y dando soporte completo para controladores y seguimiento posicional.
+A-Frame  da soporte a la mayoría de dispositivos de realidad virtual como Vive, Rift, Windows Mixed Reality, Daydream, GearVR, Cardboard, Oculus Go, e incluso puede ser usada para realidad aumentada. El objetivo de A-Frame es definir una experiencia inmersiva completa, yendo más allá del contenido en 360º, y dando soporte completo para controladores y seguimiento posicional.
 
 \subsection{ A-frame dentro de HTML}
 \label{subsec:HTML}
@@ -660,7 +723,7 @@ De entre los  principales conceptos y elementos que introduce A-Frame se van a d
 </html>
 \end{verbatim}
 	
-	\item \textit{Entity}: como se especifica en el patrón ECS(Sistema-entidad-componente), las entidades son objetos a los que se le añaden componentes, por defecto las entidades tienen las componentes de posición rotación y escala, para explicarlo de una forma más sencillas las entidades representan los objetos 3D en la escena.En A-Frame las entidades se representan mediante el elemento $<$entity $>$.A continuación se muestra como añadir un objeto de tipo box, con color rojo, a la escena:
+	\item \textit{Entity}: como se especifica en el patrón ECS(Sistema-entidad-componente), las entidades son objetos a los que se le añaden componentes, por defecto las entidades tienen las componentes de posición rotación y escala, para explicarlo de una forma más sencilla, las entidades representan los objetos 3D en la escena.En A-Frame las entidades se representan mediante el elemento $<$entity $>$. A continuación se muestra como añadir un objeto de tipo box, con color rojo, a la escena:
 \begin{verbatim}
 <body>
  <a-scene>
@@ -671,7 +734,7 @@ De entre los  principales conceptos y elementos que introduce A-Frame se van a d
 
 \end{verbatim}
 
-	\item \textit{Component}: Como se define en el patrón ECS, una componente es una porción modular de datos que se añade a una entidad para otorgarla una apariencia, comportamiento y funcionalidad determinada. Las componentes pueden ser de dos formatos, con una propiedad única o con varias.A continuación se muestra un ejemplo de ambas.
+	\item \textit{Component}: Como se define en el patrón ECS, una componente es una porción modular de datos que se añade a una entidad para otorgarla una apariencia, comportamiento y funcionalidad determinada. Las componentes pueden ser de dos formatos, con una propiedad única o con varias. A continuación se muestra un ejemplo de ambas.
 \begin{verbatim}
 <body>
  <a-scene>	
@@ -680,7 +743,7 @@ De entre los  principales conceptos y elementos que introduce A-Frame se van a d
  </a-scene>
 </body> 
 \end{verbatim}
-	\item \textit{Primitives}: A-Frame proporciona una gran cantidad de objetos predeterminados como $<$a-box $>$ $<$a-sky $>$ , los cuales son identificados como primitives o también nombrados primitivos en este trabajo, proporcionan una manera sencilla de usar figuras 3D para empezar a usar A-Frame,y admiten la adición de componentes . Los desarrollados además pueden crear sus propios primitivos. Unos ejemplos de los primitivos precargados son:
+	\item \textit{Primitives}: A-Frame proporciona una gran cantidad de objetos predeterminados como $<$a-box $>$ $<$a-sky $>$ , los cuales son identificados como primitives o también nombrados primitivos en este trabajo, proporcionan una manera sencilla de usar figuras 3D para empezar a usar A-Frame, y admiten la adición de componentes. Los desarrollados además pueden crear sus propios primitivos. Unos ejemplos de los primitivos incluidos son:
 \setlength{\columnsep}{0.1in}
  \begin{multicols}{2}
  \begin{itemize}
@@ -701,16 +764,17 @@ De entre los  principales conceptos y elementos que introduce A-Frame se van a d
 \subsection{Uso de JavaScript dentro de A-Frame}
 \label{subsec:JS}
 
-Gracias a la importación de archivos en JavaScript se pueden añadir multiples funcionalidades a A-Frame.
+Gracias a la importación de archivos en JavaScript se pueden añadir múltiples funcionalidades a A-Frame.
 
-Un módulo o paquete muy extendido entre los desarrolladores es el aframe-extras~\cite{A-Frame:_extras} se trata de una serie de Add-ons y helpers para A-Frame, e incluye componentes de control, modelos predefinidos, primitives \dots.
+Un módulo o paquete muy extendido entre los desarrolladores es el aframe-extras~\cite{A-Frame:_extras}, se trata de una serie de Add-ons y helpers para A-Frame, e incluye componentes de control, modelos predefinidos, primitives \dots.
 
 Otro recurso muy utilizado para A-Frame y basado en JavaScript es la importación de components
-\footnote{https://aframe.io/docs/0.9.0/introduction/entity-component-system.html.}, como se puede ver anteriormente estos nos habilitan una serie de funciones, existe una amplia biblioteca de components para importar, entre ellos hay algunos que se organizan en paquetes o módulos como superframe.
+\footnote{https://aframe.io/docs/0.9.0/introduction/entity-component-system.html.}, para habilitar o añadir una serie de funciones en el entorno creado con A-frame.
+Existe una amplia biblioteca de components para importar, entre ellos hay algunos que se organizan en paquetes o módulos como superframe.
 \footnote{https://github.com/supermedium/superframe.}
 
-El uso de cada component es particular  y puede encontrarse en su documentación~\cite{A-Frame:_doc}, pero generalmente para usar un component hay que vincularlo con una entidad \textit{$<$a-entity$>$} y configurarlo.\\
-Tomando como ejemplo particle system, su importación y uso sería de la siguiente forma:
+Aunque el uso de cada component es particular  y puede encontrarse en su documentación~\cite{A-Frame:_doc}, generalmente para usar un component hay que vincularlo con una entidad \textit{$<$a-entity$>$} y añadirle una serie de elementos para su configuración.\\
+A continuación, se muestra un ejemplo con el component \textit{particle system}, en él se dan los pasos necesarios para su importación y posterior uso ligado a una entidad:
 
 \begin{itemize}
 \item Se importa el componente en el index.html de la misma manera que ya se mostró con A-Frame:
@@ -738,13 +802,13 @@ Tomando como ejemplo particle system, su importación y uso sería de la siguiente
 \clearpage
 
 \section{BBC Micro Bit}
-\label{sec:Microbit}
+\label{sec:Micro Bit}
 
-La última tecnología en introducir en este trabajo de fin de grado es el Micro Bit, ya se expone en el capítulo~\ref{sec:In_Microbit} su definición y características, su función y objetivo en este trabajo es programar las funcionalidades necesarias para que se convierta en el controlador del escenario de A-Frame previamente creado.
+La última tecnología en introducir en este trabajo de fin de grado es el Micro Bit, ya se expone en el capítulo~\ref{sec:In_Micro Bit} su definición y características, su función y objetivo en este trabajo es programar las funcionalidades necesarias para que se convierta en el controlador del escenario de A-Frame previamente creado.
 
-Dentro del proceso de implementación de esta funcionalidad en el MicroBit cabe destacar dos herramientas fundamentales \textit{pyautogui} y \textit{bitio}, son unos módulos de micropython que aportan diversas funcionalidades.
+Dentro del proceso de implementación de esta funcionalidad en el Micro Bit cabe destacar dos herramientas fundamentales \textit{pyautogui} y \textit{bitio}, son unos módulos de micropython que aportan diversas funcionalidades.
 
-Para el inicio del desarrollo y estudio de esta funcionalidad se tuvo la ayuda de esta práctica \footnote{github.com/sarehp/microbit-aframe}, que se encuentra en el repositorio de GuitHub del tutor. En ella se puede observar el uso de estas dos herramientas y fue idónea para servir de punto de partida por parte del alumno.
+Para el inicio del desarrollo y estudio de esta funcionalidad se tuvo la ayuda de esta práctica \footnote{github.com/sarehp/Micro Bit-aframe}, que se encuentra en el repositorio de GuitHub del tutor. En ella se puede observar el uso de estas dos herramientas y fue idónea para servir de punto de partida por parte del alumno.
 
 El siguiente paso fue llevar a cabo una serie de test y pruebas con Bitio y Pyautogui para aprender sus distintas funcionalidades.
 En las siguientes secciones \ref{subsec:pyautogui} y ~\ref{subsec:Bitio} se expone más detalladamente documentación y función de estos dos módulos.
@@ -752,26 +816,27 @@ En las siguientes secciones \ref{subsec:pyautogui} y ~\ref{subsec:Bitio} se expo
 \label{subsec:pyautogui}
 Para aprender a utilizar pyautogui se han utilizado estas documentaciones~\cite{PyAutoGUI:_doc}
 
-Como se puede leer en ellas, pyautogui es un módulo de python que nos permite mapear el teclado y el ratón, es decir controlar mediante la programación todas las teclas de ambos dispositivos.
+Como se puede leer en ellas, pyautogui es un módulo de Python que nos permite mapear el teclado y el ratón, es decir controlar mediante la programación todas las teclas de ambos dispositivos.
 
 Gracias a pyautogui, se ha podido mapear las pulsaciones de las teclas del teclado o movimientos del ratón a las interacciones con el Micro Bit en forma de gestos y pulsaciones de los botones.
 
 El código fuente se encuentra en el siguiente repositorio de GitHub~\footnote{ https://github.com/asweigart/pyautogui}.
+\clearpage
 
 \subsection{Bitio}
 \label{subsec:Bitio}
 
-Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Micro Bit en un controlador, se trata de una libreria de Micro Bit para Python,  nos permite correr código de python en nuestro PC y poder interactuar directamente con el Micro Bit. 
+Bitio es la segunda herramienta que se ha usado para conseguir convertir nuestro Micro Bit en un controlador, se trata de una librería de Micro Bit para Python, permite correr código de Python en el ordenador mientras se interactúa directamente con el Micro Bit. 
 
 Para aprender su uso se siguió la documentación~\cite{Bitio:_git} que se encuentra en un repositorio de GitHub creado por David Whale, el encargado de desarrollarlo.
 
-En la sección \textit{Getting Started} se exponen los pasos necesarios para instalarlo en el programa de python, además se explica como hacer la conexión con el Micro Bit y una serie de ejemplos de las funciones propias de bitio como pueden ser leer los valores del acelerómetro o detectar cuando se pulsa uno de los botones.
+En la sección \textit{Getting Started} se exponen los pasos necesarios para instalarlo en el programa de Python, además se explica como hacer la conexión con el Micro Bit y una serie de ejemplos de las funciones propias de bitio como pueden ser leer los valores del acelerómetro o detectar cuando se pulsa uno de los botones.
 
 \subsection{Micropython}
-\label{subsec:Microbit_py}
+\label{subsec:Micro Bit_py}
 
-Mycropython es el lenguaje de programación propio del Micro Bit. En este trabajo de fin de grado  todas las acciones se han desarrollado en este lenguaje y a la hora de realizar los programas que corren las acciones de la placa se ha contado con un apoyo en su documentación~\cite{MicroPython:_doc}.
-Esta basado en Python~\cite{Python:_doc} se usa de una forma prácticamente idéntica. Cualquier editor de texto es válido para programar los scripts, el recomendado oficialmente es el editor Mu Figura~\ref{figura:Mu}.
+Mycropython es el lenguaje de programación propio del Micro Bit. En este trabajo de fin de grado, todas las acciones se han desarrollado en este lenguaje y a la hora de realizar los programas que corren las acciones de la placa se ha contado con un apoyo en su documentación~\cite{MicroPython:_doc}.
+Está basado en Python~\cite{Python:_doc} se usa de una forma prácticamente idéntica. Cualquier editor de texto es válido para programar los scripts, el recomendado oficialmente es el editor Mu Figura~\ref{figura:Mu}.
 Permite de una forma intuitiva cargar el código en el dispositivo con un botón dedicado para ello y ofrece entre sus distintos modos la posibilidad de visualizar la salida estándar.
 
 \begin{figure}[H]
@@ -781,51 +846,49 @@ Permite de una forma intuitiva cargar el código en el dispositivo con un botón d
 \label{figura:Mu}
 \end{figure}
 
-Si no se cuenta con el editor de Mu la forma de cargar los programas en el MicroBit es mediante una terminal, para ello ya sea en Windows como en Linux es necesario tener una compilación de Python instalada en el sistema operativo y lanzar el programa.
-\subsection{Programación del Micro:bit mediante bloques(Makecode)}
-\label{subsec:Microbit_prog}
+Si no se cuenta con el editor de Mu la forma de cargar los programas en el Micro Bit es mediante una terminal, para ello ya sea en Windows como en Linux es necesario tener una compilación de Python instalada en el sistema operativo y lanzar el programa.
 
-Makecode es un editor para programar el Micro:bit que usa el método de programación por bloques~\cite{Prog:_bloques}~\cite{Prog:_bloques2}.
-
-Con una interfaz muy parecida a la de BeetleBlocks divide sus bloques en grupos, que aportan distintas funciones como Bucles , acciones para los LEDs, Lógica, Matemática \dots etc
-
-En la web de Makecode\footnote{https://makecode.microbit.org/} están disponibles numerosos tutoriales para familiarizarse con su uso.
-Aunque en este trabajo Makecode no ha sido utilizado para el desarrollo de las funcionalidades, se profundizó en cada uno de los tutoriales ya que ofrecen una mejor visión global de las posibilidades del Micro:bit, pudiendo programarse sencillos juegos de una forma rápida y amena.
-
-En la siguiente figura~\ref{figura:Makecode} se puede ver su aspecto inicial al arrancarlo, posee una distribución común de la programación por bloques con los diferentes grupos de funciones y variables a la izquierda \textbf{(2)} y una área de trabajo grande para arrastras los bloques y crear los \textit{sprites} \textbf{(3)}.
-Como complemento se puede hacer una previsualización del resultado de la ejecución de los bloques creados\textbf{(1)}.
-
+\subsection{Programación del Micro Bit mediante bloques(Makecode)}
+\label{subsec:Micro Bit_prog}
 \begin{figure}[H]
+\centering
 \includegraphics[width=1\textwidth]{img/Makecode}
 \caption{Makecode}
 \label{figura:Makecode}
 \end{figure}
+Makecode es un editor para programar el Micro Bit que usa el método de programación por bloques~\cite{Prog:_bloques}~\cite{Prog:_bloques2}.
+Con una interfaz muy parecida a la de Beetle Blocks divide sus bloques en grupos, que aportan distintas funciones, acciones para los LEDs, Lógica, Matemática \dots etc
+
+En la web de Makecode\footnote{https://makecode.Micro Bit.org/} están disponibles numerosos tutoriales para familiarizarse con su uso.
+Aunque en este trabajo Makecode no ha sido utilizado para el desarrollo de las funcionalidades, se profundizó en cada uno de los tutoriales ya que ofrecen una mejor visión global de las posibilidades del Micro Bit, pudiendo programarse sencillos juegos de una forma rápida y amena.
+
+En la siguiente figura~\ref{figura:Makecode} se puede ver su aspecto inicial al arrancarlo, posee una distribución común de la programación por bloques con los diferentes grupos de funciones y variables a la izquierda \textbf{(2)} y una área de trabajo grande para arrastras los bloques y crear los \textit{sprites} \textbf{(3)}.
+Como complemento se puede hacer una previsualización del resultado de la ejecución de los bloques creados\textbf{(1)}.
+\cleardoublepage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Diseño e implementación de los talleres %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cleardoublepage
 \chapter{Diseño y desarrollo de los talleres}
 \label{chap:talleres}
-
 \section{Introducción y propósito de los talleres}
 \label{sec:In_Taller}
-
-El principal objetivo de este trabajo de fin de grado es introducir todas estas herramientas que hemos explicado previamente a alumnos de enseñanzas medias, y para ello se han a desarrollado una serie de tres talleres, estos son autoconclusivos pero a su vez cada uno de ellos utiliza lo aprendido en el anterior, resultando en que una vez finalizados los tres se tenga una experiencia de realidad virtual completa creada con A-Frame en la que se introduce un objeto creado con BeetleBlocks y que puede ser controlada con un Micro:bit para moverse por ella.
+El principal objetivo de este trabajo de fin de grado es introducir todas estas herramientas que hemos explicado previamente a alumnos de enseñanzas medias, y para ello se han a desarrollado una serie de tres talleres autoconclusivos, pero además a modo de hilo conductor, cada uno de ellos utiliza lo aprendido en el anterior.
+Por tanto una vez finalizados los tres se tenga una experiencia de realidad virtual completa creada con A-Frame en la que se introduce un objeto creado con Beetle Blocks y que puede ser controlada con un Micro Bit para moverse por ella, y de tal forma el alumno aprende acerca de las tres tecnologías implementándolas en un proyecto global.
 
 El desarrollo y contenido de los talleres es el siguiente:
 \begin{itemize}
-\item \textbf{Taller 1}: Creación de un objeto 3D con Beetleblocks.\\
+\item \textbf{Taller 1}: Creación de un objeto 3D con Beetle Blocks.\\
 Este taller se centra en la creación de un objeto 3D con Bettleblocks, además se aprende a exportarlo y a darle el formato adecuado para usarlo en el siguiente taller.
 \item \textbf{Taller 2}: Diseñar una experiencia VR con A-frame.\\
-En este taller se aprende a usar A-Frame, creando un entorno de realidad virtual en el que se añade el objeto creado anteriormente con BeetleBlocks.
-\item \textbf{Taller 3}: Micro:bit como interfaz de usuario para una experiencia de realidad virtual.\\
-En este taller se convierte el Micro:bit en un controlador para la experiencia de realidad virtual creada con A-Frame, el Micro Bit permite moverse por la escena, mover la cámara y una pequeña interacción con el objeto.
+En este taller se aprende a usar A-Frame, creando un entorno de realidad virtual en el que se añade el objeto creado anteriormente con Beetle Blocks.
+\item \textbf{Taller 3}: Micro Bit como interfaz de usuario para una experiencia de realidad virtual.\\
+En este taller se convierte el Micro Bit en un controlador para la experiencia de realidad virtual creada con A-Frame, el Micro Bit permite moverse por la escena, mover la cámara y una pequeña interacción con el objeto.
 \end{itemize}
 
-\section{Taller 1 (Creación de un objeto 3D con Beetleblocks. )}
+\section{Taller 1 (Creación de un objeto 3D con Beetle Blocks. )}
 \label{sec:Taller1}
-Este primer taller pretende enseñar a crear un objeto en 3D con BeetleBlocks y su accesible método de programación mediante bloques. Además en la segunda parte del taller se introduce Blender otra herramienta de diseño 3D que permite dar el formato correcto al objeto para usarlo en un entorno VR creado con A-Frame, que será el núcleo del segundo Taller\ref{sec:Taller2}.\\
+Este primer taller pretende enseñar a crear un objeto en 3D con Beetle Blocks y su accesible método de programación mediante bloques. Además en la segunda parte del taller se introduce Blender otra herramienta de diseño 3D que permite dar el formato correcto al objeto para usarlo en un entorno VR creado con A-Frame, que será el núcleo del segundo Taller\ref{sec:Taller2}.\\
 El objetivo de este taller es introducir el diseño en 3D a alumnos de enseñanzas medias de tal forma que con una sesión, sean capaces de crear algún objeto básico en 3D y darle las herramientas necesarias para que puedan desarrollar algo más complejo en un futuro.
 \subsection{ Introducción a Bettleblocks}
 \label{subsec:T_Beetle}
@@ -834,13 +897,13 @@ Beettleblocks pone las cosas fáciles a la hora de crear objetos 3D, con este tal
 
 Antes de comenzar a programar la primera figura, se debe crear una cuenta en Bettleblocks para  de una forma accesible poder acceder a los proyectos guardados.
 \begin{itemize}
- \item El primer paso es ir a la web de BeetleBlocks\footnote{http://BeetleBlocks.com} y en la esquina superior derecha pulsar sobre la opción \textit{Log in} para crear el usuario.
- \item Una vez hecho esto se puede comenzar a usar BeetleBlocks, para ello se debe pulsar en \textit{Run BeetleBlocks} como se ve en la Figura~\ref{figura:Run_Beetle}.\\
+ \item El primer paso es ir a la web de Beetle Blocks\footnote{http://Beetle Blocks.com} y en la esquina superior derecha pulsar sobre la opción \textit{Log in} para crear el usuario.
+ \item Una vez hecho esto se puede comenzar a usar Beetle Blocks, para ello se debe pulsar en \textit{Run Beetle Blocks} como se ve en la Figura~\ref{figura:Run_Beetle}.\\
 \end{itemize}
 \begin{figure}[H]
     		\centering
     		\includegraphics[width=8cm, keepaspectratio]{img_b/run_beetle}
-		\caption{Crear perfil e iniciar BeetleBlocks}
+		\caption{Crear perfil e iniciar Beetle Blocks}
 		\label{figura:Run_Beetle}
 \end{figure} 
 
@@ -848,7 +911,7 @@ Antes de comenzar a programar la primera figura, se debe crear una cuenta en Bet
 \subsection{El Primer Objeto }
 \label{subsec:1_Beetle}
 
-Una vez abierto BeetleBlocks se muestra una pantalla como la de la Figura~\ref{figura:Init_beetle}
+Una vez abierto Beetle Blocks se muestra una pantalla como la de la Figura~\ref{figura:Init_beetle}
 
 \begin{figure}[H]
   \centering
@@ -869,7 +932,7 @@ A la izquierda se tiene el menú con los diferentes bloques ordenados por categor
  \label{figura:Beetle_headphones}
 \end{figure}
 Sabiendo esto ya se puede empezar a crear/programar el primer objeto.
-A continuación se exponen las ordenes y funciones útiles para familiarizarse con Beetleblocks y crear un primer objeto:
+A continuación se exponen las órdenes y funciones útiles para familiarizarse con Beetle Blocks y crear un primer objeto:
 
 \begin{enumerate}
 
@@ -880,7 +943,7 @@ A continuación se exponen las ordenes y funciones útiles para familiarizarse con
 	 \item Al crear una variable x, se le puede asignar un valor gracias al bloque \\
 	 \includegraphics[width=0.22\textwidth]{img_b/Variables}
 	 en el que se introduce el valor deseado.
-	 \item Un elemento muy común en la programación son los bucles estos se representan en BeetleBlocks con el bloque  \includegraphics[width=0.08\textwidth]{img_b/Repetir}, para continuar con la creación de la figura se debe repetir el proceso de la creación de las líneas de una figura geométrica, en el hueco del bloque se inserta la variable creada, esto provoca que todos los bloques que son insertados a posteriori se repiten el número de veces que valor tenga la variable.
+	 \item Un elemento muy común en la programación son los bucles estos se representan en Beetle Blocks con el bloque  \includegraphics[width=0.08\textwidth]{img_b/Repetir}, para continuar con la creación de la figura se debe repetir el proceso de la creación de las líneas de una figura geométrica, en el hueco del bloque se inserta la variable creada, esto provoca que la ejecución de los bloques que son insertados posteriormente se repiten un número de veces igual al valor tenga la variable.
 	 \item Dentro del bucle se deben insertar 2 bloques:
 	 \begin{itemize}
 	 \item El bloque 
@@ -889,7 +952,7 @@ A continuación se exponen las ordenes y funciones útiles para familiarizarse con
 	\includegraphics[width=0.12\textwidth]{img_b/move_x}
 	\item El bloque 
 	 \includegraphics[width=0.12\textwidth]{img_b/girar}
-	 permite girar la dirección en la que está orientado el escarabajo, el valor que debe introducirse en cada hueco debe ser en grados. En este caso se quiere girar tantos grados como lados tenga la figura geométrica que se quiere conseguir, para hacerlo de una forma muy sencilla el bloque de división debe contener el número total de grados de un circulo entre los lados de la figura en este caso la variable x previamente creada, quedando de la siguiente manera 	\includegraphics[width=0.12\textwidth]{img_b/div} sólo queda combinar ambos bloques \includegraphics[width=0.22\textwidth]{img_b/giro_div}.
+	 permite girar la dirección en la que está orientado el escarabajo, el valor que debe introducirse en cada hueco debe ser en grados. En este caso, se quiere girar tantos grados como lados tenga la figura geométrica que se quiere conseguir, para hacerlo de una forma muy sencilla el bloque de división debe contener el número total de grados de un circulo entre los lados de la figura en este caso la variable x previamente creada, quedando de la siguiente manera 	\includegraphics[width=0.12\textwidth]{img_b/div} sólo queda combinar ambos bloques \includegraphics[width=0.22\textwidth]{img_b/giro_div}.
 	\item Por último se combinan los tres bloques, tanto el bucle como los dos resultantes anteriores, el \textit{sprite} o conjunto de bloques final debería quedar como en la Figura~\ref{figura:loop}.
 \begin{figure}[H]
     	\centering
@@ -924,12 +987,12 @@ A continuación se exponen las ordenes y funciones útiles para familiarizarse con
 \subsection{Formato }
 \label{subsec:2_Beetle} 
 
-El último paso por exponer es la exportación de la figura final de entre los diferentes formatos que ofrece Beetleblocks, ninguno es compatible con A-Frame, en la siguiente sección veremos como conseguirlo gracias a Blender, pero en este paso es necesario exportarlo en formato \textit{.stl}.
+El último paso por exponer, es la exportación de la figura final de entre los diferentes formatos que ofrece Beetle Blocks, ninguno es compatible con A-Frame, en la siguiente sección veremos como conseguirlo gracias a Blender, pero en este paso es necesario exportarlo en formato \textit{.stl}.
 
 \subsection{ Blender}
 \label{subsec:T_Blender}
 
-Una vez que se ha creado un objeto con Beeetleblocks el paso final es conseguir que tenga una extensión \textit{.obj} que es la apropiada para poder usar el objeto en el siguiente taller, en el que mostrará la manera de crear una experiencia de realidad virtual con A-frame.De entre las múltiples maneras de conseguirlo, en este trabajo se ha optado por usar usar Blender un software OpenSource de diseño 3D.La pantalla de inicio de Blender se puede ver en la Figura~\ref{figura:Init_Blender}.\begin{itemize}
+Una vez que se ha creado un objeto con Beeetleblocks, el paso final es conseguir que tenga una extensión \textit{.obj} que es la apropiada para poder usar el objeto en el siguiente taller, en el que mostrará la manera de crear una experiencia de realidad virtual con A-frame.De entre las múltiples maneras de conseguirlo, en este trabajo se ha optado por usar usar Blender un software OpenSource de diseño 3D.La pantalla de inicio de Blender se puede ver en la Figura~\ref{figura:Init_Blender}.\begin{itemize}
 \item Los pasos a seguir para exportar la figura en \textbf{\textit{.obj}} y \textbf{\textit{.mtl}} son los siguientes:
 \begin{enumerate}
 
@@ -956,12 +1019,12 @@ Una vez que se ha creado un objeto con Beeetleblocks el paso final es conseguir 
 \section{Taller 2 (Creación de un entorno VR ) }
 \label{sec:Taller2}
 
-En este segundo taller se enseñará a crear una experiencia de realidad virtual con A-Frame, además se añadirá el objeto previamente creado con  BeetleBlocks en el primer taleer, y se indicaran los pasos a seguir para visualizar el escenario de A-Frame en un smartphone.
+En este segundo taller se enseñará a crear una experiencia de realidad virtual con A-Frame, además se añadirá el objeto previamente creado con  Beetle Blocks en el primer taller, y se indicaran los pasos a seguir para visualizar el escenario de A-Frame en un smartphone.
 \subsection{Creación de entorno VR con A-Frame}
 \label{subsec:T_Aframe}
 
 Para crear la experiencia de realidad virtual con A-Frame el primer paso es crear un documento index.html y el repositorio en el que se van a incluir los archivos necesarios.
-Todos los comandos de terminal descritos en este taller se basan en un terminal Linux, con los siguientes se procede a crear el directorio de la práctica y el archivo html.
+Todos los comandos de terminal descritos en el taller están basados en un terminal Linux, con los siguientes se procede a crear el directorio de la práctica y el archivo html.
 \begin{verbatim}
  mkdir A-Frame
  cd A-Frame
@@ -1006,7 +1069,7 @@ A continuación se expone un ejemplo en el que se introducen una serie de primiti
 \end{figure}
 Además es posible crear primitives propios, algo que se puede ver en la siguiente sección de este taller, para ello es necesario exportar un archivo JavaScript.
 
-Una vez explicada la metodología para cargar objetos en A-Frame, el siguiente paso a realizar es cargar el objeto creado con BeetleBlocks, ya con el formato \textbf{\textit{.obj}} que se le ha dado previamente con Blender.
+Una vez explicada la metodología para cargar objetos en A-Frame, el siguiente paso a realizar es cargar el objeto creado con Beetle Blocks, ya con el formato \textbf{\textit{.obj}} que se le ha dado previamente con Blender.
 \clearpage
 \begin{itemize}
 \item El proceso para cargarlo en el index.html es el siguiente:
@@ -1041,53 +1104,46 @@ Una vez explicada la metodología para cargar objetos en A-Frame, el siguiente pa
 \subsection{Animación básica con A-frame.}
 \label{subsec:T_Aframe_Animacion}
 
-A-Frame nos permite añadir algo de animación básica a nuestra figura, gracias a la importación de archivos JavaScript, que funcionan como módulos de A-Frame.
+A-Frame permite añadir algo de animación a los objetos que integran la escena, mediante el identificador $<$a-animation $>$, se tiene acceso a una serie de animaciones básicas, pero en este caso se ha optado por la importación de archivos JavaScript, que funcionan como módulos de A-Frame.
 
-El ejemplo expuesto aquí consigue aportarle una animación al objeto que consiste en una rotación al hacer click sobre él, para hacerlo se debe importar el paquete aframe-animation-component\footnote{https://github.com/aframevr/aframe/blob/master/docs/components/animation.md}.
+El ejemplo expuesto aquí consigue aportarle una animación al objeto, se produce una rotación al hacer click sobre él, para hacerlo se debe importar el paquete aframe-animation-component\footnote{https://github.com/aframevr/aframe/blob/master/docs/components/animation.md}.
 
-Lo importamos en la cabecera $<$\textit{head}$>$ del documento de la misma forma que se hace con A-Frame.
+De la misma manera que se hace con A-Frame se importa en la cabecera $<$\textit{head}$>$ del documento HTML.
 	 {\footnotesize
 \begin{verbatim}
-<script src="https://rawgit.com/ngokevin/aframe-animation-component
+<head>
+ [...]
+ <script src="https://rawgit.com/ngokevin/aframe-animation-component
   /master/dist/aframe-animation-component.min.js">
-
-</script>
+ </script>
+</head>
 \end{verbatim}
 }
-Para usar la animación $<$\textit{a-animation}$>$ es necesario invocarla dentro del objeto, representado en A-Frame como $<$\textit{a-entity}$>$, de la siguiente manera:
+La animación forma parte de las propiedades del objeto $<$\textit{animation}$>$ se suele indicar una vez se establezcan las propiedades básicas del objeto, representado en A-Frame como $<$\textit{a-entity}$>$, este módulo también puede añadir animación a los primitives de A-Frame, a continuación se expone un ejemplo en el que se añade una animación de rotación:
 
-	 {\footnotesize
 \begin{verbatim}
-<a-entity [...]>
-
- <a-animation attribute="rotation" begin="click"
- 			 repeat="5" to="0 360 0">  </a-animation>
- 
- <a-event name="mouseenter" scale="4 1 6">
- </a-event>
- 
+<a-entity obj-model="obj:#Beetle-obj" mtl="src:#Beetle-mtl"
+   material="src:#Beetle-texture" position="1.5 1 2.5"
+   
+   animation="property: rotation; loop: 5; to: 0 360 0; 
+   startEvents: click"
 </a-entity>
 \end{verbatim}
-}
+Como se puede observar, a la hora de declarar una animación primero se debe indicar el tipo, en este caso rotación y posteriormente, se establecen una serie de modificadores, para este ejemplo el número de veces que se quiere repetir y la dirección de la rotación en alguno de sus ejes, la lista completa de argumentos que funcionan como modificadores se puede consultar en la documentación anteriormente citada.
 
-Como se puede observar uno de los atributos de $<$\textit{a-animation}$>$  es begin="click", este permite que la animación sólo se ejecute cuando se hace click sobre el objeto.
-Al estar en un entorno de realidad virtual, no se dispone del ratón y lo que funciona sería el equivalente del es el centro de la mirada, para conseguir simular apuntar al objeto  con el puntero del ratón es necesario crear un cursor ``virtual" en el centro de la pantalla, que no es otra cosa que el centro de la perspectiva que tenemos en cada momento.
-El cursor se crea una vez se define la posición inicial de la cámara, en este caso se le da un color rojo para que resalte con el fondo de la escena.
+El último de los argumentos, no forma parte de la animación propiamente dicha, se trata de un identificador de evento, en este caso el click del ratón, que permite que la animación sólo se ejecute cuando se hace un click sobre el objeto.
 
-Una vez aclarado este punto la creación del cursor y centrar la cámara es muy sencillo, y debe hacerse dentro del objeto:
+Cuando se está inmerso en un entorno de realidad virtual, no se dispone del puntero del ratón para hacer click sobre el objeto. El puntero sería el equivalente al centro de la mirada, para conseguir simular que se está mirando al objeto sin necesidad de tener un visor puesto, es necesario crear un cursor ``virtual", que además resulta de gran ayuda cuando se utilice un visor, ya que ayuda a una orientación más rápida a la hora de moverse por un entorno de realidad virtual.
+\clearpage
+El cursor se crea una vez se define la posición inicial de la cámara, en este caso se le da un color rojo de forma que resalte con el fondo de la escena.
+Una vez aclarado este punto, la creación del cursor resulta muy sencilla y el resultado final puede verse en la Figura~\ref{figura:A_Frame}:
 \begin{verbatim}
 [...]
  <a-camera position="1.5 1 6.5">
- 
-  <a-cursor color="#FF0000">
-  
+   <a-cursor color="#FF0000">
  </a-camera>
-</a-entity>
 [...]
 \end{verbatim}
-
-El resultado final puede verse en la Figura~\ref{figura:A_Frame}
-
 \begin{figure}[H]
     		\centering
     		\includegraphics[width=14cm, keepaspectratio]{img/A_Frame}
@@ -1097,12 +1153,13 @@ El resultado final puede verse en la Figura~\ref{figura:A_Frame}
 
 \subsection{Llevar la experiencia VR a un smartphone}
 \label{subsec:T_smart}
-Con todo esto se consigue crear un entorno de realidad virtual con A-Frame de forma local.Pero para visualizar un entorno de realidad virtual, es necesario un visor, la forma más rapida y sencilla de ver obetener uno, es a través de un smartphone, para exportar el index.html a internet y poder visualizarla desde el navegador web del teléfono se va a contar con la ayuda una utilidad llamada ngrok.
+A continuación se expone un método para visualizar el entorno de A-Frame en un smartphone, si por ejemplo, no se cuenta con un visor físico para el ordenador.
+Para hacer esto se ha hecho uso de la utilidad \textbf{ngrok}, que permite la exportación de un servidor local a Internet, proporcionándole una IP pública y haciendo posible su acceso a través del navegador de un teléfono móvil. Uno de los problemas que se pueden encontrar con ngrok es que la experiencia no puede ser muy compleja, debido a que la transmisión de información no proporciona la velocidad normal de un servidor estándar.
 
 \begin{itemize}
 \item Estos los pasos necesarios para usar ngrok y exportar la escena de A-Frame:
 \begin{enumerate}
-	\item En una terminal y estando en carpeta la raiz del proyecto, se lanza el servidor de forma local:
+	\item En una terminal y estando en carpeta la raíz del proyecto, lanzar el servidor de forma local:
 	\begin{verbatim}
 	python -m SimpleHTTPServer 1234
 	\end{verbatim}
@@ -1114,7 +1171,7 @@ Con todo esto se consigue crear un entorno de realidad virtual con A-Frame de fo
 	./ngrok http 1234
 	\end{verbatim}
 	
-	\item Ngrok devuelve una pantalla, entre los datos que proporciona se encuentra la url pública de la aplicación, marcada en rojo en la Figura~\ref{figura:ngrok}. 
+	\item Ngrok devuelve una pantalla, entre los datos que proporciona se encuentra la \textbf{url pública} de la aplicación, marcada en rojo en la Figura~\ref{figura:ngrok}. 
 	\item Introduciendo esta url en un navegador compatible, por ejemplo Google Chrome, se puede visualizar la experiencia de A-Frame en un smartphone u otro dispositivo compatible.
 	
 \end{enumerate}
@@ -1134,11 +1191,12 @@ Con todo esto se consigue crear un entorno de realidad virtual con A-Frame de fo
 \section{Taller 3(Micro Bit como IU en entorno VR)}
 \label{sec:Taller3}
 
-En este tercer taller se mostrará como convertir nuestro Micro Bit en un controlador para una experiencia de realidad virtual creada con A-Frame.
+En este tercer taller se mostrará como programar el Micro Bit para convertirlo en el controlador de una experiencia de realidad virtual creada con A-Frame.
 
-El propósito de este taller es partir del anterior a la hora de usar el controlador en la experiencia, pero no necesariamente es obligatorio ya que el Micro Bit debe funcionar en cualquier entorno de A-Frame que permita movimiento independientemente de como sea la experiencia en si.
+De la misma manera que en el segundo taller se utilizaba la figura creada en el primero para insertarla en A-frame,en este caso se parte de la escena creada en el segundo taller para controlar el movimiento dentro de ella con el Micro Bit.
+Conviene aclarar que el Micro Bit debe funcionar en cualquier entorno de A-Frame que permita movimiento, independientemente de como sea la experiencia en sí.
 
-Las funciones que llevará cabo el Micro Bit una vez finalizado el taller, serán las siguientes:
+Una vez finalizado el taller, las funciones implementadas en el Micro Bit serán:
 
 \begin{itemize}
 \item Movimiento físico en la experiencia al pulsar B.
@@ -1150,44 +1208,39 @@ Las funciones que llevará cabo el Micro Bit una vez finalizado el taller, serán 
 \begin{figure}[H]
     		\centering
     		\includegraphics[width=15cm, keepaspectratio]{img/Microbit_functions}
-		\caption{Funciones del Micro:bit}
-		\label{figura:Microbit_functions}
+		\caption{Funciones del Micro Bit}
+		\label{figura:Micro_Bit_functions}
 \end{figure} 
 
-Para programar el Micro:bit primero se debe preparar el entorno, como ya se indica en la introducción el lenguaje utilizado será python, o en su defecto micropython.
-El sistema operativo será Linux, Micro:bit también dispone de compatibilidad con Windows mediante la instalación de un driver, esto será abordado en el anexo del trabajo.
+El primer paso antes de programar el Micro Bit es preparar el entorno. Como ya se ha expuesto en la introducción, el lenguaje utilizado será Python, o en su defecto micropython.
+El sistema operativo será Linux, Micro Bit también dispone de compatibilidad con Windows mediante la instalación de un driver, esto es abordado en el Apéndice~\ref{chap:apen2} del trabajo.
 
-Los pasos a realizar por tanto serán:
+Los requerimientos para empezar a programar el Micro Bit son:
 \begin{itemize}
 \item Disponer de un editor de texto.
 \item Instalar bitio.
 \item Instalar pyautogui.
 \end{itemize}
 
-Con esto ya se dispone de un entorno apto para empezar a programar nuestra placa.
-
+Como editor de texto se puede utilizar aquel que sea más cómodo para el usuario, entre ellos el editor Mu que recomienda la documentaciñon de Micro Bit.
+Respecto a la instalación de bitio y pyautogui, son abordadas en las siguientes secciones.
 \subsection{Instalación de Bitio}
 \label{subsec:Install_Bitio}
 
-El primer paso es instalar Bitio, para ello lo primero que se debe hacer es ir a su repositorio de GitHub\footnote{https://github.com/whaleygeek/bitio}.
+El primer paso es instalar Bitio, esta guía de instalación esta basada directamente en su repositorio de GitHub\footnote{https://github.com/whaleygeek/bitio}.Como la propia documentación indica la mejor forma de usar bitio en un entorno educativo es copiar la carpeta `src/Micro Bit' en el directorio Home del proyecto actual.
 
-Como la propia documentación indica la mejor forma de usar bitio en un entorno educativo es copiar la carpeta `src/microbit' en el directorio Home del proyecto actual.
-
-Con esto se consigue que automáticamente cualquier programa que esté en el mismo directorio acceda a la carpeta de bitio cuando se importe el paquete microbit, al principio del programa \textbf{.py}
+Con esto se consigue que automáticamente cualquier programa que esté en el mismo directorio acceda a la carpeta de bitio cuando se importe el paquete Micro Bit, al principio del programa \textbf{.py} mediante la siguiente línea.
 
 \textit{import microbit}
 
-Dentro de la carpeta `src' se ecuentran una serie de programas para probar las distintas funcionalidades de bitio.
-
-La forma de probar si se ha instalado bitio correctamente es tan simple como hacer una prueba con uno de ellos.Tomando como prueba \textit{button.py} se obtienen estos valores en la terminal al ejecutar el programa.
-
+Dentro de la carpeta `src' se ecuentran una serie de programas que permiten probar las distintas funcionalidades de bitio.
+Una forma de verificar que bitio está instalado correctamente es hacer una prueba con uno de se los programas de prueba que se encuentran en esta carpeta.
+\clearpage
+Tomando como prueba \textit{button.py}, si bitio está correctamente instalado, se obtienen estos valores de la salida estándar.
 \begin{verbatim}
-
 python button.py
 
-\end{verbatim}
-\begin{verbatim}
-No micro:bit has previously been detected
+No Micro Bit has previously been detected
 Scanning for serial ports
 remove device, then press ENTER
 scanning...
@@ -1202,34 +1255,33 @@ found 1 new device
 selected:COM6
 Do you want this device to be remembered? (Y/N)
 connecting...
-Your micro:bit has been detected
+Your Micro Bit has been detected
 Now running your program
-micro:bit connected - press button A to test
+Micro Bit connected - press button A to test
 Button A pressed
 Button A pressed
 Button A pressed
 \end{verbatim}
 
-El funcionamiento de cualquier programa de bitio  es el siguiente primero escanea los dispositivos conectados a nuestro pc, sin el Micro:bit entre ellos, a continuación pide al usuario que lo conecte y establece la conexión con él que corresponde al puerto nuevo encontrado.
-Una vez que el programa está corriendo la última línea que se encuentra es.
+Si se analiza la salida, bitio sigue una serie de pasos al ejecutar un programa. Primero, se escanean los dispositivos conectados al ordenador, con el Micro Bit desconectado del ordenador, a continuación, se solicita al usuario conectarlo y tras confirmar, se establece la conexión al encontrar un nuevo dispositivo conectado.
+\clearpage
+Para verificar la conexión con la placa y que el programa está ejecutándose en la terminal se debe mostrar:
 
 \textit{Now running your program}
 
-En este caso el programa nos devuelve una línea de texto cada vez que se pulsa el botón \textbf{A}.
+En el ejemplo expuesto anteriormente el programa devuelve una línea de texto cada vez que se pulsa el botón \textbf{A}.
 
 
 \subsection{Instalación de Pyautogui}
 \label{subsec:Install_Pyauto}
 
-A continuación se debe instalar pyautogui para poder correr código de python en el Micro:bit.
+El último paso antes de empezar a programar el Micro Bit es instalar pyautogui, para así poder mapear las funciones de las teclas del teclado y el ratón, respecto a los valores del acelerómetro del Micro Bit.
 
-El método de instalación difiere un poco en función del sistema operativo que se utiliza, en este trabajo de fin de grado los test han sido tanto en Linux como en Windows 10.
+El método de instalación difiere un poco en función del sistema operativo que se utiliza, en este trabajo de fin de grado, los test han sido hechos tanto en Linux como en Windows 10.
 
-Al igual que con bitio el método de instalción que se describe aquí esta basado en la propia documentación:
+De la misma manera que se hizo con bitio, el método de instalación que se describe aquí esta basado en la propia documentación\footnote{https://github.com/asweigart/pyautogui}
 
-\textit{https://github.com/asweigart/pyautogui}
-
-Para instalar pyautogui en Linux:
+Los comandos a ejecutar para instalar pyautogui en Linux son:
 \begin{verbatim}
 pip3 install python3-xlib
 sudo apt-get install scrot
@@ -1238,41 +1290,39 @@ sudo apt-get install python3-dev
 pip3 install pyautogui
 \end{verbatim}
 
-Con esto ya se cuenta con pyautogui totalmente funcional al importar el paquete al principio del programa mediante la línea.
+Con esto y de la misma manera que con bitio, pyautogui es totalmente funcional al importarlo al principio del programa mediante la línea.
 
 \textit{import pyautogui}
 
+Una prueba sencilla para saber si pyautogui es funcional, es probar el programa testpy.py que se adjunta en este trabajo.
 
-Una prueba sencilla para saber si pyautogui es funcional es probar el programa testpy.py que se adjunta en este trabajo.
+La funcionalidad del programa es centrar la posición del ratón cuando se pulsa A en el Micro Bit, para saber si pyautogui está correctamente instalado, basta con lanzar este programa y ver si el puntero del ratón se desplaza al centro de la pantalla al pulsar el botón.
+\clearpage
 Su contenido es el siguiente.
-
 \begin{verbatim}
-import microbit
-import pyautogui
-while True:
-	if microbit.button_a.was_pressed():
-		microbit.display.show("PULSA A")
-		screenWidth, screenHeight = pyautogui.size()
-		pyautogui.moveTo(screenWidth / 2, screenHeight / 2)
-		microbit.sleep(500)
-		microbit.display.clear()
+  import Micro Bit
+  import pyautogui
+  while True:
+    if Micro Bit.button_a.was_pressed():
+      Micro Bit.display.show("PULSA A")
+      screenWidth, screenHeight = pyautogui.size()
+      pyautogui.moveTo(screenWidth / 2, screenHeight / 2)
+      Micro Bit.sleep(500)
+      Micro Bit.display.clear()
 \end{verbatim}
 
-La funcionalidad del programa es hacer centrar la posición de nuestro ratón cuando se pulsa A en el microbit, para saber si pyautogui esta correctamente instalado basta con lanzar este programa y ver si el puntero del ratón se desplaza al centro de la pantalla al pulsar A.
 
+\subsection{Programación del Micro Bit}
+\label{subsec:Prog_Micro Bit}
 
-\subsection{Programación del Micro:bit}
-\label{subsec:Prog_Microbit}
+Una vez se tiene el entorno preparado y todas las herramientas instaladas, se puede proceder a programar el Micro Bit para convertirlo en el controlador de la experiencia.
 
-Una vez se tiene el entorno preparado y todas las herramientas instaladas se puede proceder a programar el Micro:bit y convertirlo en el controlador de la experiencia.
+Para la realización del taller y la programación de las distintas funcionalidades del Micro Bit se ha optimizado el código del siguiente repositorio de GitHub~\footnote{https://github.com/sarehp/microbit-aframe} proporcionado por el tutor, para implementar el movimiento físico.
+Para las otras dos funciones se ha utilizado la documentación tanto de bitio como de pyautogui.
 
-Como ya se hace referencia anteriormente en el trabajo, el punto de partida se corresponde con el siguiente repositorio de github.
+Como se considera que la programación de la funcionalidades es demasiado compleja para la duración de los talleres, se ha optado por que los alumnos completen el código de una serie de programas que se adjuntan con el guión del taller, que se corresponden con las distintas funciones a implementar.
 
-\textit{https://github.com/sarehp/microbit-aframe}.
-
-El objetivo del taller será optimizar este código base para crear un controlador con más funcionalidades.
-
-A continuación se describe el estudio y realización de cada una de ellas correspondientes a la figura~\ref{figura:Microbit_functions}
+A continuación, se describe el estudio e implementación llevado a cabo con cada una de las funciones por parte del alumno:
 
 \begin{itemize}
 \item[A) ] Movimiento
@@ -1284,9 +1334,7 @@ A continuación se describe el estudio y realización de cada una de ellas corresp
 \Large
 A) Movimiento \\
 \normalsize
-Para programar el movimiento dentro de A-Frame se tomó el código del repositorio de github y se le añadió la funcionalidad de centrar la cámara antes de comenzar el movimiento para facilitar la experiencia.
-Esto esprogramado con pyautogui.
-
+Para programar el movimiento dentro de A-Frame, se parte del código facilitado en el repositorio de GitHub, añadiéndole un paso previo que consiste en centrar la cámara antes de comenzar el movimiento y de esta forma  facilitar la orientación.
 \begin{verbatim}
 	screenWidth, screenHeight = pyautogui.size()
 	pyautogui.mouseDown()
@@ -1296,44 +1344,37 @@ Esto esprogramado con pyautogui.
 \begin{itemize}
 \item Con la primera línea se guarda la resolución de la pantalla en dos variables una para el ancho y otra para el alto.
 \item Se deja el ratón pulsado con la orden mouseDown, se hace esto para entrar en el control de la cámara en A-frame.
-\item Se mueve el ratón al centro de la pantalla
+\item Se mueve el ratón al centro de la pantalla.
 \item Por último se suelta el botón izquierdo del ratón para salir del control de la cámara.
 \end{itemize}
 
 \Large
 B) Interacción \\
 \normalsize
-
-La Siguiente función en ser implementada es la interacción, en este caso su programación es muy sencilla.
-
-La interacción que fue creada en el anterior taller consistía en una pequeña animación del objeto 3D dentro del escenario creado por A-Frame. La animación es ejecutada mediante un click del ratón cuando se enfoca directamente al objeto.
-
-Por tanto la función a implementar en el Micro:bit es el click del ratón.
+La siguiente función en ser implementada es la interacción, en este caso su programación es muy sencilla. La interacción creada en el anterior taller, consiste en una pequeña animación del objeto 3D en el escenario creado con A-Frame. La animación comienza cuando se hace click sobre el objeto. La función a implementar en el Micro Bit es hacer click con el ratón sobre el objeto cuando se pulsen los dos botones simultáneamente.
 Hay una función en pyautogui que permite esta orden.
 
 \begin{verbatim}
 pyautogui.click()
 \end{verbatim} 
 
-El método de detección que ha sido elegido en este caso es la pulsación simultanea de los dos botones para hacer click.
-Para capturar una pulsación de un botón Micro:bit posee una una función específica para cada uno por lo que en el bloque if se deberá incluir las dos en un \textit{and} de la siguiente forma:
+El método de detección elegido en este caso es la pulsación simultánea de los dos botones. Existe una función específica para detectar la pulsación de cada uno de los botones del Micro Bit, por tanto, basta con indicar con un \textit{AND} la pulsación de ambos en el bloque \textit{If}  de la siguiente manera:
 
 \begin{verbatim}
-microbit.button_a.is_pressed() and microbit.button_b.is_pressed():
+Micro Bit.button_a.is_pressed() and Micro Bit.button_b.is_pressed():
 \end{verbatim}
 
 \Large
 C) Control de la Cámara \\
 \normalsize
 
-El primer paso para programar el control de la cámara fue estudiar las diferentes funciones que ofrece pyautogui a la hora de poder interactuar con la pantalla y el ratón.
+En primera instancia, para programar el control de la cámara se estudiaron las diferentes funciones que ofrece pyautogui para interactuar con la pantalla y el ratón.
 
-Para poder implementar el movimiento de la cámara con el accelerómetro del Micro:bit, primero es necesario entender como se maneja la cámara en A-Frame con un ratón común.Para mover la cámara es necesario pulsar dentro del escenario de A-Frame y a continuación desplazar el ratón en la dirección deseada sin soltar el botón izquierdo del ratón.
+El primer paso para implementar el movimiento de la cámara con el accelerómetro del Micro Bit, es entender como se maneja la cámara en A-Frame con un ratón. Para mover la cámara es necesario pulsar dentro del escenario de A-Frame, y a continuación, desplazar el ratón en la dirección deseada sin soltar el botón izquierdo del ratón.
 
-Por tanto lo que se ha hecho en este caso es mapear el movimiento del ratón por la pantalla en base a los valores que ofrece el acelerómetro del Micro:bit.
-Los diferentes pasos que se han seguido son los siguientes.
- 
-En lo relativo a la pantalla se extrae la resolución. Como se ve en la figura~\ref{figura:Resolutions} existen multitud de resoluciones posibles en función de la pantalla en la que se ejecuta la experiencia de A-Frame, en concreto en la realización de este trabajo de fin de grado se disponía de una pantalla 4k con una resolución de 3840x2160 pixeles, esta no es una resolución muy común en la actualidad, por ello aquí se describirá la programación de la funciónalidad en base a una pantalla Full HD (1920x1080)
+La forma de implementar esta serie de acciones, es mapear el movimiento del ratón por la pantalla, en base a los valores que ofrece el acelerómetro del Micro Bit.\\
+
+Para comenzar, es necesario extraer la resolución de la pantalla. Como se ve en la figura~\ref{figura:Resolutions} existen multitud de resoluciones posibles en función de la pantalla en la que se ejecuta la experiencia de A-Frame. En concreto, en la realización de este trabajo de fin de grado se disponía de una pantalla 4k con una resolución de 3840x2160 pixeles, esta no es una resolución muy común en la actualidad, por ello en esta memoria se describe la programación de la funcionalidad en base a una pantalla con una resolución Full HD (1920x1080), 1920 pixeles de ancho por 1080 pixeles de alto.
 
 \begin{figure}[H]
     		\centering
@@ -1341,11 +1382,10 @@ En lo relativo a la pantalla se extrae la resolución. Como se ve en la figura~\r
 		\caption{Resoluciones}
 		\label{figura:Resolutions}
 \end{figure} 
-
-Tomando como base por tanto la resolución Full HD tenemos 1920 pixeles de ancho y 1080 pixeles de alto.
-Ahora se necesita saber como funciona el acelerómetro del Micro:bit.
-Con la función \textit{microbit.accelerometer.get\_ x()} y \textit{microbit.accelerometer.get\_ y()} se extraen los valores del acelerómetro
-los cuales van de 1000 a -1000 en cada uno de los ejes como se ve en la figura~\ref{figura:acc_vals}.
+\clearpage
+Ahora se necesita saber como funciona el acelerómetro del Micro Bit.
+Con las funciones \textit{Micro Bit.accelerometer.get\_ x()} y \textit{Micro Bit.accelerometer.get\_ y()} se extraen los valores del acelerómetro
+los cuales oscilan de 1000 a -1000 en cada uno de los ejes, Figura~\ref{figura:acc_vals}.
 
 \begin{figure}[H]
     		\centering
@@ -1354,40 +1394,41 @@ los cuales van de 1000 a -1000 en cada uno de los ejes como se ve en la figura~\
 		\label{figura:acc_vals}
 \end{figure} 
 
-Como el objetivo es mapear el movimiento del ratón con los valores del acelerómetro solo se necesitan dos ejes, debido a que la pantalla es un plano de dos dimensiones.
+Como el objetivo es mapear el movimiento del ratón con los valores del acelerómetro y debido a que la pantalla es un plano de dos dimensiones, solo se necesitan dos ejes, en este caso el X e Y.
 
-Una vez se tiene clara la medida del ancho de la pantalla en la que se ejecuta la experiencia de realidad virtual y los valores máximos del acelerómetro el siguiente paso es mover la cámara.
+Una vez se tienen claras las medidas de la pantalla en la que se ejecuta la experiencia de realidad virtual y los valores máximos del acelerómetro, el siguiente paso es mover la cámara.
 
-Como se puede ver anteriormente para mover la cámara en A-Frame es necesario mover el ratón mientras se mantiene pulsado el botón izquierdo del mismo para hacer esto, son necesarias estas dos funciones de pyautogui.
+Para mover la cámara en A-Frame es necesario mover el ratón mientras se mantiene pulsado el botón izquierdo del mismo. Para trasladar estas órdenes al Micro bit, son necesarias estas dos funciones de pyautogui.
 
 \begin{verbatim}
 pyautogui.mouseDown()
 pyautogui.moveRel(x, y)
 \end{verbatim}
 
-Con \textit{pyautogui.mouseDown()} se consigue dejar pulsado el ratón y con \textit{pyautogui.moveRel(x,y)} se mueve el ratón en función de su posición actual en la pantalla.
+Con la primera de ellas \textit{pyautogui.mouseDown()}, se consigue dejar pulsado el ratón y con \textit{pyautogui.moveRel(x,y)}, se mueve el ratón a unas coordenadas x e y, en función de su posición actual en la pantalla.
 
-Una vez se sabe esto, basta con implementar un método de sensibilidad en el acelerómetro parecido al ya creado con el movimiento físico.
+Sabiendo esto, basta con implementar un método de sensibilidad en el acelerómetro, parecido al ya implementado con el movimiento físico donde se establecía un límite para paliar pequeñas desviaciones en los ejes.
+
 \begin{verbatim}
-x = microbit.accelerometer.get_x()
-y = microbit.accelerometer.get_y()
+x = Micro Bit.accelerometer.get_x()
+y = Micro Bit.accelerometer.get_y()
 			
 if x > SENX:
-	pyautogui.moveRel(Height*x, None)
+  pyautogui.moveRel(Height*x, None)
 elif x < -SENX:
-	pyautogui.moveRel(Height*x, None)			
+  pyautogui.moveRel(Height*x, None)			
 if y > SENY:
-	pyautogui.moveRel(None, y*Width)
+  pyautogui.moveRel(None, y*Width)
 elif y < -SENY:
-	pyautogui.moveRel(None, y*Width)
+  pyautogui.moveRel(None, y*Width)
 
 \end{verbatim}
 
-Con este código se consigue mover el ratón en todas las direcciones en base a los valores del acelerómetro en el \textbf{eje x} y el \textbf{eje y}.
-Las variables \textit{SENX} y \textit{SENY}, representan la sensibilidad en los ejes del acelerómetro del Micro:bit, en este caso fueron fijadas a 180 y 280 respectivamente para prevenir movimientos, de una forma parecida al Threshold, en la anterior función implementada en el Micro:bit del movimiento.
+La función de este código es mover el ratón a unas coordenadas concretas, en base a los valores que ofrece el acelerómetro en el \textbf{eje x} y el \textbf{eje y}.
+Las variables \textit{SENX} y \textit{SENY}, ofrecen una sensibilidad en los valores de los ejes del acelerómetro, en este caso, han sido fijadas a 180 y 280 respectivamente para prevenir desvíos no deseados, de una forma parecida al Threshold establecido en la función del movimiento implementada en el Micro Bit.
 
-Por último se puede observar que el valor del acelerómetro es multiplicado por dos variables \textbf{Height} y \textbf{Width}, Estas son variables que ayudan a graduar el grado de sensibilidad del movimiento del ratón y son resultado de la división del ancho y el alto de la resolución de la pantalla usada, por un factor 
-multiplo de los valores ancho y alto de una pantalla Full HD.Para las pruebas realizadas en este proyecto su valor es el siguiente.
+Por último, se puede observar que el valor del acelerómetro es multiplicado por dos variables \textbf{Height} y \textbf{Width}. Estas variables, ayudan a graduar el grado de sensibilidad del movimiento del ratón ayudando a la fluidez del movimiento. Son resultado de la división del ancho y el alto de la resolución de la pantalla, por un factor múltiplo de los valores ancho y alto de la pantalla.
+{\footnotesize
 \begin{verbatim}
 screenWidth, screenHeight = pyautogui.size()
 Factor_y = 1920*6 
@@ -1396,10 +1437,9 @@ Factor_x = 1080*6
 Width = screenWidth / Factor_y 
 Height = screenHeight/ Factor_x
 \end{verbatim}
-
-Cambiando el valor de estas variables es posible ajustar la sensibilidad del movimiento en función de la pantalla usada, basta con cambiar el múltiplo por  uno menor en este caso fue 6 debido a que la pantalla era 4k y la densidad de píxeles era muy elevada, despumes de diversas pruebas se confirmó como un valor apropiado para tener un control óptimo e la experiencia, en el que la cámara no se mueva excesivamente rápido.
-
-
+}
+Cambiando el valor de estas variables es posible ajustar la sensibilidad del movimiento en función de la pantalla usada, basta con cambiar el múltiplo.
+En este caso es 6, debido a que la pantalla usada en las pruebas es 4K y la densidad de píxeles es muy elevada, tras una serie de pruebas, se ha establecido como un valor apropiado para tener un control óptimo de la experiencia, en el que la cámara no se mueva excesivamente rápido y exista una fluidez.
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1410,43 +1450,44 @@ Cambiando el valor de estas variables es posible ajustar la sensibilidad del mov
 \chapter{Conclusiones}
 \label{chap:conclusiones}
 
-En la última parte de este trabajo de fin de grado se analiza la consecución de los objetivos propuestos. los conocimientos aprendidos durante el grado que han sido aplicados, los conocimientos aprendidos por el alumno en la realización de este mismo así como los trabajos futuros en base a posibles ideas o funcionalidades a implementar en un futuro.
+En la última parte de este trabajo de fin de grado se analiza la consecución de los objetivos propuestos, las asignaturas cursadas durante el grado que han sido aplicadas, así como los conocimientos aprendidos por el alumno en la realización de este proyecto, así como las posibles ideas o funcionalidades a implementar en un futuro.
 
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-En el capitulo~\ref{chap:Obj} se exponen una serie de objetivos:
+En el Capítulo~\ref{chap:Obj} se exponen una serie de objetivos:
 \begin{enumerate}
-\item Visibilidad de las experiencias de realidad virtual en la educación
-\item Conseguir crear una experiencia VR propia
-\item Implementar una funcionalidad del Micro:bit en el entorno de A-Frame 
+\item Visibilidad de las experiencias de realidad virtual en la educación.
+\item Introducir la creación de objetos 3D y entornos VR.
+\item Implementar una funcionalidad del Micro Bit en el entorno de A-Frame. 
 \end{enumerate}
 
-Para la consecución del primer objetivo se llevo a cabo una descripción de la realidad virtual así como las posibles utilidades y aplicaciones posibles para mejorar la educación en diferentes ámbitos ayudando así a la introducción de una parte práctica en el aprendizaje de los alumnos lo que conlleva una mayor retención de los conocimientos.
+Para la consecución del primer objetivo, se llevó a cabo una descripción de la realidad virtual así como de las posibles utilidades y aplicaciones posibles para mejorar la educación en diferentes ámbitos, promoviendo la introducción de una parte práctica en el aprendizaje de los alumnos, lo que conlleva una mayor retención de los conocimientos.
 
-Respecto al objetivo de conseguir crear una experiencia de realidad virtual propia y a que a su vez sea posible para alumnos que vayan a acceder a la universidad, es conseguido gracias a BeetleBlocks y A-Frame dos herramientas simples de entender basadas en la programación por bloques y javascript respectivamente pero que ofrecen múltiples posibilidades de creatividad y en el caso de A-Frame la creación de experiencias virtuales a través de la docencia.
+Respecto al objetivo de introducir a los alumnos el diseño 3D  mediante la programación mediante bloques y la creación de una experiencia de realidad virtual propia, ha sido conseguido gracias a Beetle Blocks y A-Frame dos herramientas simples de entender basadas en la programación por bloques y HTML/JavaScript respectivamente pero que ofrecen múltiples posibilidades de creatividad y en el caso de A-Frame, la creación de experiencias virtuales a través de la docencia.
 
-Por último la parte más compleja como es la programación del Micro:bit usando micropython para transformarlo en el controlador de la experiencia previamente creada con A-Frame. Como ya se ha dicho es la parte más compleja a la hora de ser impartida a alumnos en fase de acceso a la universidad ya que es necesario una serie de conocimientos de python, por tanto el tercer taller se ha orientado en un guión guiado que ayude ala comprensión con pequeñas partes prácticas para asentar las bases de la programación.
+Por último la parte más compleja, siendo la programación del Micro Bit usando micropython y consiguiendo la transformación en el controlador de la experiencia previamente creada con A-Frame. Este es el objetivo más complejo a la hora de ser impartido a alumnos en fase de acceso a la universidad, debido a la necesidad de una serie de conocimientos base de Python.
+Por tanto, el tercer taller se ha orientado de tal forma que, a medida que se desarrolla el guión, los alumnos deben completar el código de una serie de programas basados en las distintas funcionalidades a implementar en el Micro Bit. Esto hace que se deba tener un mínimo de conocimientos acerca de Python, pero facilita la comprensión a la hora de asentar las bases de la programación.
 
 \section{Aplicación de lo aprendido}
 \label{sec:aplicacion}
 
-Para la realización de este trabajo de fin de grado las principales asignaturas relacionadas con el mismo son :
+Las principales asignaturas impartidas que están relacionadas con el desarrollo de este trabajo de fin de grado son:
 
 \begin{enumerate}
-  \item INGENIERIA DE SISTEMAS DE INFORMACION
-  \item DESARROLLO DE APLICACIONES TELEMATICAS
-  \item SERVICIOS Y APLICACIONES TELEMATICAS
+  \item INGENIERÍA DE SISTEMAS DE INFORMACIÓN
+  \item DESARROLLO DE APLICACIONES TELEMÁTICAS
+  \item SERVICIOS Y APLICACIONES TELEMÁTICAS
 \end{enumerate}
 
-En ellas el alumno aprendió la programación con python, javascript además de conocimientos y aplicación de utilidades relacionadas con HTML5.
+En ellas el alumno aprendió la programación con Python y JavaScript, además de  aprender la aplicación de utilidades y conocimientos relacionados con HTML5.
 
 \section{Lecciones aprendidas}
 \label{sec:lecciones_aprendidas}
 
-Los conocimientos aprendidos por el alumno en este trabajo de fin de grado corresponden a la creación de objetos en 3D, la creación de experiencias de realidad virtual así como la programación del Micro Bit.
+Los conocimientos aprendidos por el alumno en este trabajo de fin de grado corresponden al núcleo de los tres talleres desarrollados, es decir, la creación de objetos en 3D, la creación de experiencias de realidad virtual y la programación del Micro Bit.
 
-Con esto se puede concluir que toda la parte práctica de los talleres ha servido a su vez para que el alumno realizara una labor de estudio y aprendizaje de las tecnologías aplicadas, para la creación posterior de los talleres didácticos.
+Se puede afirmar, que toda la parte práctica de los talleres ha servido a su vez para que el alumno realizara una labor de estudio y aprendizaje de las tecnologías aplicadas, para posteriormente, aplicarlo en la redacción de los guiones de los talleres didácticos.
 
 \clearpage
 \section{Trabajos futuros}
@@ -1454,12 +1495,11 @@ Con esto se puede concluir que toda la parte práctica de los talleres ha servido
 
 En este apartado se detallan las posibles mejoras e ideas que podrían ser útiles en un futuro:
 \begin{itemize}
-\item Mejorar la animación del objeto 3D ya sea usando un Software externo o explotando las posibilidades de A-Frame.
-\item Aumentar el número de funcionalidades del Micro Bit dentro de A-Frame, usando eventos de movimiento como sacudirlo o el uso de la brújula interna.
-\item Introducir alguna funcionalidad extra de A-Frame en el segundo taller como por ejemplo la realidad Aumentada.
-\item Mejoras la experiencia programando un sencillo juego que haga uso del Micro Bit dentro de A-Frame, esto podría contemplarse como un trabajo mucho más elaborado si se quieren introducir más de un Micro Bit y aumentar la complejidad del juego en cuestión.
+\item Mejorar la animación del objeto 3D, ya sea usando un Software externo o explotando las posibilidades de A-Frame.
+\item Aumentar el número de funcionalidades del Micro Bit dentro de A-Frame, usando eventos de movimiento, como sacudirlo o el uso de la brújula interna.
+\item Introducir alguna funcionalidad extra de A-Frame en el segundo taller, por ejemplo, la realidad aumentada.
+\item Mejoras en la experiencia, programando un sencillo juego que haga uso del Micro Bit dentro de A-Frame, podría contemplarse como un trabajo mucho más elaborado si se introdujera más de un Micro Bit y aumentara la complejidad del juego en cuestión.
 \end{itemize}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%1%%%%%%%%%%%%%%%%%%%%%%%%%
 % BIBLIOGRAFIA %
@@ -1487,11 +1527,10 @@ En este apartado se detallan las posibles mejoras e ideas que podrían ser útiles
 
 \cleardoublepage
 \appendix
-\chapter{Guía de uso Beetleblocks}
+\chapter{Guía de bloques de Beetle Blocks}
 \label{chap:apen}
-BeetleBlocks tiene la mayoría de categorías en común con Scratch. Cualquiercategoría, se puede ocultar pulsando el botón derecho.SI se quiere hacer un reinicio de un bloque se debe pulsar click derecho en el área de trabajo y selecionar "show primitives".
-Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor numérico y los puntos suspensivos \textbf{(\dots)} a un cuadro de entrada de texto\\
-
+Beetle Blocks tiene la mayoría de categorías en común con Scratch. Cualquiercategoría, se puede ocultar pulsando el botón derecho.SI se quiere hacer un reinicio de un bloque se debe pulsar click derecho en el área de trabajo y selecionar "show primitives".
+Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor numérico y los puntos suspensivos \textbf{(\dots)} a un cuadro de entrada de texto.
 \section{Movimiento}
 \label{sec:Movimiento}
 \setlength{\columnsep}{0.1in}
@@ -1521,36 +1560,36 @@ Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor n
  \setlength{\columnsep}{0.1in}
  \begin{multicols}{2}
  \begin{itemize}
-    \item Reset \# Resets all rendered graphics.
-    \item When Green Flag clicked \# Runs the code below it when clicked.
+    \item Reset \# Resetea el todos los objetos renderizados.
+    \item When Green Flag clicked \# Ejecuta el código anidado al hacer click.
     \item When space($\downarrow$) key pressed
     \item When I receive ($\downarrow$)
     \item Broadcast ($\downarrow$)
     \item ~[Checkbox] message
     \item Warp
-    \item Wait (n) secs \# Waits for a period of time.
+    \item Wait (n) secs \# Espera un periodo de tiempo.
     \item Wait until $<$boolean$>$
-    \item Forever \# Runs code inserted into it forever.
-    \item Repeat (n) \# Repeats code inserted into it a selected amount of times.
-    \item Repeat until $<$boolean$>$ \# Repeats code inserted into it until a specified thing happens.
-    \item If $<$boolean$>$ \# If something specified happens it will run the inserted code.
-    \item If $<$boolean$>$ else \# If something specified happens it will run the code inserted into the if area but if it does not happen it will run the code inserted into the else area.
+    \item Forever \# Corre siempre los códigos insertados.
+    \item Repeat (n) \# Bucle.
+    \item Repeat until $<$boolean$>$ \# Repite el código hasta que se de una condición.
+    \item If $<$boolean$>$ \# Condicional.
+    \item If $<$boolean$>$ else \# Condicional completo.
     \item Report [string]
-    \item Stop all($\downarrow$) \# Stops the specified $\downarrow$.
-    \item Stop all but this script \# Stops the script specified in the $\downarrow$
+    \item Stop all($\downarrow$) \# Para la ejecución de lo especificado en el selector.
+    \item Stop all but this script \# Para la ejecución de todo menos lo especificado.
     \item Run (...)
     \item Launch (...)
     \item Call (input)
     \item Run (...) w/continuation
     \item Call (...) w/continuation
-    \item Pause all \# Pauses rendering.
+    \item Pause all \# Para el renderizado.
 	\end{itemize}
 	\end{multicols}
 \section{Colores}
 \label{sec:Colores}
 	\begin{itemize}
-	\item Set hue($\downarrow$) to (n) \# Sets selected option to selected n
-    \item Change hue($\downarrow$) by (n) \# Changes selected option by selected n
+	\item Set hue($\downarrow$) to (n) \# Establece un color para el dibujado
+    \item Change hue($\downarrow$) by (n) \# Cambia el color
     \item Color ($\downarrow$)
 	
 	\end{itemize}
@@ -1567,10 +1606,10 @@ Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor n
     \item Tube l:(n) outer: (n) inner: (n)
     \item Text [string] H: (n) W: (n)
     \item 2D text [string] size: (n)
-    \item Start drawing lines($\downarrow$) \# Starts drawing the specified $\downarrow$ option.
-    \item Stop drawing \# Stops drawing.
+    \item Start drawing lines($\downarrow$) \# Permite dibujar líneas o curvas
+    \item Stop drawing \# Para de dibujar.
     \item Start extruding curves($\downarrow$)
-    \item Stop extruding \# Stops extruding.
+    \item Stop extruding 
     \item Set extrusion Dia. to (n)
     \item Change extrusion Dia. by (n)
  
@@ -1582,7 +1621,7 @@ Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor n
 \setlength{\columnsep}{0.1in}
  \begin{multicols}{2}
  \begin{itemize}
-    \item Request user ... [text] \# Requests ...ted text
+    \item Request user ... [text] 
     \item ~[~[Checkbox]] answer
     \item ~[Checkbox] mouse x
     \item ~[Checkbox] mouse y
@@ -1592,8 +1631,8 @@ Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor n
     \item ~[Checkbox] timer
     \item ~[http://(url)]
     \item $<$turbo mode?$>$
-    \item set turbo mode to $<$boolean input$>$ \# Sets turbo mode to inputted boolean
-    (current date($\downarrow$))
+    \item set turbo mode to $<$boolean input$>$ 
+    \item (current date($\downarrow$))
  
  \end{itemize}
  \end{multicols}
@@ -1601,18 +1640,18 @@ Por último todas las letras \textbf{``n"} de esta guía corresponden a un valor n
 \section{Crear una variable}
 \label{sec:Crear una variable}
 
-Cuando se pulsa en el botón de crear una variable se despliega el cuadro de creación en el se introduce el nombre de la variable a crear y se puede elegir si esta variable puede ser usada por todos los sprites o solo para algunos en concreto.\\
+Cuando se pulsa en el botón de crear una variable se despliega el cuadro de creación en el se introduce el nombre de la variable a crear y se puede elegir si esta variable puede ser usada por todos los sprites, o solo para algunos en concreto.\\
 \clearpage
-\Large Variables
-\normalsize
+\section{Variables}
+\label{sec:Variables}
 \setlength{\columnsep}{0.1in}
  \begin{multicols}{2}
  \begin{itemize}
 
-    \item set ($\downarrow$) to (...) \# Sets inputted variable to inputted text/n
-    \item change ($\downarrow$) by 1(n) \# Changes inputted variable by inputted n
-    \item show variable ($\downarrow$) \# Shows the inputted variable
-    \item hide variable ($\downarrow$) \# Hides the inputted variable
+    \item set ($\downarrow$) to (...) \# Establece el valor de la variable.
+    \item change ($\downarrow$) by (n) \# Remplaza la variable por el valor. dado.
+    \item show variable ($\downarrow$) \# Muestra la variale introducida.
+    \item hide variable ($\downarrow$) \# Oculta la variable introducida.
     \item script variables a(...) $<$increase$>$
     \item list (...) $<$increase$>$
     \item (...) in front of list
@@ -1620,16 +1659,16 @@ Cuando se pulsa en el botón de crear una variable se despliega el cuadro de crea
     \item all but first of list
     \item length of list
     \item list contains thing(...)
-    \item add thing(...) to list \# Adds inputted text/n to the list
-    \item delete 1($\downarrow$) of list \# Deletes inputted item from the list
-    \item insert thing(...) at 1($\downarrow$) of list \# Inserts inputted text/n in the inputted area of the list
-    \item replace item ($\downarrow$) of list with(...) \# Replaces inputted item of list with inputted item
+    \item add thing(...) to list \# Añade a la lista el elemento introducido.
+    \item delete 1($\downarrow$) of list \# Borra el elemento solicitado.
+    \item insert thing(...) at 1($\downarrow$) of list \# Inserta el elemento en la posición especifica de la lista.
+    \item replace item ($\downarrow$) of list with(...) \# Remplaza un elemento por otro en la lista.
  \end{itemize}
  \end{multicols}
  \section{Crear un bloque}
 \label{sec:Crear un bloque}
 
- La sección de crear un bloque consta de uno único hasta que el usuario crea alguno.Para crear un bloque, es necesario hacer click en el botón correspondiente, esto abre un cuadro de dialogo que ofrece las siguientes opciones:
+ En la sección de crear un bloque, se tiene un único bloque hasta que el usuario crea alguno. Para crear un bloque, es necesario hacer click en el botón correspondiente, esto abre un cuadro de diálogo que ofrece las siguientes opciones:
  \begin{enumerate}
 \item Selección de categoría, el color de los bloques es acorde a la categoría elegida.
 	
@@ -1673,50 +1712,100 @@ Cuando se pulsa en el botón de crear una variable se despliega el cuadro de crea
 
 \end{itemize}
 \end{multicols}
-
-
-\begin{figure}[H]
-  \subfloat[Colores]{
-   \label{f:Colores}
-  \includegraphics[width=0.3\textwidth]{img/Bcolors}}
-\end{figure} 
 \clearpage
-
+\section{Imágenes de los Bloques}
+\label{sec:Blocks_Images}
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.3\textwidth]{img/Bcolors}
+		\caption{Colores}
+		\label{figura:Colores}
+\end{figure} 
 \begin{figure}[H]
  \centering
   \subfloat[Movimiento]{
    \label{f:motion}
-    \includegraphics[width=0.3\textwidth ]{img/Bvariables}}
+    \includegraphics[width=0.3\textwidth, height=0.75\textwidth ]{img/Bvariables}}
   \subfloat[Control]{
    \label{f:Control}
-    \includegraphics[width=0.3\textwidth, height=0.75\textwidth]{img/Bcontrol}}
+    \includegraphics[width=0.3\textwidth, height=0.9\textwidth]{img/Bcontrol}}
     \subfloat[Operadores]{
    \label{f:Operadores}
-    \includegraphics[width=0.3\textwidth, height=0.75\textwidth]{img/Boperators}}
+    \includegraphics[width=0.3\textwidth, height=0.9\textwidth]{img/Boperators}}
   
  \caption{Bloques Beetle Blocks A}
  \label{f:animales}
 \end{figure} 
 
-\begin{figure}[H]
+\begin{figure}
  \centering
   \subfloat[Colores]{
    \label{f:Colores}
-  \includegraphics[width=0.3\textwidth, height=0.4\textwidth]{img/Bmotion}}
+  \includegraphics[width=0.3\textwidth, height=0.6\textwidth]{img/Bmotion}}
     \subfloat[Funciones]{
    \label{f:Funciones}
-    \includegraphics[width=0.3\textwidth, height=0.4\textwidth]{img/Bsensing}}
+    \includegraphics[width=0.3\textwidth, height=0.6\textwidth]{img/Bsensing}}
     \subfloat[Figuras / Formas]{
    \label{f:Formas}
-    \includegraphics[width=0.3\textwidth, height=0.4\textwidth]{img/Bshapes}}
+    \includegraphics[width=0.3\textwidth, height=0.6\textwidth]{img/Bshapes}}
    \caption{Bloques Beetle Blocks B}
  \label{f:animales}
 \end{figure}
 
 \clearpage
 
-
-\chapter{Auriculares en Beetle Blocks}
+\chapter{Programar el Micro Bit en Windows}
 \label{chap:apen2}
-En este segundo apéndice se explica el proceso de desarrollo y creación de los auriculares descritos en la práctica de BeetleBlocks.
+
+Para usar el Micro Bit en windows, es necesario instalar una compilación de Python, en Windows 10 basta con buscar en la tienda Python 3.7 \footnote{https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p?activetab=pivot:overviewtab} e instalar la aplicación.
+
+Una vez instalado Python, el siguiente paso es instalar bitio y pyautogui, pero antes es necesario instalar el driver \textit{ mbed serial driver}\footnote{https://os.mbed.com/handbook/Windows-serial-configuration}, para que la terminal de windows pueda tener acceso al serial port del Micro Bit.
+
+La instalación de bitio es igual que la detallada para Linux, basta con descargar el repositorio a la raíz del proyecto, o si se desea tener un entorno más controlado descargar solo la carpeta /microbit.
+
+Para pyautogui es necesario ejecutar una serie de pasos.
+\begin{itemize}
+\item Instalar pip, para ello es necesario descargar primero el archivo  get-pip.py en el directorio del proyecto.
+\begin{verbatim}
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+\end{verbatim}
+\item Ejecutarlo con la ayuda de una terminal de Windows:
+\begin{verbatim}
+$ python get-pip.py
+\end{verbatim}
+\item Por último instalar pyautogui
+\begin{verbatim}
+$ pip install pyautogui
+\end{verbatim}
+\end{itemize}
+
+Una vez instalado Python, bitio y pyautogui ya es posible ejecutar cualquier programa para el Micro Bit desde una terminal de windows como se puede ver en la Figura~\ref{figura:m_win}.
+
+\begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.8\textwidth]{img/micro_w}
+		\caption{Cmd corriendo programa de micropython}
+		\label{figura:m_win}
+\end{figure} 
+\chapter{Programas de Python}
+\label{chap:apen3}
+
+\section{Testpy.py}
+\label{sec:Apen3.1}
+\lstinputlisting[language=Python]{microbit/taller3/testpy.py}
+\section{interaction.py}
+\label{sec:Apen3.2}
+\lstinputlisting[language=Python]{microbit/taller3/interaction.py}
+\section{move.py}
+\label{sec:Apen3.3}
+\lstinputlisting[language=Python]{microbit/taller3/move.py}
+\clearpage
+\section{camera.py}
+\label{sec:Apen3.4}
+\lstinputlisting[language=Python]{microbit/taller3/camera.py}
+\section{microIU.py}
+\lstinputlisting[language=Python]{microbit/microIU.py}
+\label{sec:Apen3.5}
+\chapter{Talleres didácticos}
+\label{chap:apen4}
 \end{document}

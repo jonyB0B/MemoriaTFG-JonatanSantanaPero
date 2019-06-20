@@ -2,18 +2,16 @@ import pyautogui
 import microbit
 import msvcrt, sys
 
-#Variables globales
-
+#GLOBAL
 THRESHOLD=200.0
 SENX=180.0
 SENY=280.0
-AYUDA="""		AYUDA
-	Pulsa A para manejar la cámara
-	Pulsa B para manejar el movimiento		
-	Pulsa AB a la vez para hacer click"""  
+AYUDA="""		HELP
+	Press A to move the camera,
+	Press B to move,		
+	Press A & B to interact"""  
 	
-#FUNCIONES
-
+#FUNCTIONS
 def Help_Windows():
 	ch = msvcrt.getwch()
 	if ch == 'q':
@@ -80,17 +78,19 @@ def Center_Cam():
 	pyautogui.mouseDown()
 	pyautogui.moveTo(screenWidth / 2, screenHeight / 2)
 	pyautogui.mouseUp()
+
+
+
+
 	
 #MAIN
-	
 while True:
-
 	if msvcrt.kbhit():
 		Help_Windows()
 		#Help_Linux()
 			
 	elif microbit.button_a.is_pressed() and microbit.button_b.is_pressed():
-		print("Button AB pressed, click mode")
+		print("Button A & B pressed, click mode")
 		pyautogui.click()
 		
 	elif microbit.button_a.is_pressed():
@@ -108,6 +108,6 @@ while True:
 		#Centramos la poscion de la camara antes de movernos
 		Center_Cam()
 		Move()
-		
+
 	#print(microbit.accelerometer.get_values())
 	microbit.sleep(500)
